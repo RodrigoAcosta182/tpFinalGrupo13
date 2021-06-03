@@ -10,6 +10,10 @@ switch ($page){
         $loginController = Configuracion::getLoginController();
         $loginController->renderLogin();
         break;
+    case "inicio":
+        $inicioController = Configuracion::getInicioController();
+        $inicioController->renderInicio();
+        break;
 }
 
 

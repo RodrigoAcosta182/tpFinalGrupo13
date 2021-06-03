@@ -1,0 +1,141 @@
+{{> header}}
+{{> navbar}}
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+    <img src="/tpFinalGrupo13/images/banner.jpeg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+</div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+    <h2>Garlopa Transfer</h2>
+    <p style="font-style: italic; color: #757575">"Hay lugares donde uno se queda, y lugares que quedan en uno"</p>
+
+    <div class="w3-row" style="margin-left: 20%"><br>
+
+        <div class="w3-quarter">
+            <img src="/tpFinalGrupo13/images/Ariel.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Ariel Molina</h3>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="/tpFinalGrupo13/images/Emi.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3> Emiliano Ortiz</h3>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="/tpFinalGrupo13/images/Rodri.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Rodrigo Acosta</h3>
+        </div>
+
+    </div>
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+    <div class="w3-quarter">
+        <h2>Nuestra flota</h2>
+        <p>Somos una empresa de transporte de carga, logística y distribución de mercaderías, enfocada en satisfacer las necesidades y requerimientos de nuestros clientes.</p>
+    </div>
+
+    <div class="w3-quarter">
+        <div class="w3-card w3-white">
+            <img src="/tpFinalGrupo13/images/Camion1.jpg" alt="Snow" style="width:100%">
+            <div class="w3-container">
+                <h3>Scania</h3>
+                <h4>Rendimiento Potente</h4>
+                <p>La nueva serie G es altamente adaptable y se puede personalizar para las necesidades específicas de su negocio, resistentes y maniobrables para casi cualquier aplicación</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-quarter">
+        <div class="w3-card w3-white">
+            <img src="/tpFinalGrupo13/images/Camion2.jpg" alt="Lights" style="width:100%">
+            <div class="w3-container">
+                <h3>Mercedes Benz</h3>
+                <h4>Dinámica de marcha.</h4>
+                <p>Configuraciones de cadena cinemática perfectamente armonizadas entre sí, desarrollo espontáneo de potencia, gran estabilidad de marcha y comportamiento direccional preciso</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-quarter">
+        <div class="w3-card w3-white">
+            <img src="/tpFinalGrupo13/images/Camion3.jpg" alt="Mountains" style="width:100%">
+            <div class="w3-container">
+                <h3>Iveco</h3>
+                <h4>Confort</h4>
+                <p>Auténtica grandeza hasta el último detalle. El Actros define de nuevo términos tales como libertad de movimiento, habitabilidad y ambiente, sin perder nunca de vista la jornada de trabajo del conductor.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+    <div class="w3-row">
+        <div class="w3-col m5">
+            <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contactanos</span></div>
+            <h3>Direccion</h3>
+            <p>Pasa por una taza de cafe, o lo que sea.</p>
+            <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Gral Rodriguez, Bs As</p>
+            <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +54 1515151515</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  info@garlopa.com</p>
+        </div>
+        <div class="w3-col m7">
+            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+                <div class="w3-section">
+                    <label>Nombre</label>
+                    <input class="w3-input" type="text" name="Name" required>
+                </div>
+                <div class="w3-section">
+                    <label>Email</label>
+                    <input class="w3-input" type="text" name="Email" required>
+                </div>
+                <div class="w3-section">
+                    <label>Mensaje</label>
+                    <input class="w3-input" type="text" name="Message" required>
+                </div>
+                <button type="submit" class="w3-button w3-right w3-theme">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">
+
+{{> footer}}
+
+<script>
+    // Script for side navigation
+    function w3_open() {
+        var x = document.getElementById("mySidebar");
+        x.style.width = "300px";
+        x.style.paddingTop = "10%";
+        x.style.display = "block";
+    }
+
+    // Close side navigation
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+
+</body>
+</html>

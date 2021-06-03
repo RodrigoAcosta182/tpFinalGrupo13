@@ -31,4 +31,12 @@ class Configuracion
         include_once("controller/LoginController.php");
         return new LoginController($render);
     }
+
+    public static function getInicioController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/InicioController.php");
+        return new InicioController($render);
+    }
 }
