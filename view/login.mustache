@@ -2,22 +2,25 @@
 
 <link rel="stylesheet" href="/tpFinalgrupo13/public/css/loginStyle.css">
 <div class="w3-container">
-    <form class="w3-card-4 w3-display-middle" action="login/" method="post">
-        <div class="imgcontainer">
-            <img src="/tpFinalgrupo13/public/images/logo.jpeg" alt="Avatar" class="avatar">
+    <form class="w3-card-4 w3-display-middle" action="login/validarLogin" method="post">
+        <div class="w3-center">
+            <img class="w3-circle" style="width:20%" src="/tpFinalgrupo13/public/images/logo.jpeg" alt="Avatar" class="avatar" >
         </div>
-        <div class="container">
-            <label for="usuario"><b>Usuario</b></label>
-            <input type="text" placeholder="Ingresar usuario" name="usuario" required>
-            <label for="contrasena"><b>Contraseña</b></label>
-            <input type="password" placeholder="Ingresar contraseña" name="contrasena" required>
-            <button type="submit">Ingresar</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Recordarme
-            </label>
+        <div class="w3-container">
+            <h3 class="w3-center">Ingresar al sistema</h3>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Ingresar usuario" name="email" style="color: white" required>
+
+            <label for="contrasenia"><b>Contraseña</b></label>
+            <input type="password" placeholder="Ingresar contraseña" name="contrasenia" style="color: white" required>
+
+            <button class="w3-button w3-indigo" type="submit">Ingresar</button>
+            <p class="w3-text-red w3-center">{{MensajeErrorLogin}}</p>
+            <p class="w3-text-red w3-center">{{MensajeUsuarioInactivo}}</p>
         </div>
-        <div class="w3-container container" >
-            <span class="psw">No recuerda su <a href="#">contraseña?</a></span>
+        <div class="w3-container">
+            <hr>
+            <a href="#" style="width: 100%" type="submit" class="w3-red w3-button">Registrarse</a>
         </div>
     </form>
 </div>
