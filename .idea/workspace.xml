@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bdd43a72-a48a-4079-8c97-54c1d15fe22c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Router.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/UrlHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mvc.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/InicioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/Configuracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Configuracion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Ariel.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Ariel.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Emi.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Emi.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Rodri.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Rodri.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/banner.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/banner.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/camion1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/camion1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/camion2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/camion2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/camion3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/camion3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/logo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sa.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/third-party/w3s/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/w3s.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpfinal-grupo06.sql" beforeDir="false" afterPath="$PROJECT_DIR$/public/sqlFile/tpfinal-grupo06.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/css/loginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/loginStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/inicio.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/inicio.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/login.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/login.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/partial/header.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/header.mustache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tXiSlsqeWwi7cfFxiqvLrQoH48" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\tpFinalGrupo13\public" />
+      <recent name="C:\xampp\htdocs\tpFinalGrupo13\public\css" />
+      <recent name="C:\xampp\htdocs\tpFinalGrupo13\public\sqlFile" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdd43a72-a48a-4079-8c97-54c1d15fe22c" name="Default Changelist" comment="" />
+      <created>1622921838795</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622921838795</updated>
+      <workItem from="1622921840739" duration="260000" />
+      <workItem from="1622922511757" duration="47000" />
+      <workItem from="1622922695125" duration="516000" />
+      <workItem from="1622923670414" duration="448000" />
+      <workItem from="1622928337128" duration="2089000" />
+      <workItem from="1622938391576" duration="472000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
