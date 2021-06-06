@@ -39,6 +39,13 @@ class Configuracion
         include_once("controller/HomeController.php");
         return new HomeController($render);
     }
+    public static function getAltaUsuarioController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/AltaUsuarioController.php");
+        return new AltaUsuarioController($render);
+    }
 
     public function getRouter(){
         include_once("Router.php");

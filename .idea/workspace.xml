@@ -20,10 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c62d6e6b-c4c1-40ab-be6b-c11724755004" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/view/css/loginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/css/loginStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/inicio.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/inicio.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/AltaUsuarioController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/formStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/CLIENTE.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/abmCamion.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/altaUsuario.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/modificarUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/Configuracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Configuracion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/login.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/login.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/partial/header.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/header.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/partial/navbar.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/navbar.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +84,7 @@
       <workItem from="1622730489306" duration="5134000" />
       <workItem from="1622843027784" duration="2158000" />
       <workItem from="1622939744489" duration="92000" />
-      <workItem from="1622939857103" duration="322000" />
+      <workItem from="1622939857103" duration="10025000" />
     </task>
     <servers />
   </component>
@@ -106,14 +111,22 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="326" y="7" key="#PHP/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622675097905" />
+    <state x="405" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1622941574288">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="405" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622941574288" />
+    <state x="373" y="66" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1622944191066">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="373" y="66" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622944191066" />
     <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622847951060">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622847951060" />
-    <state x="514" y="287" key="NewPhpFileDialog" timestamp="1622760005031">
+    <state x="514" y="287" key="NewPhpFileDialog" timestamp="1622951087857">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="514" y="287" key="NewPhpFileDialog/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622760005031" />
+    <state x="514" y="287" key="NewPhpFileDialog/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622951087857" />
     <state x="1876" y="287" key="NewPhpFileDialog/0.0.1360.728/1360.0.1366.728@1360.0.1366.728" timestamp="1622724662070" />
     <state x="336" y="162" key="run.anything.popup" timestamp="1622758905750">
       <screen x="0" y="0" width="1360" height="728" />
@@ -125,7 +138,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/index.php</url>
-          <line>7</line>
+          <line>11</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
