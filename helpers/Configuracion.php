@@ -74,13 +74,63 @@ class Configuracion
         return new AltaClienteController($render);
     }
 
+    public static function getModificarClienteController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/ModificarClienteController.php");
+        return new ModificarClienteController($render);
+    }
+
     public static function getAltaVehiculoController()
     {
         $render = self::getRender();
 
-        include_once("controller/AltaVehiculoController.php.php");
+        include_once("controller/AltaVehiculoController.php");
         return new AltaVehiculoController($render);
     }
+
+    public static function getModificarVehiculoController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/ModificarVehiculoController.php");
+        return new ModificarVehiculoController($render);
+    }
+
+    public static function getAltaCargaController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/AltaCargaController.php");
+        return new AltaCargaController($render);
+    }
+
+    public static function getModificarCargaController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/ModificarCargaController.php");
+        return new ModificarCargaController($render);
+    }
+
+    public static function getAltaServicioController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/AltaServicioController.php");
+        return new AltaServicioController($render);
+    }
+
+    public static function getModificarServicioController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/ModificarServicioController.php");
+        return new ModificarServicioController($render);
+    }
+
+
 
     public function getRouter(){
         include_once("Router.php");

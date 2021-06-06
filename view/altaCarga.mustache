@@ -6,23 +6,25 @@
 <div class="w3-container" style="margin-left: 35%; width: 50%">
     <div class="w3-card-4" style="width:50%;">
         <header class="w3-container w3-teal">
-            <h1 class="w3-center">Nuevo clientes</h1>
+            <h1 class="w3-center">Nueva carga</h1>
         </header>
 
         <div>
             <form action="/action_page.php">
 
-                <label for="fname">Nombre</label>
-                <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+                <label> Descripcion</label><br>
+                <select name="carga" id="">
+                    <option value="araña">Araña</option>
+                    <option value="jaula">Jaula</option>
+                    <option value="tanque">Tanque</option>
+                    <option value="granel">Granel</option>
+                </select>
 
-                <label for="lname">Apellido</label>
-                <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+                <label for="fname">Patente</label>
+                <input type="text" id="fname" name="firstname" placeholder="Tu patente..">
 
-                <label for="lname">Dni</label>
-                <input type="email" id="lname" name="dni" placeholder="Tu Dni..">
-
-                <label for="lname">Domicilio</label>
-                <input type="email" id="lname" name="dni" placeholder="Tu Domicilio..">
+                <label for="lname">Nro chasis</label>
+                <input type="text" id="lname" name="lastname" placeholder="Nro chasis.." autocomplete="off">
 
                 <br> <br><input type="checkbox" id="active" name="active" value="active" checked>
                 <label for="active">Activo</label><br>
