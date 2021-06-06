@@ -15,12 +15,14 @@
             <input type="password" placeholder="Ingresar contraseña" name="contrasenia" style="color: white" required>
 
             <button class="w3-button w3-indigo" type="submit">Ingresar</button>
+            <p class="w3-text-green w3-center">{{registroCorrecto}}</p>
+            <p class="w3-text-red w3-center">{{emailExistente}}</p>
             <p class="w3-text-red w3-center">{{MensajeErrorLogin}}</p>
             <p class="w3-text-red w3-center">{{MensajeUsuarioInactivo}}</p>
         </div>
         <div class="w3-container">
             <hr>
-            <a href="#" style="width: 100%" type="submit" class="w3-red w3-button">Registrarse</a>
+            <a href="/tpFinalGrupo13/registrarse" style="width: 100%" type="submit" class="w3-red w3-button">Registrarse</a>
         </div>
     </form>
 </div>
