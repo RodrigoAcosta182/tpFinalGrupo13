@@ -2,32 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdd43a72-a48a-4079-8c97-54c1d15fe22c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Router.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/UrlHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mvc.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/InicioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/Configuracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Configuracion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Ariel.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Ariel.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Emi.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Emi.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Rodri.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Rodri.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/banner.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/banner.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/camion1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/camion1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/camion2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/camion2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/camion3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/camion3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sa.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/third-party/w3s/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/w3s.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpfinal-grupo06.sql" beforeDir="false" afterPath="$PROJECT_DIR$/public/sqlFile/tpfinal-grupo06.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/css/loginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/loginStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/inicio.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/inicio.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/login.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/login.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/partial/header.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/header.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -72,7 +52,7 @@
       <workItem from="1622922695125" duration="516000" />
       <workItem from="1622923670414" duration="448000" />
       <workItem from="1622928337128" duration="2089000" />
-      <workItem from="1622938391576" duration="472000" />
+      <workItem from="1622938391576" duration="2352000" />
     </task>
     <servers />
   </component>
