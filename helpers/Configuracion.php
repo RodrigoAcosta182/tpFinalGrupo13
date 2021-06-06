@@ -24,12 +24,23 @@ class Configuracion
         return new Render("view/partial");
     }
 
+    public static function getUsuarioModel(){
+        $database = self::getDatabase();
+        include_once ("model/UsuarioModel.php");
+        return new UsuarioModel($database);
+    }
+
     public static function getLoginController()
     {
         $render = self::getRender();
-
+        $usuarioModel = self::getUsuarioModel();
         include_once("controller/LoginController.php");
-        return new LoginController($render);
+        return new LoginController($render,$usuarioModel);
+    }
+
+    public static function getLogoutController(){
+        include_once ("controller/LogoutController.php");
+        return new LogoutController();
     }
 
     public static function getHomeController()
@@ -45,6 +56,30 @@ class Configuracion
 
         include_once("controller/AltaUsuarioController.php");
         return new AltaUsuarioController($render);
+    }
+
+    public static function getModificarUsuarioController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/ModificarUsuarioController.php");
+        return new ModificarUsuarioController($render);
+    }
+
+    public static function getAltaClienteController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/AltaUsuarioController.php");
+        return new AltaClienteController($render);
+    }
+
+    public static function getAltaVehiculoController()
+    {
+        $render = self::getRender();
+
+        include_once("controller/AltaVehiculoController.php.php");
+        return new AltaVehiculoController($render);
     }
 
     public function getRouter(){
