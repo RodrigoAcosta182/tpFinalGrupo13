@@ -11,7 +11,7 @@ class LoginController
         $this->render = $render;
     }
 
-    public function renderLogin()
+    public function execute()
     {
         echo $this->render->renderizar("view/login.mustache");
     }

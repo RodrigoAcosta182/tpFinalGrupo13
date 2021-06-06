@@ -32,11 +32,21 @@ class Configuracion
         return new LoginController($render);
     }
 
-    public static function getInicioController()
+    public static function getHomeController()
     {
         $render = self::getRender();
 
-        include_once("controller/InicioController.php");
-        return new InicioController($render);
+        include_once("controller/HomeController.php");
+        return new HomeController($render);
+    }
+
+    public function getRouter(){
+        include_once("Router.php");
+        return new Router($this);
+    }
+
+    public function getUrlHelper(){
+        include_once("helpers/UrlHelper.php");
+        return new UrlHelper();
     }
 }
