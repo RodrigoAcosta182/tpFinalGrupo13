@@ -69,7 +69,7 @@ class Configuracion
     {
         $render = self::getRender();
 
-        include_once("controller/AltaUsuarioController.php");
+        include_once("controller/AltaClienteController.php");
         return new AltaClienteController($render);
     }
 
