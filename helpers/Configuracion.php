@@ -46,16 +46,15 @@ class Configuracion
     public static function getHomeController()
     {
         $render = self::getRender();
-
         include_once("controller/HomeController.php");
         return new HomeController($render);
     }
-    public static function getAltaUsuarioController()
+    public static function getRegistrarseController()
     {
         $render = self::getRender();
-
-        include_once("controller/AltaUsuarioController.php");
-        return new AltaUsuarioController($render);
+        $usuarioModel = self::getUsuarioModel();
+        include_once("controller/RegistrarseController.php");
+        return new RegistrarseController($render,$usuarioModel);
     }
 
     public static function getModificarUsuarioController()
