@@ -2,15 +2,20 @@
 class HomeController
 {
 
-private $render;
+    private $render;
 
-public function __construct(\Render $render)
-{
-$this->render = $render;
-}
+    public function __construct(\Render $render)
+    {
+    $this->render = $render;
+    }
 
-public function execute()
-{
-echo $this->render->renderizar("view/home.mustache");
-}
+    public function execute()
+    {
+        if (isset($_SESSION["logueado"])) {
+            echo $this->render->renderizar("view/home.mustache");
+        } else {
+            header("location: /tpFinalGrupo13");
+            exit();
+        }
+    }
 }

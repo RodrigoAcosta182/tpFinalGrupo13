@@ -24,12 +24,23 @@ class Configuracion
         return new Render("view/partial");
     }
 
+    public static function getUsuarioModel(){
+        $database = self::getDatabase();
+        include_once ("model/UsuarioModel.php");
+        return new UsuarioModel($database);
+    }
+
     public static function getLoginController()
     {
         $render = self::getRender();
-
+        $usuarioModel = self::getUsuarioModel();
         include_once("controller/LoginController.php");
-        return new LoginController($render);
+        return new LoginController($render,$usuarioModel);
+    }
+
+    public static function getLogoutController(){
+        include_once ("controller/LogoutController.php");
+        return new LogoutController();
     }
 
     public static function getHomeController()
