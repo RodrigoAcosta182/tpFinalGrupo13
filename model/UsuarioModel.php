@@ -28,4 +28,13 @@ class UsuarioModel
         return $this->database->consulta("SELECT * FROM usuario WHERE Email ='$email'");
     }
 
+    public function getUsuarioById($id){
+        return $this->database->consulta("select * from usuario where Id = '$id'");
+    }
+
+    public function eliminarUsuarioById($id)
+    {
+        return $this->database->ejecutar("UPDATE usuario SET Active = 0 WHERE Id ='$id'");
+    }
+
 }
