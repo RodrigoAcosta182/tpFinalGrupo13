@@ -9,6 +9,11 @@ class UsuarioModel
         $this->database = $database;
     }
 
+    public function listarUsuario(){
+
+        return $this->database->consulta("select * from usuario");
+    }
+
     public function getUsuarioByEmailPassword($email,$password){
         return $this->database->consulta("select * from usuario where Email = '$email' and Password = '$password'");
     }
