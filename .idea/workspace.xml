@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bdd43a72-a48a-4079-8c97-54c1d15fe22c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/login.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/login.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/Configuracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Configuracion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/partial/navbar.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/navbar.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,24 +34,40 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP-LOCAL" />
   <component name="ProjectId" id="1tXiSlsqeWwi7cfFxiqvLrQoH48" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pw2-grupo03" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\tpFinalGrupo13\view" />
       <recent name="C:\xampp\htdocs\tpFinalGrupo13\public" />
       <recent name="C:\xampp\htdocs\tpFinalGrupo13\public\css" />
       <recent name="C:\xampp\htdocs\tpFinalGrupo13\public\sqlFile" />
@@ -53,6 +87,8 @@
       <workItem from="1622923670414" duration="448000" />
       <workItem from="1622928337128" duration="2089000" />
       <workItem from="1622938391576" duration="2352000" />
+      <workItem from="1623004593864" duration="8311000" />
+      <workItem from="1623020252751" duration="3940000" />
     </task>
     <servers />
   </component>
@@ -70,5 +106,32 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="390" y="7" key="#PHP" timestamp="1623006031695">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="7" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1623006031695" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623023045408">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1623023045408" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623012548400">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1623012548400" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1623020752843">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1623020752843" />
+    <state x="516" y="287" key="NewPhpFileDialog" timestamp="1623022389913">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="1880" y="287" key="NewPhpFileDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1622951703552" />
+    <state x="516" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1623022389913" />
+    <state x="500" y="176" width="1009" height="715" key="dock-window-1" timestamp="1623006716382">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="176" width="1009" height="715" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1623006716382" />
   </component>
 </project>

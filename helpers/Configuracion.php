@@ -40,6 +40,150 @@ class Configuracion
         return new HomeController($render);
     }
 
+    public static function getUsuarioModel(){
+
+        $database = self::getDatabase();
+
+        include_once ("model/UsuarioModel.php");
+
+        return new UsuarioModel($database);
+    }
+
+    public static function getUsuarioController()
+    {
+        $render = self::getRender();
+        $usuarioModel = self::getUsuarioModel();
+
+        include_once("controller/UsuarioController.php");
+        return new UsuarioController($render, $usuarioModel);
+    }
+
+    public static function getClienteModel(){
+
+        $database = self::getDatabase();
+
+        include_once ("model/ClienteModel.php");
+
+        return new ClienteModel($database);
+    }
+
+    public static function getClienteController()
+    {
+        $render = self::getRender();
+        $clienteModel = self::getClienteModel();
+
+        include_once("controller/ClienteController.php");
+        return new ClienteController($render, $clienteModel);
+    }
+
+    public static function getCamionModel(){
+
+        $database = self::getDatabase();
+
+        include_once ("model/CamionModel.php");
+
+        return new CamionModel($database);
+    }
+
+    public static function getCamionController()
+    {
+        $render = self::getRender();
+        $camionModel = self::getCamionModel();
+
+        include_once("controller/CamionController.php");
+        return new CamionController($render, $camionModel);
+    }
+
+    public static function getArrastreModel(){
+
+        $database = self::getDatabase();
+
+        include_once ("model/ArrastreModel.php");
+
+        return new ArrastreModel($database);
+    }
+
+    public static function getArrastreController()
+    {
+        $render = self::getRender();
+        $arrastreModel = self::getArrastreModel();
+
+        include_once("controller/ArrastreController.php");
+        return new ArrastreController($render, $arrastreModel);
+    }
+
+    public static function getMantenimientoModel(){
+
+        $database = self::getDatabase();
+
+        include_once ("model/MantenimientoModel.php");
+
+        return new MantenimientoModel($database);
+    }
+
+    public static function getMantenimientoController()
+    {
+        $render = self::getRender();
+        $MantenimientoModel = self::getMantenimientoModel();
+
+        include_once("controller/MantenimientoController.php");
+        return new MantenimientoController($render, $MantenimientoModel);
+    }
+
+    public static function getFacturaModel(){
+
+        $database = self::getDatabase();
+
+        include_once ("model/FacturaModel.php");
+
+        return new FacturaModel($database);
+    }
+
+    public static function getFacturaController()
+    {
+        $render = self::getRender();
+        $FacturaModel = self::getFacturaModel();
+
+        include_once("controller/FacturaController.php");
+        return new FacturaController($render, $FacturaModel);
+    }
+
+    public static function getViajeModel(){
+
+        $database = self::getDatabase();
+
+        include_once ("model/ViajeModel.php");
+
+        return new ViajeModel($database);
+    }
+
+    public static function getViajeController()
+    {
+        $render = self::getRender();
+        $ViajeModel = self::getViajeModel();
+
+        include_once("controller/ViajeController.php");
+        return new ViajeController($render, $ViajeModel);
+    }
+
+    public static function getPosicionModel(){
+
+        $database = self::getDatabase();
+
+        include_once ("model/PosicionModel.php");
+
+        return new PosicionModel($database);
+    }
+
+    public static function getPosicionController()
+    {
+        $render = self::getRender();
+        $PosicionModel = self::getPosicionModel();
+
+        include_once("controller/PosicionController.php");
+        return new PosicionController($render, $PosicionModel);
+    }
+
     public function getRouter(){
         include_once("Router.php");
         return new Router($this);
