@@ -13,10 +13,8 @@
             <div class="w3-section w3-bottombar w3-padding-16">
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Arrastre.." name="busqueda">
             </div>
-            <form action="">
-                <button name="sacar" class="w3-button w3-green">
-                    <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none"> Agregar Arrastre </a>
-                </button>
+            <form action="arrastre/altaArrastre">
+                <button name="sacar" class="w3-button w3-green">Agregar Arrastre</button>
             </form>
             <br>
         </div>
@@ -37,7 +35,7 @@
                     <td>{{Descripcion}}</td>
                     <td>
                         <div>
-                            <form action="/pokedex-molinaAriel/index.php?page=modificar" method="post">
+                            <form action="arrastre/modificarArrastre" method="post">
                                 <button class='w3-button w3-blue' style="width: 100%;" name="modificar" value="{{Id}}">Modificar</button>
                             </form>
                             <br>

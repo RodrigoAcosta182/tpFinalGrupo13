@@ -13,10 +13,8 @@
             <div class="w3-section w3-bottombar w3-padding-16">
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Mantenimiento.." name="busqueda">
             </div>
-            <form action="">
-                <button name="sacar" class="w3-button w3-green">
-                    <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none"> Agregar Service </a>
-                </button>
+            <form action="mantenimiento/altaMantenimiento">
+                <button name="sacar" class="w3-button w3-green">Nuevo Mantenimiento</button>
             </form>
             <br>
         </div>
@@ -30,6 +28,7 @@
                 <th>Kilometraje</th>
                 <th>Descripcion</th>
                 <th>Importe</th>
+                <th>Acciones</th>
             </tr>
 
             {{#mantenim}}
@@ -40,6 +39,11 @@
                     <td>{{Km}}</td>
                     <td>{{Descripcion}}</td>
                     <td>{{Importe}}</td>
+                    <td>
+                        <form action="mantenimiento/modificarMantenimiento">
+                            <button name="sacar" class="w3-button w3-blue">Editar</button>
+                        </form>
+                    </td>
                 </tr>
             {{/mantenim}}
         </table>

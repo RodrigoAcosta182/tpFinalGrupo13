@@ -3,13 +3,11 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
 
-<div class="w3-container" style="margin-left: 35%; width: 50%">
-    <div class="w3-card-4" style="width:50%;">
-        <header class="w3-container w3-teal">
-            <h1 class="w3-center">Modificar vehiculo</h1>
-        </header>
 
-        <div>
+    <div class="w3-card-4 w3-display-middle" style="width:40%;">
+        <header class="w3-container w3-teal">
+            <h3 class="w3-center">Modificar vehiculo</h3>
+        </header>
             <form action="/action_page.php">
 
                 <label> Marca</label><br>
@@ -38,15 +36,15 @@
                 <label for="lname">Nro motor</label>
                 <input type="email" id="lname" name="dni" placeholder="Nro motor..">
 
-                <label for="lname">Kilometraje</label><br><br>
-                <input type="number" id="lname" name="kilometraje" placeholder="Kilometraje del vehiculo.."> <br><br>
+                <label for="lname">Kilometraje</label><br>
+                <input type="number" id="lname" name="kilometraje" placeholder="Kilometraje del vehiculo.."> <br>
 
-                <label for="lname">Año de fabricacion</label><br><br>
-                <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."><br><br>
+                <label for="lname">Año de fabricacion</label><br>
+                <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."><br>
 
                 <label> Tipo</label><br>
                 <select name="acoplado" id="">
-                    <option value=""></option>
+                    <option value="">Seleccione un tipo...</option>
                     <option value="1">Con acoplado</option>
                     <option value="2">Sin acoplado</option>
                 </select>
@@ -57,9 +55,8 @@
                 <input type="submit" value="Guardar">
                 <button  class="button button4">Volver</button>
             </form>
-        </div>
     </div>
-</div>
+
 
 </body>
 </html>

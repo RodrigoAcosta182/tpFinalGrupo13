@@ -44,7 +44,6 @@ class LoginController
     }
 
     public function validarLogin(){
-
         if (isset($_POST["email"]) && isset($_POST["contrasenia"])) {
             $usuario = $_POST["email"];
             $password = md5($_POST["contrasenia"]);
@@ -69,7 +68,6 @@ class LoginController
                 header("Location: /tpFinalGrupo13/home");
                 exit();
             }
-
         }
     }
 }

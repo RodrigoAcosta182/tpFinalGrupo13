@@ -16,4 +16,15 @@ class ArrastreController
         $arrastre["arrastre"] = $this->arrastreModel->listarArrastre();
         echo $this->render->renderizar("view/arrastre.mustache", $arrastre);
     }
+
+    public function altaArrastre()
+    {
+        echo $this->render->renderizar("view/altaArrastre.mustache");
+    }
+
+    public function modificarArrastre()
+    {
+        echo $this->render->renderizar("view/modificarArrastre.mustache");
+    }
+
 }
