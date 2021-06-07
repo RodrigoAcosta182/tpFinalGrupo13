@@ -13,7 +13,19 @@ class UsuarioController
 
     public function execute()
     {
-        $usuarios["usuarios"] = $this->usuarioModel->listarUsuario();
-        echo $this->render->renderizar("view/usuario.mustache", $usuarios);
+        if (isset($_SESSION["logueado"])) {
+            $usuarios["usuarios"] = $this->usuarioModel->listarUsuario();
+            echo $this->render->renderizar("view/usuario.mustache", $usuarios);
+        } else {
+            header("location: /tpFinalGrupo13");
+            exit();
+        }
     }
+
+    public function modificarUsuario()
+    {
+        echo $this->render->renderizar("view/modificarUsuario.mustache");
+    }
+
 }
+

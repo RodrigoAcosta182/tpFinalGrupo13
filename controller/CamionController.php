@@ -16,4 +16,14 @@ class CamionController
         $camion["camion"] = $this->camionModel->listarCamiones();
         echo $this->render->renderizar("view/camion.mustache", $camion);
     }
+
+    public function altaVehiculo()
+    {
+        echo $this->render->renderizar("view/altaVehiculo.mustache");
+    }
+
+    public function modificarVehiculo()
+    {
+        echo $this->render->renderizar("view/modificarVehiculo.mustache");
+    }
 }
