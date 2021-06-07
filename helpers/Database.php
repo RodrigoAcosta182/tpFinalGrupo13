@@ -25,6 +25,10 @@ class Database
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function ejecutar($sql){
+        mysqli_query($this->conn, $sql);
+    }
+
     public function __destruct()
     {
         mysqli_close($this->conn);

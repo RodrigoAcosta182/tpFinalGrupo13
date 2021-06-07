@@ -22,34 +22,12 @@ input[type=text], input[type=password] {
 
 button {
     background-color: #212f52;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 1em 1em;
+    margin: 0.5em 0 0 0 ;
     border: none;
     cursor: pointer;
     width: 100%;
 }
-
-button:hover {
-    opacity: 0.8;
-}
-
-.imgcontainer {
-    text-align: center;
-    margin: 0px 0 12px 0;
-
-}
-
-img.avatar {
-    width: 15%;
-    /*border-radius: 50%;*/
-}
-
-.container {
-    padding: 16px;
-}
-
-
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
