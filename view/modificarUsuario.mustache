@@ -1,22 +1,20 @@
-
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
-
 
     <div class="w3-card-4 w3-display-middle" style="width:35%;">
         <header class="w3-container w3-teal">
             <h2 class="w3-center">Modificar usuario</h2>
         </header>
-
+            {{#usuario}}
             <form action="/action_page.php" autocomplete="off">
                 <label for="fname">Nombre</label>
-                <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+                <input type="text" id="fname" name="firstname" placeholder="Tu nombre.." value="{{Nombre}}">
 
                 <label for="lname">Apellido</label>
-                <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+                <input type="text" id="lname" name="lastname" placeholder="Tu apellido.." value="{{Apellido}}">
 
                 <label for="lname">Email</label>
-                <input type="email" id="lname" name="email" placeholder="Tu email..">
+                <input type="email" id="lname" name="email" placeholder="Tu email.." value="{{Email}}">
 
                 <label for="lname">Contraseña</label>
                 <input type="password" id="lname" name="psw" placeholder="Tu contraseña..">
@@ -49,13 +47,13 @@
                     <option value="">Class 8</option>
                     <option value="">Class 9</option>
                 </select>
-
                 <br> <br><input type="checkbox" id="active" name="active" value="active" checked>
                 <label for="active">Activo</label><br>
                 <br>
                 <input type="submit" value="Guardar">
                 <button  class="button button4">Volver</button>
             </form>
+            {{/usuario}}
     </div>
 
 
