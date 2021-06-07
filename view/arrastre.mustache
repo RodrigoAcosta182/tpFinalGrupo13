@@ -29,17 +29,17 @@
             </tr>
 
             {{#arrastre}}
-                <tr>
+                <tr class="w3-border-bottom w3-light-grey">
                     <td>{{Patente}}</td>
                     <td>{{NroChasis}}</td>
                     <td>{{Descripcion}}</td>
-                    <td>
+                    <td class="w3-center">
                         <div>
                             <form action="arrastre/modificarArrastre" method="post">
-                                <button class='w3-button w3-blue' style="width: 100%;" name="modificar" value="{{Id}}">Modificar</button>
+                                <button class='w3-button w3-blue' style="width: 50%;" name="modificar" value="{{Id}}">Modificar</button>
                             </form>
                             <br>
-                            <button name="sacar" class="w3-button w3-red" style="width: 100%;">
+                            <button name="sacar" class="w3-button w3-red" style="width: 50%;">
                                 <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none" onclick="return  confirm('Desea eliminar Cliente?')"> Eliminar </a>
                             </button>
                         </div>
