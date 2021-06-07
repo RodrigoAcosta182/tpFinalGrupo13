@@ -21,10 +21,16 @@ class UsuarioController
             exit();
         }
     }
-
     public function modificarUsuario()
     {
-        echo $this->render->renderizar("view/modificarUsuario.mustache");
+        $idUsuario = $_POST['idUsuario'];
+        $usuario["usuario"]= $this->usuarioModel->getUsuarioById($idUsuario);
+        echo $this->render->renderizar("view/modificarUsuario.mustache",$usuario);
+    }
+
+    public function eliminarUsuario(){
+        $idUsuario = $_POST['idUsuarioEliminar'];
+        $this->usuarioModel->eliminarUsuarioById($idUsuario);
     }
 
 }
