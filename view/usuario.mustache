@@ -1,7 +1,5 @@
 {{> header}}
 {{> navbar}}
-
-<link rel="stylesheet" href="/tpFinalgrupo13/public/css/alertStyle.css">
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-container">
 
@@ -38,10 +36,6 @@
                                 <button class='w3-button w3-blue' style="width: 100%;" name="idUsuario" value="{{Id}}">Modificar</button>
                             </form>
                             <br>
-                            <form action="usuario/eliminarUsuario" method="post">
-                                <button class="w3-button w3-red" style="width: 100%;" onclick="myFunction()" name="idUsuarioEliminar" value="{{Id}}">Eliminar</button>
-                                <div id="snackbar">El usuario fue eliminado</div>
-                            </form>
                         </div>
                     </td>
                 </tr>
@@ -53,10 +47,3 @@
 </div>
 {{> footer}}
 
-<script>
-    function myFunction() {
-        var x = document.getElementById("snackbar");
-        x.className = "show";
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-    }
-</script>
