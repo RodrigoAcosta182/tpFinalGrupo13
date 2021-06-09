@@ -28,9 +28,15 @@ class UsuarioController
         echo $this->render->renderizar("view/modificarUsuario.mustache",$usuario);
     }
 
+    public function procesoModificarUsuario(){
+
+    }
+
     public function eliminarUsuario(){
         $idUsuario = $_POST['idUsuarioEliminar'];
         $this->usuarioModel->eliminarUsuarioById($idUsuario);
+
+        echo $this->render->renderizar("view/usuario.mustache");
     }
 
 }
