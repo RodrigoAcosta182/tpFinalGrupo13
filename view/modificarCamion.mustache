@@ -1,0 +1,66 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
+
+
+    <div class="w3-card-4"  style="width:40%;margin: auto">
+        <header class="w3-container w3-teal">
+            <h3 class="w3-center">Modificar camion</h3>
+        </header>
+        {{#camion}}
+            <form action="/action_page.php">
+                <label> Marca</label><br>
+                <select name="tipo" id="">
+                    {{#camion}}
+                        <option value="{{Id_marca}}">
+                            {{ Marca }}
+                        </option>
+                    {{/camion}}
+                </select>
+                <label> Modelo</label><br>
+                <select name="modelo" id="">
+                    {{#camion}}
+                        <option value="{{Id_modelo}}">
+                            {{ Modelo }}
+                        </option>
+                    {{/camion}}
+                </select>
+
+                <label for="fname">Patente</label>
+                <input type="text" id="fname" name="firstname" placeholder="Tu patente.." value="{{Patente}}">
+
+                <label for="lname">Nro chasis</label>
+                <input type="text" id="lname" name="lastname" placeholder="Nro chasis.." value="{{Chasis}}">
+
+                <label for="lname">Nro motor</label>
+                <input type="email" id="lname" name="dni" placeholder="Nro motor.." value="{{Motor}}">
+
+                <label> Tipo de acoplado</label><br>
+                <select name="acoplado" id="">
+                    {{#camion}}
+                        <option value="{{Id_arrastre}}">
+                            {{ Arrastre }}
+                        </option>
+                    {{/camion}}
+                </select>
+
+                <label for="lname">Kilometraje</label><br>
+                <input type="number" id="lname" name="kilometraje" placeholder="Kilometraje del vehiculo.." value="{{Km}}"> <br>
+
+                <label for="lname">Año de fabricacion</label><br>
+                <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."value="{{aFab}}" ><br>
+
+
+                <br><input type="checkbox" id="active" name="active" {{#Activo}}checked="checked"{{/Activo}}>
+                <label for="active">Activo</label><br>
+                <br>
+                <input type="submit" value="Guardar">
+                <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/camion">Volver</a>
+            </form>
+        {{/camion}}
+    </div>
+
+
+</body>
+</html>
