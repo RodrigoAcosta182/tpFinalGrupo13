@@ -8,25 +8,24 @@
         <header class="w3-container w3-teal">
             <h1 class="w3-center">Modificar cliente</h1>
         </header>
+        {{#clientes}}
             <form action="/action_page.php">
                 <label for="fname">Nombre</label>
-                <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+                <input type="text" id="fname" name="firstname" placeholder="Tu nombre.." value="{{Nombre}}">
 
                 <label for="lname">Apellido</label>
-                <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+                <input type="text" id="lname" name="lastname" placeholder="Tu apellido.." value="{{Apellido}}">
 
                 <label for="lname">Dni</label>
-                <input type="email" id="lname" name="dni" placeholder="Tu Dni..">
+                <input type="email" id="lname" name="dni" placeholder="Tu Dni.." value="{{Dni}}">
 
-                <label for="lname">Domicilio</label>
-                <input type="email" id="lname" name="dni" placeholder="Tu Domicilio..">
-
-                <br> <br><input type="checkbox" id="active" name="active" value="active" checked>
+                <br> <br><input type="checkbox" id="active" name="active" {{#Activo}}checked="checked"{{/Activo}}>
                 <label for="active">Activo</label><br>
                 <br>
                 <input type="submit" value="Guardar">
                 <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/cliente">Volver</a>
             </form>
+            {{/clientes}}
 
 
 
