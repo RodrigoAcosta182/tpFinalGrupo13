@@ -6,6 +6,7 @@ class CamionController
     private $render;
 
     public function __construct(\Render $render, \CamionModel $camionModel)
+
     {
         $this->render = $render;
         $this->camionModel = $camionModel;
@@ -19,11 +20,13 @@ class CamionController
 
     public function altaVehiculo()
     {
-        echo $this->render->renderizar("view/altaVehiculo.mustache");
+        echo $this->render->renderizar("view/altaCamion.mustache");
     }
 
-    public function modificarVehiculo()
+    public function modificarCamion()
     {
-        echo $this->render->renderizar("view/modificarVehiculo.mustache");
+        $idCamion = $_POST['idCamion'];
+        $camion["camion"]= $this->camionModel->getCamionById($idCamion);
+        echo $this->render->renderizar("view/modificarCamion.mustache",$camion);
     }
 }
