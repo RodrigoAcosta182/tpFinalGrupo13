@@ -26,7 +26,7 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>DNI</th>
-                <th>Domicilio</th>
+                <th>Activo</th>
                 <th>Acciones</th>
             </tr>
 
@@ -36,16 +36,12 @@
                     <td>{{Nombre}}</td>
                     <td>{{Apellido}}</td>
                     <td>{{Dni}}</td>
-                    <td>{{Domicilio}}</td>
+                    <td>{{Activo}}</td>
                     <td>
                         <div>
                             <form action="cliente/modificarCliente" method="post">
-                                <button class='w3-button w3-blue' style="width: 100%;" name="modificar" value="{{Id}}">Modificar</button>
+                                <button class='w3-button w3-blue' style="width: 100%;" name="idCliente" value="{{id}}">Modificar</button>
                             </form>
-                            <br>
-                            <button name="sacar" class="w3-button w3-red" style="width: 100%;">
-                                <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none" onclick="return  confirm('Desea eliminar Cliente?')"> Eliminar </a>
-                            </button>
                         </div>
                     </td>
                 </tr>

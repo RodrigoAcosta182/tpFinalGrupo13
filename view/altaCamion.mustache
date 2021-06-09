@@ -4,12 +4,13 @@
 <link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
          <div class="w3-card-4"  style="width:40%;margin: auto">
             <header class="w3-container w3-teal">
-                <h3 class="w3-center">Nuevo vehiculo</h3>
+                <h3 class="w3-center">Nuevo camion</h3>
             </header>
                 <form action="/action_page.php">
 
                     <label> Marca</label><br>
                     <select name="marca" id="">
+                        <option value=""></option>
                         <option value="iveco">Iveco</option>
                         <option value="scania">Scania</option>
                         <option value="mercedes">Mercedes Benz</option>
@@ -17,6 +18,7 @@
 
                     <label> Modelo</label><br>
                     <select name="modelo" id="">
+                        <option value="#"></option>
                         <option value="1">Daily</option>
                         <option value="2">Eurostar</option>
                         <option value="3">G310</option>
@@ -40,11 +42,13 @@
                     <label for="lname">Año de fabricacion</label><br>
                     <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."><br>
 
-                    <label> Tipo</label><br>
+                    <label> Tipo de arrastre</label><br>
                     <select name="acoplado" id="">
                         <option value="">Seleccione un tipo...</option>
-                        <option value="1">Con acoplado</option>
-                        <option value="2">Sin acoplado</option>
+                        <option value="1">Araña</option>
+                        <option value="2">Jaula</option>
+                        <option value="2">Tanque</option>
+                        <option value="2">Granel</option>
                     </select>
 
                     <input type="checkbox" id="active" name="active" value="active" checked>
