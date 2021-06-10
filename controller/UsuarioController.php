@@ -13,9 +13,16 @@ class UsuarioController
 
     public function execute()
     {
+        $data = array();
+
+        if (isset($_SESSION["mensajeModificar"]) && $_SESSION["mensajeModificar"] == 1) {
+            $data["mensajeModificar"] = "El usuario fue editado exitosamente";
+            unset($_SESSION["mensajeModificar"]);
+        }
+
         if (isset($_SESSION["logueado"])) {
-            $usuarios["usuarios"] = $this->usuarioModel->listarUsuario();
-            echo $this->render->renderizar("view/usuario.mustache", $usuarios);
+            $data["usuarios"] = $this->usuarioModel->listarUsuario();
+           echo $this->render->renderizar("view/usuario.mustache",$data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
@@ -29,7 +36,17 @@ class UsuarioController
     }
 
     public function procesoModificarUsuario(){
+        $nombre = $_GET['nombre'];
+        $apellido = $_GET['apellido'];
+        $email = $_GET['email'];
+        $contrasenia = $_GET['contrasenia'];
+        $rol = $_GET['rol'];
+        $licencia = $_GET['licencia'];
+        $active = $_GET['active'];
 
+        $_SESSION['mensajeModificar'] = 1;
+
+        header("Location: /tpfinalGrupo13/Usuario");
     }
 
     public function eliminarUsuario(){
