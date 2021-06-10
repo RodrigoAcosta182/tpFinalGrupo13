@@ -24,7 +24,7 @@ class RegistrarseController
             $apellido = $_POST['apellido'];
             $email = $_POST['email'];
             $contrasenia = md5($_POST['contrasenia']);
-            $active = 0;
+            $active = 1;
 
             if(!$this->usuarioModel->getUsuarioSiExisteMail($email)){
                 $this->usuarioModel->registrarUsuario($nombre,$apellido,$email,$contrasenia,$active);
