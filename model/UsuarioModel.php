@@ -19,7 +19,6 @@ class UsuarioModel
     }
 
     public function registrarUsuario($nombre, $apellido, $email, $password, $active){
-        echo $nombre;
         return $this->database->ejecutar("INSERT INTO usuario(Nombre, Apellido, Email, Password, Active) 
                                             VALUES ('$nombre', '$apellido', '$email', '$password', '$active')");
     }
@@ -31,10 +30,22 @@ class UsuarioModel
     public function getUsuarioById($id){
         return $this->database->consulta("select * from usuario where Id = '$id'");
     }
+    public function getPasswordById($id)
+    {
+        return $this->database->consulta("select Password from usuario where Id = '$id'");
+    }
 
     public function eliminarUsuarioById($id)
     {
         return $this->database->ejecutar("UPDATE usuario SET Active = 0 WHERE Id ='$id'");
     }
+
+    public function editUsuarioById($id,$nombre,$apellido,$email,$contrasenia,$active)
+    {
+        return $this->database->ejecutar("UPDATE usuario 
+                                              SET Nombre = '$nombre', Apellido = '$apellido', Email = '$email', Password = '$contrasenia', Active = '$active'  
+                                              WHERE Id ='$id'");
+    }
+
 
 }

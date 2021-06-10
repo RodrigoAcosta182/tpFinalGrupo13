@@ -36,17 +36,44 @@ class UsuarioController
     }
 
     public function procesoModificarUsuario(){
-        $nombre = $_GET['nombre'];
-        $apellido = $_GET['apellido'];
-        $email = $_GET['email'];
-        $contrasenia = $_GET['contrasenia'];
-        $rol = $_GET['rol'];
-        $licencia = $_GET['licencia'];
-        $active = $_GET['active'];
 
-        $_SESSION['mensajeModificar'] = 1;
+            $id = $_GET['id'];
+            $nombre = $_GET['nombre'];
+            $apellido = $_GET['apellido'];
+            $email = $_GET['email'];
+            $licencia = $_GET['licencia'];
 
-        header("Location: /tpfinalGrupo13/Usuario");
+            if(isset($_GET['rol'])){
+                $rol = 1;
+            }else{
+                $rol = 0;
+            }
+
+            if(isset($_GET['active']) && $_GET['active'] === "on" ){
+                $active = 1;
+            }else{
+                $active = 0;
+            }
+
+
+            if(isset($_GET['contrasenia']) && $_GET['contrasenia'] != "" )
+            {
+                $contrasenia = md5($_GET['contrasenia']);
+            }else{
+
+                $contrasenia = $this->usuarioModel->getPasswordById($id);
+
+                echo json_encode($contrasenia);
+
+            }
+
+
+
+//            $this->usuarioModel->editUsuarioById($id,$nombre,$apellido,$email,$contrasenia,$active);
+//
+//            $_SESSION['mensajeModificar'] = 1;
+//
+//            header("Location: /tpfinalGrupo13/Usuario");
     }
 
     public function eliminarUsuario(){
