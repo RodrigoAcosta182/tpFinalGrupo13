@@ -11,15 +11,14 @@ class UsuarioModel
 
     public function listarUsuario(){
 
-        return $this->database->consulta("select * from usuario where Active = 1");
+        return $this->database->consulta("SELECT * FROM usuario where Active = 1");
     }
 
     public function getUsuarioByEmailPassword($email,$password){
-        return $this->database->consulta("select * from usuario where Email = '$email' and Password = '$password'");
+        return $this->database->consulta("SELECT * FROM usuario where Email = '$email' and Password = '$password'");
     }
 
     public function registrarUsuario($nombre, $apellido, $email, $password, $active){
-        echo $nombre;
         return $this->database->ejecutar("INSERT INTO usuario(Nombre, Apellido, Email, Password, Active) 
                                             VALUES ('$nombre', '$apellido', '$email', '$password', '$active')");
     }
@@ -29,12 +28,25 @@ class UsuarioModel
     }
 
     public function getUsuarioById($id){
-        return $this->database->consulta("select * from usuario where Id = '$id'");
+        return $this->database->consulta("SELECT *
+                                              FROM usuario u 
+                                              INNER JOIN tipousuario t ON t.Id = u.pTipoUsuario  where u.Id = '$id'");
     }
 
     public function eliminarUsuarioById($id)
     {
         return $this->database->ejecutar("UPDATE usuario SET Active = 0 WHERE Id ='$id'");
+    }
+
+    public function editUsuario($id,$nombre,$apellido,$email,$contrasenia,$active)
+    {
+        return $this->database->ejecutar("UPDATE usuario 
+                                              SET Nombre = '$nombre', Apellido = '$apellido', Email = '$email', Password = '$contrasenia', Active = '$active'  
+                                              WHERE Id ='$id'");
+    }
+
+    public function getRoles(){
+        return $this->database->consulta("SELECT * FROM tipousuario");
     }
 
 }
