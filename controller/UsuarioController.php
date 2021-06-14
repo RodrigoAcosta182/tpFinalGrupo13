@@ -30,13 +30,20 @@ class UsuarioController
     }
     public function modificarUsuario()
     {
-        $idUsuario = $_POST['idUsuario'];
-        $usuario["usuario"]= $this->usuarioModel->getUsuarioById($idUsuario);
-        echo $this->render->renderizar("view/modificarUsuario.mustache",$usuario);
+        $data = array();
+        if (isset($_SESSION["logueado"])) {
+            $idUsuario = $_POST['idUsuario'];
+            $data["usuario"]= $this->usuarioModel->getUsuarioById($idUsuario);
+            $data["roles"]= $this->usuarioModel->getRoles();
+            echo $this->render->renderizar("view/modificarUsuario.mustache",$data);
+        } else {
+            header("location: /tpFinalGrupo13");
+            exit();
+        }
     }
 
     public function procesoModificarUsuario(){
-
+        if (isset($_SESSION["logueado"])) {
             $id = $_GET['id'];
             $nombre = $_GET['nombre'];
             $apellido = $_GET['apellido'];
@@ -55,33 +62,23 @@ class UsuarioController
                 $active = 0;
             }
 
-
             if(isset($_GET['contrasenia']) && $_GET['contrasenia'] != "" )
             {
                 $contrasenia = md5($_GET['contrasenia']);
             }else{
-
-                $contrasenia = $this->usuarioModel->getPasswordById($id);
-
-                echo json_encode($contrasenia);
-
+                $contrasenia = ($this->usuarioModel->getUsuarioById($id)[0]['Password']);
             }
 
 
 
-//            $this->usuarioModel->editUsuarioById($id,$nombre,$apellido,$email,$contrasenia,$active);
-//
-//            $_SESSION['mensajeModificar'] = 1;
-//
-//            header("Location: /tpfinalGrupo13/Usuario");
+            $this->usuarioModel->editUsuario($id,$nombre,$apellido,$email,$contrasenia,$active);
+            $_SESSION['mensajeModificar'] = 1;
+            header("Location: /tpfinalGrupo13/Usuario");
+
+        } else {
+            header("location: /tpFinalGrupo13");
+            exit();
+        }
     }
-
-    public function eliminarUsuario(){
-        $idUsuario = $_POST['idUsuarioEliminar'];
-        $this->usuarioModel->eliminarUsuarioById($idUsuario);
-
-        echo $this->render->renderizar("view/usuario.mustache");
-    }
-
 }
 

@@ -9,28 +9,38 @@
         <form action="procesoModificarUsuario" method="get" autocomplete="off">
             <input type="hidden" name="id"  value="{{Id}}" placeholder="{{Id}}">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre.." value="{{Nombre}}">
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre.." value="{{Nombre}}" required>
 
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" placeholder="Tu apellido.." value="{{Apellido}}">
+            <input type="text" id="apellido" name="apellido" placeholder="Tu apellido.." value="{{Apellido}}" required>
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Tu email.." value="{{Email}}">
+            <input type="email" id="email" name="email" placeholder="Tu email.." value="{{Email}}" required>
 
             <label for="contrasenia">Contraseña</label>
             <input type="password" id="contrasenia" name="contrasenia" placeholder="Tu contraseña..">
+
+            <label for="rol">Rol</label>
+            <select name="rol">
+            {{#roles}}
+                <option value="{{Id}}">
+                    {{ Descripcion }}
+                </option>
+            {{/roles}}
+            </select>
+
             <div class="w3-row" style="background-color: #181818">
-                <label>Roles</label> <br>
-                <input class="w3-radio" type="radio" name="rol" id="admin"  value="1">
+                <label>Rol</label> <br>
+                <input class="w3-radio" type="radio" name="rol" id="admin"  value="1" {{#pTipoUsuario}}checked{{/pTipoUsuario}}>
                 <label for="admin">Administrador</label><br>
-                <input class="w3-radio" type="radio" name="rol" id="super" value="2">
+                <input class="w3-radio" type="radio" name="rol" id="super" value="2" {{#pTipoUsuario}}checked{{/pTipoUsuario}}>
                 <label for="super">Supervisor</label><br>
-                <input class="w3-radio" type="radio" name="rol" id="chofer" value="3">
+                <input class="w3-radio" type="radio" name="rol" id="chofer" value="3" {{#pTipoUsuario}}checked{{/pTipoUsuario}}>
                 <label for="chofer">Chofer</label><br>
+                <input class="w3-radio" type="radio" name="rol" id="encargado" value="5" {{#pTipoUsuario}}checked{{/pTipoUsuario}}>
+                <label for="encargado">Encargado de taller</label><br>
                 <input class="w3-radio" type="radio" name="rol" id="llano" value="4">
                 <label for="llano">Llano</label><br>
-                <input class="w3-radio" type="radio" name="rol" id="encargado" value="5">
-                <label for="encargado">Encargado de taller</label><br>
             </div>
             <label> Licencias</label><br>
             <select name="licencia" id="">
