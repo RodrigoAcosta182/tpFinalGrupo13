@@ -33,9 +33,12 @@ class UsuarioController
         $data = array();
         if (isset($_SESSION["logueado"])) {
             $idUsuario = $_POST['idUsuario'];
-            $data["usuario"]= $this->usuarioModel->getUsuarioById($idUsuario);
             $data["roles"]= $this->usuarioModel->getRoles();
-            echo $this->render->renderizar("view/modificarUsuario.mustache",$data);
+            $data["licencias"] = $this->usuarioModel->getLicencias();
+            $data["usuario"]= $this->usuarioModel->getUsuarioById($idUsuario);
+
+
+         echo $this->render->renderizar("view/modificarUsuario.mustache",$data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
@@ -48,13 +51,10 @@ class UsuarioController
             $nombre = $_GET['nombre'];
             $apellido = $_GET['apellido'];
             $email = $_GET['email'];
+            $rol = $_GET['rol'];
             $licencia = $_GET['licencia'];
 
-            if(isset($_GET['rol'])){
-                $rol = 1;
-            }else{
-                $rol = 0;
-            }
+
 
             if(isset($_GET['active']) && $_GET['active'] === "on" ){
                 $active = 1;
@@ -70,8 +70,7 @@ class UsuarioController
             }
 
 
-
-            $this->usuarioModel->editUsuario($id,$nombre,$apellido,$email,$contrasenia,$active);
+            $this->usuarioModel->editUsuario($id,$nombre,$apellido,$email,$contrasenia,$active,$rol,$licencia);
             $_SESSION['mensajeModificar'] = 1;
             header("Location: /tpfinalGrupo13/Usuario");
 

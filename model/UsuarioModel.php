@@ -28,9 +28,15 @@ class UsuarioModel
     }
 
     public function getUsuarioById($id){
-        return $this->database->consulta("SELECT *
+        return $this->database->consulta("SELECT u.*, 
+                                                     t.Id AS Id_tipo, 
+                                                     t.Descripcion AS Descrip, 
+                                                     l.Id As Id_licencia,
+                                                     l.Descripcion AS Descripcion_licencia
                                               FROM usuario u 
-                                              INNER JOIN tipousuario t ON t.Id = u.pTipoUsuario  where u.Id = '$id'");
+                                              INNER JOIN tipousuario t ON t.Id = u.pTipoUsuario
+                                              LEFT JOIN licencia l ON l.Id = u.pLicencia 
+                                              where u.Id = '$id'");
     }
 
     public function eliminarUsuarioById($id)
@@ -38,15 +44,21 @@ class UsuarioModel
         return $this->database->ejecutar("UPDATE usuario SET Active = 0 WHERE Id ='$id'");
     }
 
-    public function editUsuario($id,$nombre,$apellido,$email,$contrasenia,$active)
+    public function editUsuario($id,$nombre,$apellido,$email,$contrasenia,$active,$rol,$licencia)
     {
         return $this->database->ejecutar("UPDATE usuario 
-                                              SET Nombre = '$nombre', Apellido = '$apellido', Email = '$email', Password = '$contrasenia', Active = '$active'  
+                                              SET Nombre = '$nombre', Apellido = '$apellido', Email = '$email', Password = '$contrasenia', Active = '$active',
+                                                  pTipoUsuario = '$rol', pLicencia = '$licencia'
                                               WHERE Id ='$id'");
     }
 
     public function getRoles(){
         return $this->database->consulta("SELECT * FROM tipousuario");
+    }
+
+    public function getLicencias()
+    {
+        return $this->database->consulta("SELECT * FROM licencia");
     }
 
 }
