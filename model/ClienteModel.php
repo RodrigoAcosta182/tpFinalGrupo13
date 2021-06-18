@@ -14,4 +14,8 @@ class ClienteModel{
         return $this->database->consulta("select * from cliente");
     }
 
+    public function getClienteById($id){
+        return $this->database->consulta("select * from cliente where Id = '$id'");
+    }
+
 }

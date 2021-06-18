@@ -19,7 +19,9 @@ class ClienteController
 
     public function modificarCliente()
     {
-        echo $this->render->renderizar("view/modificarCliente.mustache");
+        $idCliente = $_POST['idCliente'];
+        $cliente["clientes"]= $this->clienteModel->getClienteById($idCliente);
+        echo $this->render->renderizar("view/modificarCliente.mustache",$cliente);
     }
 
     public function altaCliente()

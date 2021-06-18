@@ -32,7 +32,7 @@ class UsuarioModel
                                                      t.Id AS Id_tipo, 
                                                      t.Descripcion AS Descrip, 
                                                      l.Id As Id_licencia,
-                                                     l.Descripcion AS Descripcion_licencia
+                                                     l.Codigo AS Descripcion_licencia
                                               FROM usuario u 
                                               INNER JOIN tipousuario t ON t.Id = u.pTipoUsuario
                                               LEFT JOIN licencia l ON l.Id = u.pLicencia 
