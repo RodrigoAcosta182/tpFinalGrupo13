@@ -32,7 +32,7 @@
 
             {{#clientes}}
                 <tr class="w3-border-bottom w3-light-grey">
-                    <td>{{id}}</td>
+                    <td>{{Id}}</td>
                     <td>{{Nombre}}</td>
                     <td>{{Apellido}}</td>
                     <td>{{Dni}}</td>
@@ -40,7 +40,7 @@
                     <td>
                         <div>
                             <form action="cliente/modificarCliente" method="post">
-                                <button class='w3-button w3-blue' style="width: 100%;" name="idCliente" value="{{id}}">Modificar</button>
+                                <button class='w3-button w3-blue' style="width: 100%;" name="idCliente" value="{{Id}}">Modificar</button>
                             </form>
                         </div>
                     </td>
