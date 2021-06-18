@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2021 a las 01:31:05
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.10
+-- Tiempo de generación: 10-06-2021 a las 07:31:41
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tpfinal-grupo06`
+-- Base de datos: `tpfinalgrupo13`
 --
-CREATE DATABASE IF NOT EXISTS `tpfinal-grupo06` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `tpfinal-grupo06`;
+CREATE DATABASE IF NOT EXISTS `tpfinalgrupo13` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `tpfinalgrupo13`;
 
 -- --------------------------------------------------------
 
@@ -197,6 +197,13 @@ CREATE TABLE `mantenimiento` (
   `pService` int(50) NOT NULL,
   `pEmpleado` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `mantenimiento`
+--
+
+INSERT INTO `mantenimiento` (`Id`, `pVehiculo`, `Fecha`, `pService`, `pEmpleado`) VALUES
+(1, 4, '2021-06-07 04:46:42', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -495,9 +502,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Id`, `Codigo`, `Nombre`, `Apellido`, `Email`, `Password`, `Hash`, `Active`, `pTipoUsuario`) VALUES
-(1, 0, 'admin', 'admin', 'garlopacompany@gmail.com', 'Unlam2020', '', 0, 1),
-(6, 0, 'Ariel', 'Molina', 'emilianonahuelortiz@hotmail.com', '123', 'c8c41c4a18675a74e01c8a20e8a0f662', 1, 4),
-(10, 0, 'Emiliano', 'Ortiz', 'emiortiz1992@gmail.com', '123', '0d7de1aca9299fe63f3e0041f02638a3', 1, 4);
+(16, 0, 'Garlopa', 'Company', 'garlopacompany@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '', 1, 1),
+(19, 0, 'admin', 'admin', 'admin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -590,7 +596,7 @@ CREATE TABLE `vtipoxusuario` (
 --
 DROP TABLE IF EXISTS `vtipoxusuario`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vtipoxusuario`  AS  select `u`.`Id` AS `IdUsuario`,`u`.`Nombre` AS `Nombre`,`u`.`Apellido` AS `Apellido`,`u`.`Email` AS `Email`,`u`.`Password` AS `Password`,`u`.`Active` AS `Active`,`t`.`Descripcion` AS `Descripcion` from (`usuario` `u` join `tipousuario` `t` on(`u`.`pTipoUsuario` = `t`.`Id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vtipoxusuario`  AS SELECT `u`.`Id` AS `IdUsuario`, `u`.`Nombre` AS `Nombre`, `u`.`Apellido` AS `Apellido`, `u`.`Email` AS `Email`, `u`.`Password` AS `Password`, `u`.`Active` AS `Active`, `t`.`Descripcion` AS `Descripcion` FROM (`usuario` `u` join `tipousuario` `t` on(`u`.`pTipoUsuario` = `t`.`Id`)) ;
 
 --
 -- Índices para tablas volcadas
@@ -615,6 +621,7 @@ ALTER TABLE `cargascombustible`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `Codigo` (`Codigo`),
   ADD KEY `pLocalidad` (`pLocalidad`),
   ADD KEY `pProvincia` (`pProvincia`);
 
@@ -812,7 +819,7 @@ ALTER TABLE `localidad`
 -- AUTO_INCREMENT de la tabla `mantenimiento`
 --
 ALTER TABLE `mantenimiento`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
@@ -884,7 +891,7 @@ ALTER TABLE `ubicaciondiaria`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculo`

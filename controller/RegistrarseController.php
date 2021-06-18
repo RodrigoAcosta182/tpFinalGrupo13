@@ -15,16 +15,14 @@ class RegistrarseController
     {
         echo $this->render->renderizar("view/registrarse.mustache");
     }
+
     public function validarRegistro(){
-
-
-
         if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['contrasenia'])){
             $nombre = $_POST['nombre'];
             $apellido = $_POST['apellido'];
             $email = $_POST['email'];
             $contrasenia = md5($_POST['contrasenia']);
-            $active = 0;
+            $active = 1;
 
             if(!$this->usuarioModel->getUsuarioSiExisteMail($email)){
                 $this->usuarioModel->registrarUsuario($nombre,$apellido,$email,$contrasenia,$active);
