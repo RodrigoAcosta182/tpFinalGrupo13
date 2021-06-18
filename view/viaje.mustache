@@ -47,7 +47,12 @@
                     <td>{{Id}}</td>
                     <td>
                         <div>
-                            <form action="/pokedex-molinaAriel/index.php?page=modificar" method="post">
+                            <form action="viaje/modificarViaje" method="post">
+                                <button class='w3-button w3-blue' style="width: 100%;" name="modificar" value="{{Id}}">Modificar</button>
+                            </form>
+                        </div>
+                        <div>
+                            <form action="viaje/s" method="post">
                                 <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
                             </form>
                         </div>
