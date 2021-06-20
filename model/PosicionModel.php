@@ -11,7 +11,7 @@ class PosicionModel{
 
     public function listarPosicion(){
 
-        return $this->database->consulta("select ubicaciondiaria.codigo as IdPos, vehiculo.Patente as Patente, vehiculo.NroChasis as Chasis, ubicaciondiaria.Ubicacion as Ubic
+        return $this->database->ejecutar("select ubicaciondiaria.codigo as IdPos, vehiculo.Patente as Patente, vehiculo.NroChasis as Chasis, ubicaciondiaria.Ubicacion as Ubic
                                               from ubicaciondiaria
                                               inner join vehiculo on ubicaciondiaria.pEmpleado = vehiculo.id");
     }

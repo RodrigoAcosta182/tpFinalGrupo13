@@ -49,7 +49,6 @@ class LoginController
             $password = md5($_POST["contrasenia"]);
 
             $user = $this->usuarioModel->getUsuarioByEmailPassword($usuario,$password);
-            echo json_encode($user);
 
             if(empty($user)){
                 $_SESSION["errorLogin"] = 1;
@@ -60,14 +59,44 @@ class LoginController
                 header("Location: /tpFinalGrupo13");
                 exit();
             }else  {
+
                 $_SESSION["logueado"] = 0;
-                $_SESSION["id"] = $user[0]["Id"];
+                $_SESSION["id"] = $user[0]["Id"];;
                 $_SESSION["nombre"] = $user[0]["Nombre"];
                 $_SESSION["apellido"] = $user[0]["Apellido"];
+
+                $_SESSION["esAdministrador"] = $this->isAdmin($user[0]["pTipoUsuario"]);
+                $_SESSION["esChofer"] = $this->isChofer($user[0]["pTipoUsuario"]);
+                $_SESSION["esMecanico"] = $this->isMecanico($user[0]["pTipoUsuario"]);
+                $_SESSION["esSupervisor"] = $this->isSupervisor($user[0]["pTipoUsuario"]);
+                $_SESSION["esEncargado"] = $this->isEncargado($user[0]["pTipoUsuario"]);
+                $_SESSION["esLlano"] = $this->isLlano($user[0]["pTipoUsuario"]);
 
                 header("Location: /tpFinalGrupo13/home");
                 exit();
             }
         }
+    }
+    public function isAdmin($rol) {
+        return  $rol == 3 ? true : false;
+    }
+
+    public function isSupervisor($rol) {
+        return  $rol == 4 ? true : false;
+    }
+
+    public function isEncargado($rol) {
+        return  $rol == 7 ? true : false;
+    }
+
+    public function isChofer($rol) {
+        return  $rol == 1 ? true : false;
+    }
+
+    public function isMecanico($rol) {
+        return  $rol == 2 ? true : false;
+    }
+    public function isLlano($rol) {
+        return  $rol == 6 ? true : false;
     }
 }
