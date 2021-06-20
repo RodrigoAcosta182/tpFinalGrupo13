@@ -11,7 +11,7 @@ class FacturaModel{
 
     public function listarFactura(){
 
-        return $this->database->consulta("select factura.nroFact as NroFactura, cliente.Nombre as NombreCl, cliente.Apellido as ApellidoCl, cliente.Domicilio as DomicilioCl, cliente.Telefono as Tel, cliente.Dni as Dni, factura.fechaFact as Facturacion
+        return $this->database->ejecutar("select factura.nroFact as NroFactura, cliente.Nombre as NombreCl, cliente.Apellido as ApellidoCl, cliente.Domicilio as DomicilioCl, cliente.Telefono as Tel, cliente.Dni as Dni, factura.fechaFact as Facturacion
                                               from factura
                                               inner join viajes on factura.pViaje = viajes.Id
                                               inner join cliente on viajes.pCliente = cliente.id");

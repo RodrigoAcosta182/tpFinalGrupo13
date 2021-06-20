@@ -13,9 +13,11 @@
             <div class="w3-section w3-bottombar w3-padding-16">
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Arrastre.." name="busqueda">
             </div>
+            {{#_SESSION.esAdministrador}}
             <form action="arrastre/altaArrastre">
                 <button name="sacar" class="w3-button w3-green">Agregar Arrastre</button>
             </form>
+            {{/_SESSION.esAdministrador}}
             <br>
         </div>
     </div>
@@ -35,6 +37,7 @@
                     <td>{{Descripcion}}</td>
                     <td class="w3-center">
                         <div>
+                            {{#_SESSION.esAdministrador}}
                             <form action="arrastre/modificarArrastre" method="post">
                                 <button class='w3-button w3-blue' style="width: 50%;" name="modificar" value="{{Id}}">Modificar</button>
                             </form>
@@ -42,6 +45,7 @@
                             <button name="sacar" class="w3-button w3-red" style="width: 50%;">
                                 <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none" onclick="return  confirm('Desea eliminar Cliente?')"> Eliminar </a>
                             </button>
+                            {{/_SESSION.esAdministrador}}
                         </div>
                     </td>
                 </tr>

@@ -13,9 +13,11 @@
             <div class="w3-section w3-bottombar w3-padding-16">
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Camion.." name="busqueda">
             </div>
+            {{#_SESSION.esAdministrador}}
             <form action="camion/altaVehiculo">
                 <button name="camion" class="w3-button w3-green">Agregar Camion</button>
             </form>
+            {{/_SESSION.esAdministrador}}
             <br>
         </div>
     </div>
@@ -47,9 +49,11 @@
                     <td>{{Activo}}</td>
                     <td>
                         <div>
+                            {{#_SESSION.esAdministrador}}
                             <form action="camion/modificarCamion" method="post">
                                 <button class='w3-button w3-blue' style="width: 100%;" name="idCamion" value="{{Id_camion}}">Modificar</button>
                             </form>
+                            {{/_SESSION.esAdministrador}}
                         </div>
                     </td>
                 </tr>
