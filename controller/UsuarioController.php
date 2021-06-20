@@ -51,10 +51,6 @@ class UsuarioController
             $nombre = $_GET['nombre'];
             $apellido = $_GET['apellido'];
             $email = $_GET['email'];
-            $rol = $_GET['rol'];
-            $licencia = $_GET['licencia'];
-
-
 
             if(isset($_GET['active']) && $_GET['active'] === "on" ){
                 $active = 1;
@@ -69,6 +65,19 @@ class UsuarioController
                 $contrasenia = ($this->usuarioModel->getUsuarioById($id)[0]['Password']);
             }
 
+            if(isset($_GET['rol']) && $_GET['rol'] != "" )
+            {
+                $rol = $_GET['rol'];
+            }else{
+                $rol = ($this->usuarioModel->getUsuarioById($id)[0]['pTipoUsuario']);
+            }
+
+            if(isset($_GET['licencia']) && $_GET['licencia'] != "" )
+            {
+                $licencia = $_GET['licencia'];
+            }else{
+                $licencia = ($this->usuarioModel->getUsuarioById($id)[0]['pLicencia']);
+            }
 
             $this->usuarioModel->editUsuario($id,$nombre,$apellido,$email,$contrasenia,$active,$rol,$licencia);
             $_SESSION['mensajeModificar'] = 1;

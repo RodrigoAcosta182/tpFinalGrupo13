@@ -16,17 +16,18 @@
             <label for="contrasenia">Contraseña</label>
             <input type="password" id="contrasenia" name="contrasenia" placeholder="Tu contraseña..">
             <label for="rol">Rol</label>
-            <select name="rol" id="rol">
-                <option selected  value="{{id_tipo}}">{{Descrip}}</option>
-                <option value="1">Administrador</option>
-                <option value="2">Supervisor</option>
-                <option value="3">Chofer</option>
-                <option value="5">Encargado de taller</option>
-                <option value="4">Llano</option>
+            <select name="rol">
+                <option selected  value="{{id_tipo}}" disabled style="color: teal">{{Descrip}}</option>
+                <option value="3">Administrador</option>
+                <option value="4">Supervisor</option>
+                <option value="2">Mecanico</option>
+                <option value="1">Chofer</option>
+                <option value="7">Encargado de taller</option>
+                <option value="6">Llano</option>
             </select>
             <label> Licencias</label><br>
 
-            <select name="licencia" id="">
+            <select name="licencia">
                 <option selected  value="{{Id_licencia}}">{{Descripcion_licencia}}</option>
                 <option value="1">Class 1</option>
                 <option value="2">Class 2</option>
