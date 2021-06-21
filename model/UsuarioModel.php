@@ -11,7 +11,7 @@ class UsuarioModel
 
     public function listarUsuario(){
 
-        return $this->database->consulta("SELECT * FROM usuario where Active = 1");
+        return $this->database->consulta("SELECT * FROM usuario");
     }
 
     public function getUsuarioByEmailPassword($email,$password){

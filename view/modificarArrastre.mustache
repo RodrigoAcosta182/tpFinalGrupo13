@@ -8,17 +8,18 @@
             <h1 class="w3-center">Modificar carga</h1>
         </header>
             <form action="/action_page.php">
+                <input type="hidden" name="id"  value="{{Id}}" placeholder="{{Id}}">
                 <label> Descripcion</label><br>
                 <select name="carga" id="">
-                    <option value="araña">Araña</option>
-                    <option value="jaula">Jaula</option>
-                    <option value="tanque">Tanque</option>
-                    <option value="granel">Granel</option>
+                    <option value="1">Araña</option>
+                    <option value="2">Jaula</option>
+                    <option value="3">Tanque</option>
+                    <option value="4">Granel</option>
                 </select>
                 <label for="fname">Patente</label>
-                <input type="text" id="fname" name="firstname" placeholder="Tu patente..">
+                <input type="text" id="fname" name="patente" placeholder="Tu patente..">
                 <label for="lname">Nro chasis</label>
-                <input type="text" id="lname" name="lastname" placeholder="Nro chasis.." autocomplete="off">
+                <input type="text" id="lname" name="chasis" placeholder="Nro chasis.." autocomplete="off">
                 <br> <br><input type="checkbox" id="active" name="active" value="active" checked>
                 <label for="active">Activo</label><br>
                 <br>

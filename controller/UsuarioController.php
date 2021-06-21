@@ -37,14 +37,12 @@ class UsuarioController
             $data["licencias"] = $this->usuarioModel->getLicencias();
             $data["usuario"]= $this->usuarioModel->getUsuarioById($idUsuario);
 
-
          echo $this->render->renderizar("view/modificarUsuario.mustache",$data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
         }
     }
-
     public function procesoModificarUsuario(){
         if (isset($_SESSION["logueado"])) {
             $id = $_GET['id'];
