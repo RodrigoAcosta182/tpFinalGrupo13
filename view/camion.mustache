@@ -18,6 +18,11 @@
                 <button name="camion" class="w3-button w3-green">Agregar Camion</button>
             </form>
             {{/_SESSION.esAdministrador}}
+            {{#_SESSION.esSupervisor}}
+                <form action="camion/altaVehiculo">
+                    <button name="camion" class="w3-button w3-green">Agregar Camion</button>
+                </form>
+            {{/_SESSION.esSupervisor}}
             <br>
         </div>
     </div>
@@ -54,6 +59,11 @@
                                 <button class='w3-button w3-blue' style="width: 100%;" name="idCamion" value="{{Id_camion}}">Modificar</button>
                             </form>
                             {{/_SESSION.esAdministrador}}
+                            {{#_SESSION.esSupervisor}}
+                                <form action="camion/modificarCamion" method="post">
+                                    <button class='w3-button w3-blue' style="width: 100%;" name="idCamion" value="{{Id_camion}}">Modificar</button>
+                                </form>
+                            {{/_SESSION.esSupervisor}}
                         </div>
                     </td>
                 </tr>

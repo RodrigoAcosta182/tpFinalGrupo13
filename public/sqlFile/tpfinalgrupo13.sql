@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2021 a las 00:39:08
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.10
+-- Tiempo de generación: 21-06-2021 a las 21:33:09
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -87,7 +87,7 @@ INSERT INTO `cliente` (`Id`, `Nombre`, `Apellido`, `Dni`, `Domicilio`, `Activo`)
 (1, 'Ricardo', 'Fort', '25598516', 'Av. Miami 2012', b'1'),
 (2, 'Marcelo Hugo', 'Tinelli', '18365482', 'Segurola 654', b'1'),
 (3, 'Lionel Andres', 'Messi', '33016244', 'Reina Elisenda 26', b'1'),
-(4, 'Jean Claude', 'Van-Damme', '12659845', 'Coronel Brandsen 1048', b'0');
+(4, 'Jean Claude', 'Van-Damme', '12659845', 'Coronel Brandsen 1048', b'1');
 
 -- --------------------------------------------------------
 
@@ -112,6 +112,7 @@ CREATE TABLE `factura` (
 
 CREATE TABLE `licencia` (
   `Id` int(255) NOT NULL,
+  `Codigo` varchar(255) DEFAULT NULL,
   `Descripcion` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -119,20 +120,21 @@ CREATE TABLE `licencia` (
 -- Volcado de datos para la tabla `licencia`
 --
 
-INSERT INTO `licencia` (`Id`, `Descripcion`) VALUES
-(1, 'Camiones sin acomplado hasta 12.000kg'),
-(2, 'Gases'),
-(3, 'Flammable Liquids'),
-(4, 'Flammable Solids or Substances'),
-(5, 'Flammable solids'),
-(6, 'Substances which, in contact with water, emit flam'),
-(7, 'Miscellaneous dangerous substances and articles'),
-(8, 'Organic peroxides - most will burn rapidly and are'),
-(9, 'Toxic substances'),
-(10, 'Infectious substances'),
-(11, 'Radioactive Substances'),
-(12, 'Corrosives'),
-(13, 'Miscellaneous dangerous substances and articles');
+INSERT INTO `licencia` (`Id`, `Codigo`, `Descripcion`) VALUES
+(1, 'Class 1', 'Camiones sin acomplado hasta 12.000kg'),
+(2, 'Class 2', 'Gases'),
+(3, 'Class 3', 'Flammable Liquids'),
+(4, 'Class 4.1', 'Flammable Solids or Substances'),
+(5, 'Class 4.2', 'Flammable solids'),
+(6, 'Class 4.3', 'Substances which, in contact with water, emit flam'),
+(7, 'Class 5.1', 'Miscellaneous dangerous substances and articles'),
+(8, 'Class 5.2', 'Organic peroxides - most will burn rapidly and are'),
+(9, 'Class 6.1', 'Toxic substances'),
+(10, 'Class 6.2', 'Infectious substances'),
+(11, 'Class 7', 'Radioactive Substances'),
+(12, 'Class 8', 'Corrosives'),
+(13, 'Class 9', 'Miscellaneous dangerous substances and articles'),
+(14, 'Sin licencia', 'Sin licencia');
 
 -- --------------------------------------------------------
 
@@ -226,15 +228,6 @@ INSERT INTO `modelo` (`Id`, `Descripcion`, `pMarca`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `modificarcamion`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `modificarcamion` (
-);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `provincia`
 --
 
@@ -310,14 +303,6 @@ CREATE TABLE `service` (
   `pVehiculo` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `service`
---
-
-INSERT INTO `service` (`Id`, `pTipoService`, `ImporteFinal`, `FechaDesde`, `FechaHasta`, `pUsuario`, `pVehiculo`) VALUES
-(1, 2, 40000, '2020-01-01 17:39:40', '2020-07-16 22:39:40', 2, 3),
-(2, 1, 100000, '2020-10-08 22:39:40', '2020-11-12 22:39:40', 4, 4);
-
 -- --------------------------------------------------------
 
 --
@@ -329,15 +314,6 @@ CREATE TABLE `servicerepuesto` (
   `pService` int(255) NOT NULL,
   `pRepuesto` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `servicerepuesto`
---
-
-INSERT INTO `servicerepuesto` (`Id`, `pService`, `pRepuesto`) VALUES
-(1, 1, 2),
-(2, 1, 3),
-(3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -412,7 +388,6 @@ INSERT INTO `tipousuario` (`Id`, `Descripcion`) VALUES
 (2, 'Mecanico'),
 (3, 'Administrador'),
 (4, 'Supervisor'),
-(5, 'Chofer'),
 (6, 'Llano'),
 (7, 'Encargado');
 
@@ -444,7 +419,7 @@ CREATE TABLE `usuario` (
   `Hash` varchar(50) NOT NULL,
   `Active` int(1) NOT NULL DEFAULT 0,
   `pTipoUsuario` int(50) NOT NULL DEFAULT 4,
-  `pLicencia` int(11) DEFAULT NULL
+  `pLicencia` int(11) DEFAULT 14
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -452,11 +427,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Id`, `Nombre`, `Apellido`, `Email`, `Password`, `Hash`, `Active`, `pTipoUsuario`, `pLicencia`) VALUES
-(1, 'admin', 'admin', 'garlopacompany@gmail.com', 'Unlam2020', '', 1, 1, NULL),
-(2, 'Emiliano', 'Nahuel Ortiz', 'emiortiz2001@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '', 1, 4, NULL),
-(3, 'Ariel', 'Molina', 'emilianonahuelortiz@hotmail.com', '123', 'c8c41c4a18675a74e01c8a20e8a0f662', 1, 4, NULL),
-(4, 'Emiliano', 'Ortiz', 'emiortiz1992@gmail.com', '123', '0d7de1aca9299fe63f3e0041f02638a3', 1, 4, NULL),
-(5, 'Emiliano', 'Nahuel Ortiz', 'emiortiz1992weq@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '', 0, 4, NULL);
+(16, 'Rodrigo', 'Acosta', 'jracosta1991@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '', 1, 2, 14),
+(17, 'Garlopa ', 'Company', 'garlopacompany@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '', 1, 3, 14),
+(18, 'Supervisor', 'Supervisor', 'supervisor@supervisor.com', '827ccb0eea8a706c4c34a16891f84e7b', '', 1, 4, 14),
+(19, 'Llano', 'Llano', 'llano@llano.com', '827ccb0eea8a706c4c34a16891f84e7b', '', 1, 6, 14),
+(20, 'Chofer', 'Chofer', 'Chofer@chofer.com', '827ccb0eea8a706c4c34a16891f84e7b', '', 1, 1, 14),
+(21, 'Encargado', 'Encargado', 'encargado@encargado.com', '827ccb0eea8a706c4c34a16891f84e7b', '', 1, 7, 14);
 
 -- --------------------------------------------------------
 
@@ -525,40 +501,6 @@ CREATE TABLE `viajes` (
   `Finalizado` bit(1) NOT NULL,
   `pFactura` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `vtipoxusuario`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `vtipoxusuario` (
-`IdUsuario` int(11)
-,`Nombre` varchar(30)
-,`Apellido` varchar(30)
-,`Email` varchar(50)
-,`Password` varchar(50)
-,`Active` int(1)
-,`Descripcion` varchar(50)
-);
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `modificarcamion`
---
-DROP TABLE IF EXISTS `modificarcamion`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `modificarcamion`  AS  select `v`.`Id` AS `Id_camion`,`ma`.`Id` AS `Id_marca`,`tv`.`Id` AS `Id_tipo`,`a`.`Id` AS `Id_arrastre`,`ma`.`Descripcion` AS `Marca`,`mo`.`Descripcion` AS `Modelo`,`v`.`Patente` AS `Patente`,`v`.`NroChasis` AS `Chasis`,`v`.`NroMotor` AS `Motor`,`v`.`AñoFabricacion` AS `aFab`,`v`.`kilometraje` AS `Km`,`tv`.`Descripcion` AS `tipoV`,`v`.`Activo` AS `Activo` from ((((`vehiculo` `v` join `modelo` `mo` on(`v`.`pModelo` = `mo`.`Id`)) join `marca` `ma` on(`v`.`pMarca` = `ma`.`Id`)) join `arrastre` `a` on(`a`.`Id` = `v`.`pArrastre`)) join `tipovehiculo` `tv` on(`v`.`pTipoVehiculo` = `tv`.`Id`)) ;
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `vtipoxusuario`
---
-DROP TABLE IF EXISTS `vtipoxusuario`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vtipoxusuario`  AS  select `u`.`Id` AS `IdUsuario`,`u`.`Nombre` AS `Nombre`,`u`.`Apellido` AS `Apellido`,`u`.`Email` AS `Email`,`u`.`Password` AS `Password`,`u`.`Active` AS `Active`,`t`.`Descripcion` AS `Descripcion` from (`usuario` `u` join `tipousuario` `t` on(`u`.`pTipoUsuario` = `t`.`Id`)) ;
 
 --
 -- Índices para tablas volcadas
@@ -762,7 +704,7 @@ ALTER TABLE `factura`
 -- AUTO_INCREMENT de la tabla `licencia`
 --
 ALTER TABLE `licencia`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `localidad`
@@ -846,7 +788,7 @@ ALTER TABLE `ubicaciondiaria`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculo`

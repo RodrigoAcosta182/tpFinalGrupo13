@@ -18,6 +18,11 @@
                 <button name="sacar" class="w3-button w3-green">Agregar Arrastre</button>
             </form>
             {{/_SESSION.esAdministrador}}
+            {{#_SESSION.esSupervisor}}
+                <form action="arrastre/altaArrastre">
+                    <button name="sacar" class="w3-button w3-green">Agregar Arrastre</button>
+                </form>
+            {{/_SESSION.esSupervisor}}
             <br>
         </div>
     </div>
@@ -46,6 +51,15 @@
                                 <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none" onclick="return  confirm('Desea eliminar Cliente?')"> Eliminar </a>
                             </button>
                             {{/_SESSION.esAdministrador}}
+                            {{#_SESSION.esSupervisor}}
+                                <form action="arrastre/modificarArrastre" method="post">
+                                    <button class='w3-button w3-blue' style="width: 50%;" name="modificar" value="{{Id}}">Modificar</button>
+                                </form>
+                                <br>
+                                <button name="sacar" class="w3-button w3-red" style="width: 50%;">
+                                    <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none" onclick="return  confirm('Desea eliminar Cliente?')"> Eliminar </a>
+                                </button>
+                            {{/_SESSION.esSupervisor}}
                         </div>
                     </td>
                 </tr>
