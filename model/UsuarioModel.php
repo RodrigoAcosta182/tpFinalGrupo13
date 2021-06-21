@@ -11,7 +11,8 @@ class UsuarioModel
 
     public function listarUsuario(){
 
-        return $this->database->consulta("SELECT * FROM usuario");
+        return $this->database->consulta("SELECT u.*,t.Descripcion AS Rol FROM usuario u 
+                                              INNER JOIN tipousuario t ON u.pTipoUsuario = t.Id ");
     }
 
     public function getUsuarioByEmailPassword($email,$password){
