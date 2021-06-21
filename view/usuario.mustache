@@ -38,9 +38,11 @@
                     <td>{{Email}}</td>
                     <td>
                         <div>
+                            {{#_SESSION.esAdministrador}}
                             <form action="usuario/modificarUsuario" method="post">
                                 <button class='w3-button w3-blue' style="width: 100%;" name="idUsuario" value="{{Id}}">Modificar</button>
                             </form>
+                            {{/_SESSION.esAdministrador}}
                             <br>
                         </div>
                     </td>

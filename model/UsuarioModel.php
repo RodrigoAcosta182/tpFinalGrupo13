@@ -61,4 +61,6 @@ class UsuarioModel
         return $this->database->consulta("SELECT * FROM licencia");
     }
 
+
+
 }
