@@ -18,6 +18,18 @@
                         <button name="viaje" class="w3-button w3-green">Agregar Viaje</button>
                     </form>
                 {{/_SESSION.esAdministrador}}
+
+                {{#_SESSION.esSupervisor}}
+                    <button name="sacar" class="w3-button w3-green">
+                        <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none"> Agregar Viaje </a>
+                    </button>
+                {{/_SESSION.esSupervisor}}
+                {{#_SESSION.esChofer}}
+                    <button name="sacar" class="w3-button w3-green">
+                        <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none"> Agregar Viaje </a>
+                    </button>
+                {{/_SESSION.esChofer}}
+            </form>
             <br>
         </div>
     </div>
@@ -34,7 +46,6 @@
                 <th>Proforma</th>
                 <th>Acciones</th>
             </tr>
-
             {{#viaje}}
                 <tr class="w3-border-bottom w3-light-grey">
                     <td>{{IdViaje}}</td>
@@ -48,13 +59,23 @@
                     <td>
                         <div>
                             {{#_SESSION.esAdministrador}}
-                            <form action="/pokedex-molinaAriel/index.php?page=modificar" method="post">
+                            <form action="" method="post">
                                 <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
                             </form>
                             <form action="camion/modificarCamion" method="post">
                                 <button class='w3-button w3-blue' style="width: 100%;" name="idCamion" value="{{Id_camion}}">Modificar</button>
                             </form>
                             {{/_SESSION.esAdministrador}}
+                            {{#_SESSION.esSupervisor}}
+                                <form action="" method="post">
+                                    <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
+                                </form>
+                            {{/_SESSION.esSupervisor}}
+                            {{#_SESSION.esChofer}}
+                                <form action="" method="post">
+                                    <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
+                                </form>
+                            {{/_SESSION.esChofer}}
                         </div>
                     </td>
                 </tr>

@@ -14,8 +14,19 @@ class CamionController
 
     public function execute()
     {
-        $data["camion"] = $this->camionModel->listarCamiones();
-        echo $this->render->renderizar("view/camion.mustache",$data);
+        $data = array();
+
+        if (isset($_SESSION["mensajeModificar"]) && $_SESSION["mensajeModificar"] == 1) {
+            $data["mensajeModificar"] = "El camion fue editado exitosamente";
+            unset($_SESSION["mensajeModificar"]);
+        }
+        if (isset($_SESSION["logueado"])) {
+            $camion["camion"] = $this->camionModel->listarCamiones();
+            echo $this->render->renderizar("view/camion.mustache", $camion);
+        } else {
+            header("location: /tpFinalGrupo13");
+            exit();
+        }
     }
 
     public function altaVehiculo(){

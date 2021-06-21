@@ -28,6 +28,8 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
+                <th>Rol</th>
+                <th>Activo</th>
                 <th>Acciones</th>
             </tr>
 
@@ -36,6 +38,8 @@
                     <td>{{Nombre}}</td>
                     <td>{{Apellido}}</td>
                     <td>{{Email}}</td>
+                    <td>{{Rol}}</td>
+                    <td>{{Active}}</td>
                     <td>
                         <div>
                             {{#_SESSION.esAdministrador}}
@@ -43,6 +47,11 @@
                                 <button class='w3-button w3-blue' style="width: 100%;" name="idUsuario" value="{{Id}}">Modificar</button>
                             </form>
                             {{/_SESSION.esAdministrador}}
+                            {{#_SESSION.esSupervisor}}
+                                <form action="usuario/modificarUsuario" method="post">
+                                    <button class='w3-button w3-blue' style="width: 100%;" name="idUsuario" value="{{Id}}">Modificar</button>
+                                </form>
+                            {{/_SESSION.esSupervisor}}
                             <br>
                         </div>
                     </td>

@@ -6,27 +6,19 @@
 
     <div class="w3-card-4"  style="width:40%;margin: auto">
         <header class="w3-container w3-teal">
-            <h1 class="w3-center">Nuevo clientes</h1>
+            <h1 class="w3-center">Nuevo cliente</h1>
         </header>
-
-
-            <form action="/action_page.php">
+            <form action="cliente/registrarCliente" method="post">
                 <label for="fname">Nombre</label>
-                <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+                <input type="text" id="fname" name="nombre" placeholder="Tu nombre..">
 
                 <label for="lname">Apellido</label>
-                <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+                <input type="text" id="lname" name="apellido" placeholder="Tu apellido..">
 
-                <label for="lname">Dni</label>
-                <input type="email" id="lname" name="dni" placeholder="Tu Dni..">
-
-                <label for="lname">Domicilio</label>
-                <input type="email" id="lname" name="dni" placeholder="Tu Domicilio..">
-
-                <br> <br><input type="checkbox" id="active" name="active" value="active" checked>
-                <label for="active">Activo</label><br>
+                <label for="lname">DNI</label>
+                <input type="text" id="lname" name="dni" placeholder="Tu DNI..">
                 <br>
-                <input type="submit" value="Guardar">
+                <button class="w3-button w3-red w3-margin-top" style="width: 100%">Guardar</button>
                 <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/cliente">Volver</a>
             </form>
     </div>

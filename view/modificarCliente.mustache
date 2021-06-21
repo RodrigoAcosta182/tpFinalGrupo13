@@ -9,18 +9,18 @@
             <h1 class="w3-center">Modificar cliente</h1>
         </header>
         {{#clientes}}
-            <form action="/action_page.php">
+            <form action="procesoModificarCliente" method="get" autocomplete="off">
+                <input type="hidden" name="id"  value="{{Id}}" placeholder="{{Id}}">
                 <label for="fname">Nombre</label>
-                <input type="text" id="fname" name="firstname" placeholder="Tu nombre.." value="{{Nombre}}">
-
+                <input type="text" id="fname" name="nombre" placeholder="Tu nombre.." value="{{Nombre}}" required>
                 <label for="lname">Apellido</label>
-                <input type="text" id="lname" name="lastname" placeholder="Tu apellido.." value="{{Apellido}}">
+                <input type="text" id="lname" name="apellido" placeholder="Tu apellido.." value="{{Apellido}}" required>
 
-                <label for="lname">Dni</label>
-                <input type="email" id="lname" name="dni" placeholder="Tu Dni.." value="{{Dni}}">
+                <label for="lname">DNI</label>
+                <input type="text" id="lname" name="dni" placeholder="Tu Dni.." value="{{Dni}}" required>
 
-                <br> <br><input type="checkbox" id="active" name="active" {{#Activo}}checked="checked"{{/Activo}}>
-                <label for="active">Activo</label><br>
+                <br> <br><input type="checkbox" id="activo" name="activo" {{#Activo}}checked="checked"{{/Activo}}>
+                <label for="activo">Activo</label><br>
                 <br>
                 <input type="submit" value="Guardar">
                 <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/cliente">Volver</a>

@@ -14,4 +14,5 @@ class ArrastreModel{
         return $this->database->consulta("select * from arrastre");
     }
 
+
 }

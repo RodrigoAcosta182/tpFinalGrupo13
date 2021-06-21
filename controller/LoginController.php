@@ -65,6 +65,7 @@ class LoginController
                 $_SESSION["nombre"] = $user[0]["Nombre"];
                 $_SESSION["apellido"] = $user[0]["Apellido"];
 
+
                 $_SESSION["esAdministrador"] = $this->isAdmin($user[0]["pTipoUsuario"]);
                 $_SESSION["esChofer"] = $this->isChofer($user[0]["pTipoUsuario"]);
                 $_SESSION["esMecanico"] = $this->isMecanico($user[0]["pTipoUsuario"]);
