@@ -14,9 +14,7 @@
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Cliente.." name="busqueda">
             </div>
             {{#_SESSION.esAdministrador}}
-            <form action="cliente/altaCliente">
-                <button name="{{Id}}" class="w3-button w3-green">Agregar Cliente</button>
-            </form>
+                <a href="/tpfinalgrupo13/Cliente/altaCliente" style="width: 100%" type="submit" class="w3-red w3-button">Guardar</a>
             {{/_SESSION.esAdministrador}}
             {{#_SESSION.esSupervisor}}
                 <form action="cliente/altaCliente">

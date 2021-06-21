@@ -13,7 +13,12 @@ class PosicionController
 
     public function execute()
     {
+        if (isset($_SESSION["logueado"])) {
         $posicion["posicion"] = $this->posicionModel->listarPosicion();
         echo $this->render->renderizar("view/posicionvehiculo.mustache", $posicion);
+        } else {
+            header("location: /tpFinalGrupo13");
+            exit();
+        }
     }
 }

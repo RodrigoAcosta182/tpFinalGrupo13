@@ -13,7 +13,12 @@ class FacturaController
 
     public function execute()
     {
+        if (isset($_SESSION["logueado"])) {
         $factura["factura"] = $this->facturaModel->listarFactura();
         echo $this->render->renderizar("view/factura.mustache", $factura);
+        } else {
+            header("location: /tpFinalGrupo13");
+            exit();
+        }
     }
 }
