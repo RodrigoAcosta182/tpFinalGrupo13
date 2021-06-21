@@ -21,8 +21,8 @@ class CamionController
             unset($_SESSION["mensajeModificar"]);
         }
         if (isset($_SESSION["logueado"])) {
-            $camion["camion"] = $this->camionModel->listarCamiones();
-            echo $this->render->renderizar("view/camion.mustache", $camion);
+            $data["camion"] = $this->camionModel->listarCamiones();
+            echo $this->render->renderizar("view/camion.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
@@ -63,7 +63,8 @@ class CamionController
             $data["arrastre"] = $this->camionModel->getArrastre();
             $data["mantenimiento"]= $this->camionModel->getMantenimiento();
             $data["marca"] = $this->camionModel->getMarca();
-            $data["idCamion"]= $this->camionModel->getCamionById($idCamion);
+            $data["tipoarrastre"] = $this->camionModel->getTipoArrastre();
+            $data["camion"]= $this->camionModel->getCamionById($idCamion);
 
 
             echo $this->render->renderizar("view/modificarCamion.mustache",$data);
@@ -77,11 +78,11 @@ class CamionController
     public function procesoModificarCamion(){
         if (isset($_SESSION["logueado"])) {
             $id = $_GET['id'];
-            $patente = $_POST['patente'];
-            $chasis = $_POST['chasis'];
-            $motor = $_POST['motor'];
-            $aniofab = ($_POST['aniofab']);
-            $km = ($_POST['km']);
+            $patente = $_GET['patente'];
+            $chasis = $_GET['chasis'];
+            $motor = $_GET['motor'];
+            $aniofab = $_GET['aniofab'];
+            $km = $_GET['km'];
 
             if(isset($_GET['modelo']) && $_GET['modelo'] != "" )
             {

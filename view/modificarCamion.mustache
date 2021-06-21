@@ -10,46 +10,48 @@
         </header>
         {{#camion}}
             <form action="procesoModificarCamion" method="get" autocomplete="off">
+                <input type="hidden" name="id"  value="{{Id_camion}}" placeholder="{{Id_camion}}">
                 <label> Marca</label><br>
-                <select name="tipo" id="">
-                    {{#camion}}
-                        <option value="{{Id_marca}}">
-                            {{ Marca }}
-                        </option>
-                    {{/camion}}
+                <select name="marca" id="">
+                    <option selected  value="{{Id_marca}}" disabled style="color: teal">{{Marca}}</option>
+                    <option value="1">IVECO</option>
+                    <option value="2">Scania</option>
+                    <option value="3">Mercedes Benz</option>
                 </select>
                 <label> Modelo</label><br>
                 <select name="modelo" id="">
-                    {{#camion}}
-                        <option value="{{Id_modelo}}">
-                            {{ Modelo }}
-                        </option>
-                    {{/camion}}
+                    <option selected  value="{{Id_modelo}}" disabled style="color: teal">{{Modelo}}</option>
+                    <option value="1">Daily</option>
+                    <option value="2">Eurostar</option>
+                    <option value="3">G310</option>
+                    <option value="4">G460</option>
+                    <option value="5">Actros 1846</option>
+                    <option value="6">Axor</option>
                 </select>
 
                 <label for="fname">Patente</label>
-                <input type="text" id="fname" name="firstname" placeholder="Tu patente.." value="{{Patente}}">
+                <input type="text" id="fname" name="patente" placeholder="Tu patente.." value="{{Patente}}">
 
                 <label for="lname">Nro chasis</label>
-                <input type="text" id="lname" name="lastname" placeholder="Nro chasis.." value="{{Chasis}}">
+                <input type="text" id="lname" name="chasis" placeholder="Nro chasis.." value="{{Chasis}}">
 
                 <label for="lname">Nro motor</label>
-                <input type="email" id="lname" name="dni" placeholder="Nro motor.." value="{{Motor}}">
+                <input type="text" id="lname" name="motor" placeholder="Nro motor.." value="{{Motor}}">
 
                 <label> Tipo de acoplado</label><br>
-                <select name="acoplado" id="">
-                    {{#camion}}
-                        <option value="{{Id_arrastre}}">
-                            {{ Arrastre }}
-                        </option>
-                    {{/camion}}
+                <select name="arrastre" id="">
+                    <option selected  value="{{Id_arrastre}}" disabled style="color: teal">{{Arrastre}}</option>
+                    <option value="1">Araña</option>
+                    <option value="2">Jaula</option>
+                    <option value="3">Tanque</option>
+                    <option value="4">Granel</option>
                 </select>
 
                 <label for="lname">Kilometraje</label><br>
-                <input type="number" id="lname" name="kilometraje" placeholder="Kilometraje del vehiculo.." value="{{Km}}"> <br>
+                <input type="number" id="lname" name="km" placeholder="Kilometraje del vehiculo.." value="{{Km}}"> <br>
 
                 <label for="lname">Año de fabricacion</label><br>
-                <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."value="{{aFab}}" ><br>
+                <input type="date" id="lname" name="aniofab" placeholder="Año de fabricacion.."value="{{aFab}}" ><br>
 
 
                 <br><input type="checkbox" id="active" name="active" {{#Activo}}checked="checked"{{/Activo}}>
