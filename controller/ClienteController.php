@@ -75,14 +75,13 @@ class ClienteController
             $nombre = $_POST['nombre'];
             $apellido = $_POST['apellido'];
             $dni = $_POST['dni'];
-            $active = 1;
 
             if(!$this->clienteModel->getClienteSiExisteDni($dni)){
                 $this->clienteModel->registrarCliente($nombre,$apellido,$dni);
                 $_SESSION['registroCorrecto'] = 1;
-                header("Location: /tpFinalGrupo13");
+                header("Location: /tpFinalGrupo13/Cliente/");
             }else{
-                $_SESSION['emailExistente'] = 1;
+                $_SESSION['dniExistente'] = 1;
                 header("Location: /tpFinalGrupo13");
             }
         }else{
