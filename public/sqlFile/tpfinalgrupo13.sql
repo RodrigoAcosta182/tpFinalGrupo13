@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2021 a las 00:39:08
+-- Tiempo de generación: 19-06-2021 a las 01:05:39
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -112,6 +112,7 @@ CREATE TABLE `factura` (
 
 CREATE TABLE `licencia` (
   `Id` int(255) NOT NULL,
+  `Codigo` varchar(255) DEFAULT NULL,
   `Descripcion` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -119,20 +120,20 @@ CREATE TABLE `licencia` (
 -- Volcado de datos para la tabla `licencia`
 --
 
-INSERT INTO `licencia` (`Id`, `Descripcion`) VALUES
-(1, 'Camiones sin acomplado hasta 12.000kg'),
-(2, 'Gases'),
-(3, 'Flammable Liquids'),
-(4, 'Flammable Solids or Substances'),
-(5, 'Flammable solids'),
-(6, 'Substances which, in contact with water, emit flam'),
-(7, 'Miscellaneous dangerous substances and articles'),
-(8, 'Organic peroxides - most will burn rapidly and are'),
-(9, 'Toxic substances'),
-(10, 'Infectious substances'),
-(11, 'Radioactive Substances'),
-(12, 'Corrosives'),
-(13, 'Miscellaneous dangerous substances and articles');
+INSERT INTO `licencia` (`Id`, `Codigo`, `Descripcion`) VALUES
+(1, 'Class 1', 'Camiones sin acomplado hasta 12.000kg'),
+(2, 'Class 2', 'Gases'),
+(3, 'Class 3', 'Flammable Liquids'),
+(4, 'Class 4.1', 'Flammable Solids or Substances'),
+(5, 'Class 4.2', 'Flammable solids'),
+(6, 'Class 4.3', 'Substances which, in contact with water, emit flam'),
+(7, 'Class 5.1', 'Miscellaneous dangerous substances and articles'),
+(8, 'Class 5.2', 'Organic peroxides - most will burn rapidly and are'),
+(9, 'Class 6.1', 'Toxic substances'),
+(10, 'Class 6.2', 'Infectious substances'),
+(11, 'Class 7', 'Radioactive Substances'),
+(12, 'Class 8', 'Corrosives'),
+(13, 'Class 9', 'Miscellaneous dangerous substances and articles');
 
 -- --------------------------------------------------------
 
@@ -222,15 +223,6 @@ INSERT INTO `modelo` (`Id`, `Descripcion`, `pMarca`) VALUES
 (4, 'G460', 2),
 (5, 'Actros 1846', 3),
 (6, 'Axor', 3);
-
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `modificarcamion`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `modificarcamion` (
-);
 
 -- --------------------------------------------------------
 
@@ -525,40 +517,6 @@ CREATE TABLE `viajes` (
   `Finalizado` bit(1) NOT NULL,
   `pFactura` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `vtipoxusuario`
--- (Véase abajo para la vista actual)
---
-CREATE TABLE `vtipoxusuario` (
-`IdUsuario` int(11)
-,`Nombre` varchar(30)
-,`Apellido` varchar(30)
-,`Email` varchar(50)
-,`Password` varchar(50)
-,`Active` int(1)
-,`Descripcion` varchar(50)
-);
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `modificarcamion`
---
-DROP TABLE IF EXISTS `modificarcamion`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `modificarcamion`  AS  select `v`.`Id` AS `Id_camion`,`ma`.`Id` AS `Id_marca`,`tv`.`Id` AS `Id_tipo`,`a`.`Id` AS `Id_arrastre`,`ma`.`Descripcion` AS `Marca`,`mo`.`Descripcion` AS `Modelo`,`v`.`Patente` AS `Patente`,`v`.`NroChasis` AS `Chasis`,`v`.`NroMotor` AS `Motor`,`v`.`AñoFabricacion` AS `aFab`,`v`.`kilometraje` AS `Km`,`tv`.`Descripcion` AS `tipoV`,`v`.`Activo` AS `Activo` from ((((`vehiculo` `v` join `modelo` `mo` on(`v`.`pModelo` = `mo`.`Id`)) join `marca` `ma` on(`v`.`pMarca` = `ma`.`Id`)) join `arrastre` `a` on(`a`.`Id` = `v`.`pArrastre`)) join `tipovehiculo` `tv` on(`v`.`pTipoVehiculo` = `tv`.`Id`)) ;
-
--- --------------------------------------------------------
-
---
--- Estructura para la vista `vtipoxusuario`
---
-DROP TABLE IF EXISTS `vtipoxusuario`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vtipoxusuario`  AS  select `u`.`Id` AS `IdUsuario`,`u`.`Nombre` AS `Nombre`,`u`.`Apellido` AS `Apellido`,`u`.`Email` AS `Email`,`u`.`Password` AS `Password`,`u`.`Active` AS `Active`,`t`.`Descripcion` AS `Descripcion` from (`usuario` `u` join `tipousuario` `t` on(`u`.`pTipoUsuario` = `t`.`Id`)) ;
 
 --
 -- Índices para tablas volcadas

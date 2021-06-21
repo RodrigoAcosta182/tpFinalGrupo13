@@ -18,6 +18,11 @@
                 <button name="{{Id}}" class="w3-button w3-green">Agregar Cliente</button>
             </form>
             {{/_SESSION.esAdministrador}}
+            {{#_SESSION.esSupervisor}}
+                <form action="cliente/altaCliente">
+                    <button name="{{Id}}" class="w3-button w3-green">Agregar Cliente</button>
+                </form>
+            {{/_SESSION.esSupervisor}}
             <br>
         </div>
     </div>
@@ -46,6 +51,11 @@
                                 <button class='w3-button w3-blue' style="width: 100%;" name="idCliente" value="{{Id}}">Modificar</button>
                             </form>
                             {{/_SESSION.esAdministrador}}
+                            {{#_SESSION.esSupervisor}}
+                                <form action="cliente/modificarCliente" method="post">
+                                    <button class='w3-button w3-blue' style="width: 100%;" name="idCliente" value="{{Id}}">Modificar</button>
+                                </form>
+                            {{/_SESSION.esSupervisor}}
                         </div>
                     </td>
                 </tr>

@@ -18,6 +18,21 @@
                 <button name="sacar" class="w3-button w3-green">Nuevo Mantenimiento</button>
             </form>
             {{/_SESSION.esAdministrador}}
+            {{#_SESSION.esSupervisor}}
+                <form action="mantenimiento/altaMantenimiento">
+                    <button name="sacar" class="w3-button w3-green">Nuevo Mantenimiento</button>
+                </form>
+            {{/_SESSION.esSupervisor}}
+            {{#_SESSION.esEncargado}}
+                <form action="mantenimiento/altaMantenimiento">
+                    <button name="sacar" class="w3-button w3-green">Nuevo Mantenimiento</button>
+                </form>
+            {{/_SESSION.esEncargado}}
+            {{#_SESSION.esMecanico}}
+                <form action="mantenimiento/altaMantenimiento">
+                    <button name="sacar" class="w3-button w3-green">Nuevo Mantenimiento</button>
+                </form>
+            {{/_SESSION.esMecanico}}
             <br>
         </div>
     </div>
