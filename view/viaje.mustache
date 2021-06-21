@@ -13,13 +13,11 @@
             <div class="w3-section w3-bottombar w3-padding-16">
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Viaje.." name="busqueda">
             </div>
-            <form action="">
                 {{#_SESSION.esAdministrador}}
-                <button name="sacar" class="w3-button w3-green">
-                    <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none"> Agregar Viaje </a>
-                </button>
+                    <form action="viaje/altaViaje">
+                        <button name="viaje" class="w3-button w3-green">Agregar Viaje</button>
+                    </form>
                 {{/_SESSION.esAdministrador}}
-            </form>
             <br>
         </div>
     </div>
@@ -49,18 +47,12 @@
                     <td>{{Id}}</td>
                     <td>
                         <div>
-<<<<<<< HEAD
-                            <form action="viaje/modificarViaje" method="post">
-                                <button class='w3-button w3-blue' style="width: 100%;" name="modificar" value="{{Id}}">Modificar</button>
-                            </form>
-                        </div>
-                        <div>
-                            <form action="viaje/s" method="post">
-=======
                             {{#_SESSION.esAdministrador}}
                             <form action="/pokedex-molinaAriel/index.php?page=modificar" method="post">
->>>>>>> 3bc60356e0574cbbc3ef35f82ac89d646660aba1
                                 <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
+                            </form>
+                            <form action="camion/modificarCamion" method="post">
+                                <button class='w3-button w3-blue' style="width: 100%;" name="idCamion" value="{{Id_camion}}">Modificar</button>
                             </form>
                             {{/_SESSION.esAdministrador}}
                         </div>

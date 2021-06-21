@@ -17,6 +17,11 @@ class ViajeController
         echo $this->render->renderizar("view/viaje.mustache", $viaje);
     }
 
+    public function altaViaje()
+    {
+        echo $this->render->renderizar("view/altaViaje.mustache");
+    }
+
     public function modificarCliente()
     {
         echo $this->render->renderizar("view/modificarViaje.mustache");
