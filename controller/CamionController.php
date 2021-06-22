@@ -88,31 +88,31 @@ class CamionController
             {
                 $modelo = ($_GET['modelo']);
             }else{
-                $modelo = ($this->camionModel->getCamionById($id)[0]['pModelo']);
+                $modelo = ($this->camionModel->getCamionById($id)[0]['Id_modelo']);
             }
 
             if(isset($_GET['arrastre']) && $_GET['arrastre'] != "" )
             {
                 $arrastre = $_GET['arrastre'];
             }else{
-                $arrastre = ($this->camionModel->getCamionById($id)[0]['pArrastre']);
+                $arrastre = ($this->camionModel->getCamionById($id)[0]['Id_arrastre']);
             }
-
+/*
             if(isset($_GET['mantenimiento']) && $_GET['mantenimiento'] != "" )
             {
                 $mantenimiento = $_GET['mantenimiento'];
             }else{
-                $mantenimiento = ($this->camionModel->getCamionById($id)[0]['pMantenimiento']);
+                $mantenimiento = ($this->camionModel->getCamionById($id)[0]['Mantenimiento']);
             }
-
+*/
             if(isset($_GET['marca']) && $_GET['marca'] != "" )
             {
                 $marca = $_GET['marca'];
             }else{
-                $marca = ($this->camionModel->getCamionById($id)[0]['pMarca']);
+                $marca = ($this->camionModel->getCamionById($id)[0]['Id_marca']);
             }
 
-            $this->camionModel->editCamion($id,$patente,$chasis,$motor,$aniofab,$km,$modelo,$arrastre,$mantenimiento,$marca);
+            $this->camionModel->editCamion($id,$patente,$chasis,$motor,$aniofab,$km,$modelo,$arrastre,$marca);
             $_SESSION['mensajeModificar'] = 1;
             header("Location: /tpfinalGrupo13/Camion");
 

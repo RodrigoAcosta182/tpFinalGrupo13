@@ -63,7 +63,7 @@ class CamionModel{
                                               where v.Id = '$id'");
     }
 
-    public function editCamion($id,$patente,$chasis,$motor,$aniofab,$km,$modelo,$arrastre,$mantenimiento,$marca)
+    public function editCamion($id,$patente,$chasis,$motor,$aniofab,$km,$modelo,$arrastre,$marca)
     {
         return $this->database->ejecutar("UPDATE vehiculo 
                                               SET pModelo = '$modelo',
@@ -73,7 +73,6 @@ class CamionModel{
                                               AñoFabricacion = '$aniofab',
                                               pArrastre = '$arrastre',
                                               kilometraje = '$km',
-                                              pMantenimiento = '$mantenimiento',
                                               pMarca = '$marca'
                                               WHERE Id ='$id'");
     }
