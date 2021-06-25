@@ -8,17 +8,20 @@
         <header class="w3-container w3-teal">
             <h1 class="w3-center">Nuevo cliente</h1>
         </header>
-            <form action="cliente/registrarCliente" method="post">
+            <form action="registrarCliente" method="post">
                 <label for="fname">Nombre</label>
-                <input type="text" id="fname" name="nombre" placeholder="Tu nombre..">
+                <input type="text" id="fname" name="nombre" placeholder="Tu nombre.." required>
 
-                <label for="lname">Apellido</label>
-                <input type="text" id="lname" name="apellido" placeholder="Tu apellido..">
+                <label for="lapellido">Apellido</label>
+                <input type="text" id="lapellido" name="apellido" placeholder="Tu apellido.." required>
 
-                <label for="lname">DNI</label>
-                <input type="text" id="lname" name="dni" placeholder="Tu DNI..">
+                <label for="ldni">DNI</label>
+                <input type="text" id="ldni" name="dni" placeholder="Tu DNI.." required>
                 <br>
-                <button class="w3-button w3-red w3-margin-top" style="width: 100%">Guardar</button>
+                <label for="ldomicilio">Domicilio</label>
+                <input type="text" id="ldomicilio" name="domicilio" placeholder="Tu Domicilio.." required>
+
+                <button class="w3-button w3-green w3-margin-top" style="width: 100%">Agregar Cliente</button>
                 <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/cliente">Volver</a>
             </form>
     </div>
