@@ -18,9 +18,7 @@
                 <a href="/tpfinalgrupo13/Cliente/altaCliente" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Cliente</a>
             {{/_SESSION.esAdministrador}}
             {{#_SESSION.esSupervisor}}
-                <form action="cliente/altaCliente">
-                    <button name="{{Id}}" class="w3-button w3-green">Agregar Cliente</button>
-                </form>
+                <a href="/tpfinalgrupo13/Cliente/altaCliente" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Cliente</a>
             {{/_SESSION.esSupervisor}}
             <br>
         </div>
