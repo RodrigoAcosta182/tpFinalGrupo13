@@ -68,7 +68,6 @@ class ArrastreController
             exit();
         }
     }
-
     public function procesoModificarArrastre(){
         if (isset($_SESSION["logueado"])) {
             if (isset($_POST['idArrastre']) && isset($_POST['carga']) && isset($_POST['patente']) && isset($_POST['chasis'])) {
