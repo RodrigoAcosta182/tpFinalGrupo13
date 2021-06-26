@@ -32,11 +32,12 @@ class ArrastreModel{
 
     public function editArrastre($idArrastre,$carga, $patente, $chasis)
     {
-        return $this->database->ejecutar("UPDATE arrastre SET 
-                                                    Descripcion = '$carga', 
-                                                    Patente = '$patente', 
-                                                    NroChasis = '$chasis', 
-                                                    WHERE Id = '$idArrastre'");
+        echo $idArrastre;
+        echo $carga;
+        echo $patente;
+        echo $chasis;
+
+        $this->database->ejecutar("UPDATE arrastre SET Descripcion = '$carga', Patente = '$patente', NroChasis = '$chasis'  WHERE Id = '$idArrastre'");
     }
 
 
