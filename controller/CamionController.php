@@ -53,7 +53,7 @@ class CamionController
     }
 
     public function registrarCamion(){
-
+        if (isset($_SESSION["logueado"])) {
         if(isset($_POST['marca']) && isset($_POST['modelo']) && isset($_POST['patente']) && isset($_POST['chasis']) &&
             isset($_POST['motor']) && isset($_POST['kilometraje']) && isset($_POST['fabricacion']) && isset($_POST['arrastre'])){
             $marca = $_POST['marca'];
@@ -78,7 +78,7 @@ class CamionController
             header("Location: /tpFinalGrupo13/Camion");
         }
     }
-
+}
     public function modificarCamion()
     {
         $data = array();
