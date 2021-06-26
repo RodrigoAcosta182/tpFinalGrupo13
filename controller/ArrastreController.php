@@ -77,11 +77,6 @@ class ArrastreController
                 $patente = $_POST['patente'];
                 $chasis = $_POST['chasis'];
 
-                echo $idArrastre;
-                echo $carga;
-                echo $patente;
-                echo $chasis;
-
                 $this->arrastreModel->editArrastre($idArrastre,$carga,$patente, $chasis);
                 $_SESSION['mensajeModificar'] = 1;
                 header("Location: /tpFinalGrupo13/Arrastre");
