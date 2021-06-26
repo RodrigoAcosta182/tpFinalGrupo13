@@ -20,9 +20,9 @@ class CamionController
             $data["registroCorrecto"] = "El camion fue agregado exitosamente";
             unset($_SESSION["registroCorrecto"]);
         }
-        if (isset($_SESSION["patenteExistente"]) && $_SESSION["patenteExistente"] == 1) {
-            $data["patenteExistente"] = "La patente ingresada ya se encuentra registrada";
-            unset($_SESSION["patenteExistente"]);
+        if (isset($_SESSION["registroIncorrecto"]) && $_SESSION["registroIncorrecto"] == 1) {
+            $data["registroIncorrecto"] = "Hubo un error al agregar el Camion";
+            unset($_SESSION["registroIncorrecto"]);
         }
         if (isset($_SESSION["patenteExistente"]) && $_SESSION["patenteExistente"] == 1) {
             $data["patenteExistente"] = "La patente ingresada ya se encuentra registrada";
@@ -32,9 +32,15 @@ class CamionController
             $data["mensajeModificar"] = "El camion fue editado exitosamente";
             unset($_SESSION["mensajeModificar"]);
         }
+
+        if (isset($_SESSION["mensajeError"]) && $_SESSION["mensajeError"] == 1) {
+            $data["mensajeError"] = "Hubo un error al editar el Camion";
+            unset($_SESSION["mensajeError"]);
+        }
+
         if (isset($_SESSION["logueado"])) {
-        $camion["camion"] = $this->camionModel->listarCamiones();
-        echo $this->render->renderizar("view/camion.mustache", $camion);
+            $data["camion"] = $this->camionModel->listarCamiones();
+        echo $this->render->renderizar("view/camion.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
@@ -86,7 +92,6 @@ class CamionController
         }
     }
 
-
     public function procesoModificarCamion(){
         if (isset($_SESSION["logueado"])) {
             if (isset($_POST['marca']) && isset($_POST['modelo']) && isset($_POST['patente']) && isset($_POST['chasis']) &&
@@ -100,12 +105,12 @@ class CamionController
                 $kilometraje = $_POST['kilometraje'];
                 $fabricacion = $_POST['fabricacion'];
                 $arrastre = $_POST['arrastre'];
-                if (isset($_GET['activo']) && $_GET['activo'] === "on") {
-                    $activo = 1;
-                } else {
-                    $activo = 0;
-                }
 
+                if (isset($_POST['activo']) && $_POST['activo'] === "on") {
+                    $activo = true;
+                } else {
+                    $activo = false;
+                }
                     $this->camionModel->editCamion($idCamion,$marca, $modelo, $patente, $chasis, $motor, $kilometraje,$fabricacion,$arrastre,$activo);
                     $_SESSION['mensajeModificar'] = 1;
                     header("Location: /tpFinalGrupo13/Camion");
@@ -118,13 +123,7 @@ class CamionController
                 header("location: /tpFinalGrupo13");
                 exit();
             }
-        }
-
-
-
-
-
-
+    }
 
 
 
