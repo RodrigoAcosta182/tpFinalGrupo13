@@ -1,4 +1,3 @@
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
@@ -6,59 +5,49 @@
             <header class="w3-container w3-teal">
                 <h3 class="w3-center">Nuevo camion</h3>
             </header>
-                <form action="/action_page.php">
-
-                    <label> Marca</label><br>
-                    <select name="marca" id="">
-                        <option value=""></option>
-                        <option value="iveco">Iveco</option>
-                        <option value="scania">Scania</option>
-                        <option value="mercedes">Mercedes Benz</option>
-                    </select>
-
-                    <label> Modelo</label><br>
-                    <select name="modelo" id="">
-                        <option value="#"></option>
-                        <option value="1">Daily</option>
-                        <option value="2">Eurostar</option>
-                        <option value="3">G310</option>
-                        <option value="4">G460</option>
-                        <option value="5">Actros 1846</option>
-                        <option value="6">Axor</option>
-                    </select>
-
-                    <label for="fname">Patente</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Tu patente..">
-
-                    <label for="lname">Nro chasis</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Nro chasis..">
-
-                    <label for="lname">Nro motor</label>
-                    <input type="email" id="lname" name="dni" placeholder="Nro motor..">
-
-                    <label for="lname">Kilometraje</label><br>
-                    <input type="number" id="lname" name="kilometraje" placeholder="Kilometraje del vehiculo.."> <br>
-
-                    <label for="lname">Año de fabricacion</label><br>
-                    <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."><br>
-
-                    <label> Tipo de arrastre</label><br>
-                    <select name="acoplado" id="">
-                        <option value="">Seleccione un tipo...</option>
-                        <option value="1">Araña</option>
-                        <option value="2">Jaula</option>
-                        <option value="2">Tanque</option>
-                        <option value="2">Granel</option>
-                    </select>
-
-                    <input type="checkbox" id="active" name="active" value="active" checked>
-                    <label for="active">Activo</label>
-                    <input type="submit" value="Guardar">
-                    <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/camion">Volver</a>
-                </form>
-            </div>
-
-
-
+            <form action="registrarCamion" method="post">
+                <label> Marca</label><br>
+                <select name="marca">
+                    <option value="">Seleccionar una marca</option>
+                    <option value="1">Iveco</option>
+                    <option value="2">Scania</option>
+                    <option value="3">Mercedes Benz</option>
+                </select>
+                <label> Modelo</label><br>
+                <select name="modelo" id="">
+                    <option value="">Seleccionar un modelo</option>
+                    <option value="1">Daily</option>
+                    <option value="2">Eurostar</option>
+                    <option value="3">G310</option>
+                    <option value="4">G460</option>
+                    <option value="5">Actros 1846</option>
+                    <option value="6">Axor</option>
+                </select>
+                <label for="lpatente">Patente</label>
+                <input type="text" id="lpatente" name="patente" placeholder="Tu patente..">
+                <label for="lchasis">Nro chasis</label>
+                <input type="text" id="lchasis" name="chasis" placeholder="Nro chasis..">
+                <label for="lmotor">Nro motor</label>
+                <input type="text" id="lmotor" name="motor" placeholder="Nro motor..">
+                <div class="w3-col s6 w3-center" style="background-color: #181818" >
+                    <label for="lkm">Kilometraje</label><br>
+                    <input type="number" id="lkm" name="kilometraje" placeholder="Kilometraje del vehiculo..">
+                </div>
+                <div class="w3-col s6 w3-center" style="background-color: #181818">
+                    <label for="lfabri">Año de fabricacion</label> <br>
+                    <input type="date" id="lfabri" name="fabricacion" placeholder="Año de fabricacion..">
+                </div>
+                <label> Tipo de arrastre</label><br>
+                <select name="arrastre">
+                    <option value="">Seleccione un tipo...</option>
+                    <option value="1">Araña</option>
+                    <option value="2">Jaula</option>
+                    <option value="2">Tanque</option>
+                    <option value="2">Granel</option>
+                </select>
+                <input type="submit" value="Guardar">
+                <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/camion">Volver</a>
+            </form>
+        </div>
 </body>
 </html>

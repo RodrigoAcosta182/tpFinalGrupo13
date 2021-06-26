@@ -51,4 +51,30 @@ class CamionModel{
                                               left join arrastre a on a.id = v.pArrastre
                                               where v.Id = '$id'");
     }
+
+    public function getCamionSiExistePatente($patente)
+    {
+        return $this->database->consulta("SELECT * FROM vehiculo WHERE Patente ='$patente'");
+    }
+
+    public function registrarCamion($marca, $modelo, $patente, $chasis, $motor, $kilometraje, $fabricacion, $arrastre, $activo)
+    {
+        return $this->database->ejecutar("INSERT INTO vehiculo (pMarca, pModelo, Patente,NroChasis, NroMotor, kilometraje, AñoFabricacion, pArrastre,Activo)
+                                            VALUES ('$marca', '$modelo', '$patente','$chasis','$motor','$kilometraje','$fabricacion','$arrastre','$activo')");
+    }
+
+    public function editCamion($idCamion,$marca, $modelo, $patente, $chasis, $motor, $kilometraje, $fabricacion, $arrastre, $activo)
+    {
+        return $this->database->ejecutar("UPDATE vehiculo SET 
+                                                    pMarca = '$marca', 
+                                                    pModelo = '$modelo', 
+                                                    Patente = '$patente', 
+                                                    NroChasis = '$chasis', 
+                                                    NroMotor = '$motor',  
+                                                    kilometraje='$kilometraje', 
+                                                    AñoFabricacion='$fabricacion',
+                                                    pArrastre='$arrastre',
+                                                    Activo='$activo'
+                                                    WHERE Id = '$idCamion'");
+    }
 }
