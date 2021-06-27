@@ -11,11 +11,56 @@ class MantenimientoModel{
 
     public function listarMantenimiento(){
 
-        return $this->database->consulta("select tiposervice.id as IdTipoServ, service.Id as IdService, mantenimiento.fecha as Fecha, vehiculo.kilometraje as Km, tiposervice.Descripcion as Descripcion, service.ImporteFinal as Importe
-                                              from mantenimiento
-                                              inner join service on mantenimiento.pService = service.Id
-                                              inner join tiposervice on service.Id = tiposervice.id
-                                              inner join vehiculo on mantenimiento.pVehiculo = vehiculo.id");
+        return $this->database->consulta("select 
+                                                mantenimiento.Id as Id_mantenimiento,
+                                                tiposervice.id as IdTipoServ, 
+                                                vehiculo.patente as Patente, 
+                                                mantenimiento.FechaDesde as FechaDesde,
+                                                mantenimiento.FechaHasta as FechaHasta, 
+                                                mantenimiento.Descripcion as Descripcion,
+                                                vehiculo.kilometraje as Km, 
+                                                tiposervice.Descripcion as Tipo, 
+                                                mantenimiento.importe as Importe
+                                                 from mantenimiento  
+                                                 inner join tiposervice on mantenimiento.pservice = tiposervice.id
+                                                 inner join vehiculo on mantenimiento.pVehiculo = vehiculo.id
+                                                 where vehiculo.Activo = 1");
+    }
+
+    public function getMantenimientoById($id){
+        return $this->database->consulta("select 
+                                                mantenimiento.Id as Id_mantenimiento,
+                                                tiposervice.id as IdTipoServ,
+                                                vehiculo.Id as Id_vehiculo,  
+                                                vehiculo.patente as Patente, 
+                                                mantenimiento.FechaDesde as FechaDesde,
+                                                mantenimiento.FechaHasta as FechaHasta, 
+                                                mantenimiento.Descripcion as Descripcion,
+                                                vehiculo.kilometraje as Km, 
+                                                tiposervice.Descripcion as Tipo, 
+                                                mantenimiento.importe as Importe
+                                                  from mantenimiento  
+                                                 inner join tiposervice on mantenimiento.pservice = tiposervice.id
+                                                 inner join vehiculo on mantenimiento.pVehiculo = vehiculo.id
+                                              where mantenimiento.Id = '$id'");
+    }
+
+    public function registrarMantenimiento($service, $vehiculo, $importe,$fdesde,$fhasta,$descripcion)
+    {
+        return $this->database->ejecutar("INSERT INTO mantenimiento (pVehiculo , Importe, FechaDesde,FechaHasta, pService,Descripcion)
+                                            VALUES ('$vehiculo', '$importe', '$fdesde','$fhasta','$service','$descripcion')");
+    }
+
+    public function editMantenimiento($id_mantenimiento,$service, $vehiculo, $importe,$fdesde,$fhasta,$descripcion)
+    {
+        return $this->database->ejecutar("UPDATE mantenimiento SET 
+                                                    pVehiculo  = '$vehiculo', 
+                                                    Importe = '$importe', 
+                                                    FechaDesde = '$fdesde', 
+                                                    FechaHasta = '$fhasta', 
+                                                    Descripcion = '$descripcion',
+                                                    pService  = '$service' 
+                                                    WHERE Id = '$id_mantenimiento'");
     }
 
 }
