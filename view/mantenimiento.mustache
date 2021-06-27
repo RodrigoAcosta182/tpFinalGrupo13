@@ -14,24 +14,16 @@
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Mantenimiento.." name="busqueda">
             </div>
             {{#_SESSION.esAdministrador}}
-            <form action="mantenimiento/altaMantenimiento">
-                <button name="sacar" class="w3-button w3-green">Nuevo Mantenimiento</button>
-            </form>
+            <a href="/tpfinalgrupo13/Mantenimiento/altaMantenimiento" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Nuevo Mantenimiento</a>
             {{/_SESSION.esAdministrador}}
             {{#_SESSION.esSupervisor}}
-                <form action="mantenimiento/altaMantenimiento">
-                    <button name="sacar" class="w3-button w3-green">Nuevo Mantenimiento</button>
-                </form>
+                <a href="/tpfinalgrupo13/Mantenimiento/altaMantenimiento" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Nuevo Mantenimiento</a>
             {{/_SESSION.esSupervisor}}
             {{#_SESSION.esEncargado}}
-                <form action="mantenimiento/altaMantenimiento">
-                    <button name="sacar" class="w3-button w3-green">Nuevo Mantenimiento</button>
-                </form>
+                <a href="/tpfinalgrupo13/Mantenimiento/altaMantenimiento" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Nuevo Mantenimiento</a>
             {{/_SESSION.esEncargado}}
             {{#_SESSION.esMecanico}}
-                <form action="mantenimiento/altaMantenimiento">
-                    <button name="sacar" class="w3-button w3-green">Nuevo Mantenimiento</button>
-                </form>
+                <a href="/tpfinalgrupo13/Mantenimiento/altaMantenimiento" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Nuevo Mantenimiento</a>
             {{/_SESSION.esMecanico}}
             <br>
         </div>
@@ -40,26 +32,47 @@
         <table class="w3-table">
             <tr class="w3-black">
                 <th>Nro. Service</th>
-                <th>Nro. Unidad</th>
-                <th>Fecha</th>
+                <th>Vehiculo</th>
                 <th>Kilometraje</th>
+                <th>Tipo</th>
                 <th>Descripcion</th>
+                <th>Fecha desde</th>
+                <th>Fecha hasta</th>
                 <th>Importe</th>
                 <th>Acciones</th>
             </tr>
 
             {{#mantenim}}
                 <tr class="w3-border-bottom w3-light-grey">
-                    <td>{{IdTipoServ}}</td>
-                    <td>{{IdService}}</td>
-                    <td>{{Fecha}}</td>
+                    <td>{{Id_mantenimiento}}</td>
+                    <td>{{Patente}}</td>
                     <td>{{Km}}</td>
+                    <td>{{Tipo}}</td>
                     <td>{{Descripcion}}</td>
-                    <td>{{Importe}}</td>
+                    <td>{{FechaDesde}}</td>
+                    <td>{{FechaHasta}}</td>
+                    <td>$ {{Importe}}</td>
                     <td>
-                        <form action="mantenimiento/modificarMantenimiento">
-                            <button name="sacar" class="w3-button w3-blue">Editar</button>
+                        {{#_SESSION.esAdministrador}}
+                        <form action="mantenimiento/modificarMantenimiento" method="post">
+                            <button class='w3-button w3-blue' style="width: 100%;" name="IdMantenimiento" value="{{Id_mantenimiento}}">Modificar</button>
                         </form>
+                        {{/_SESSION.esAdministrador}}
+                        {{#_SESSION.esSupervisor}}
+                            <form action="mantenimiento/modificarMantenimiento" method="post">
+                                <button class='w3-button w3-blue' style="width: 100%;" name="IdMantenimiento" value="{{Id_mantenimiento}}">Modificar</button>
+                            </form>
+                        {{/_SESSION.esSupervisor}}
+                        {{#_SESSION.esEncargado}}
+                            <form action="mantenimiento/modificarMantenimiento" method="post">
+                                <button class='w3-button w3-blue' style="width: 100%;" name="IdMantenimiento" value="{{Id_mantenimiento}}">Modificar</button>
+                            </form>
+                        {{/_SESSION.esEncargado}}
+                        {{#_SESSION.esMecanico}}
+                            <form action="mantenimiento/modificarMantenimiento" method="post">
+                                <button class='w3-button w3-blue' style="width: 100%;" name="IdMantenimiento" value="{{Id_mantenimiento}}">Modificar</button>
+                            </form>
+                        {{/_SESSION.esMecanico}}
                     </td>
                 </tr>
             {{/mantenim}}

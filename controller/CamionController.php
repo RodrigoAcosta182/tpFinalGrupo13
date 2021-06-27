@@ -16,10 +16,28 @@ class CamionController
     {
         $data = array();
 
+        if (isset($_SESSION["registroCorrecto"]) && $_SESSION["registroCorrecto"] == 1) {
+            $data["registroCorrecto"] = "El camion fue agregado exitosamente";
+            unset($_SESSION["registroCorrecto"]);
+        }
+        if (isset($_SESSION["registroIncorrecto"]) && $_SESSION["registroIncorrecto"] == 1) {
+            $data["registroIncorrecto"] = "Hubo un error al agregar el Camion";
+            unset($_SESSION["registroIncorrecto"]);
+        }
+        if (isset($_SESSION["patenteExistente"]) && $_SESSION["patenteExistente"] == 1) {
+            $data["patenteExistente"] = "La patente ingresada ya se encuentra registrada";
+            unset($_SESSION["patenteExistente"]);
+        }
         if (isset($_SESSION["mensajeModificar"]) && $_SESSION["mensajeModificar"] == 1) {
             $data["mensajeModificar"] = "El camion fue editado exitosamente";
             unset($_SESSION["mensajeModificar"]);
         }
+
+        if (isset($_SESSION["mensajeError"]) && $_SESSION["mensajeError"] == 1) {
+            $data["mensajeError"] = "Hubo un error al editar el Camion";
+            unset($_SESSION["mensajeError"]);
+        }
+
         if (isset($_SESSION["logueado"])) {
             $data["camion"] = $this->camionModel->listarCamiones();
             echo $this->render->renderizar("view/camion.mustache", $data);
@@ -29,96 +47,83 @@ class CamionController
         }
     }
 
-    public function altaVehiculo(){
-        if(isset($_POST['patente']) && isset($_POST['chasis']) && isset($_POST['motor']) && isset($_POST['aniofab'])){
-            $patente = $_POST['patente'];
-            $chasis = $_POST['chasis'];
-            $motor = $_POST['motor'];
-            $aniofab = ($_POST['aniofab']);
-            $km = ($_POST['km']);
-            $active = 1;
-
-            if(!$this->camionModel->getCamionSiExistePatente($patente)){
-                $this->camionModel->registrarCamion($patente,$chasis,$motor,$aniofab,$km);
-                $_SESSION['registroCorrecto'] = 1;
-                header("Location: /tpFinalGrupo13");
-            }else{
-                $_SESSION['emailExistente'] = 1;
-                header("Location: /tpFinalGrupo13");
-            }
-        }else{
-            $_SESSION['registroIncorrecto'] = 1;
-            header("Location: /tpFinalGrupo13");
-        }
+    public function altaCamion()
+    {
         echo $this->render->renderizar("view/altaCamion.mustache");
     }
 
+    public function registrarCamion(){
+        if (isset($_SESSION["logueado"])) {
+            if(isset($_POST['marca']) && isset($_POST['modelo']) && isset($_POST['patente']) && isset($_POST['chasis']) &&
+                isset($_POST['motor']) && isset($_POST['kilometraje']) && isset($_POST['fabricacion']) && isset($_POST['arrastre'])){
+                $marca = $_POST['marca'];
+                $modelo = $_POST['modelo'];
+                $patente = $_POST['patente'];
+                $chasis = $_POST['chasis'];
+                $motor = $_POST['motor'];
+                $kilometraje = $_POST['kilometraje'];
+                $fabricacion = $_POST['fabricacion'];
+                $arrastre = $_POST['arrastre'];
+
+                if(!$this->camionModel->getCamionSiExistePatente($patente)){
+                    $this->camionModel->registrarCamion($marca,$modelo,$patente,$chasis,$motor,$kilometraje,$fabricacion,$arrastre,true);
+                    $_SESSION['registroCorrecto'] = 1;
+                    header("Location: /tpFinalGrupo13/Camion");
+                }else{
+                    $_SESSION['patenteExistente'] = 1;
+                    header("Location: /tpFinalGrupo13/Camion");
+                }
+            }else{
+                $_SESSION['registroIncorrecto'] = 1;
+                header("Location: /tpFinalGrupo13/Camion");
+            }
+        }
+    }
     public function modificarCamion()
     {
-
         $data = array();
         if (isset($_SESSION["logueado"])) {
             $idCamion = $_POST['idCamion'];
-            $data["modelo"]= $this->camionModel->getModelo();
-            $data["arrastre"] = $this->camionModel->getArrastre();
-            $data["mantenimiento"]= $this->camionModel->getMantenimiento();
-            $data["marca"] = $this->camionModel->getMarca();
-            $data["tipoarrastre"] = $this->camionModel->getTipoArrastre();
             $data["camion"]= $this->camionModel->getCamionById($idCamion);
-
-
             echo $this->render->renderizar("view/modificarCamion.mustache",$data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
         }
-
     }
 
     public function procesoModificarCamion(){
         if (isset($_SESSION["logueado"])) {
-            $id = $_GET['id'];
-            $patente = $_GET['patente'];
-            $chasis = $_GET['chasis'];
-            $motor = $_GET['motor'];
-            $aniofab = $_GET['aniofab'];
-            $km = $_GET['km'];
+            if (isset($_POST['marca']) && isset($_POST['modelo']) && isset($_POST['patente']) && isset($_POST['chasis']) &&
+                isset($_POST['motor']) && isset($_POST['kilometraje']) && isset($_POST['fabricacion']) && isset($_POST['arrastre'])) {
+                $idCamion = $_POST['idCamion'];
+                $marca = $_POST['marca'];
+                $modelo = $_POST['modelo'];
+                $patente = $_POST['patente'];
+                $chasis = $_POST['chasis'];
+                $motor = $_POST['motor'];
+                $kilometraje = $_POST['kilometraje'];
+                $fabricacion = $_POST['fabricacion'];
+                $arrastre = $_POST['arrastre'];
 
-            if(isset($_GET['modelo']) && $_GET['modelo'] != "" )
-            {
-                $modelo = ($_GET['modelo']);
-            }else{
-                $modelo = ($this->camionModel->getCamionById($id)[0]['Id_modelo']);
+                if (isset($_POST['activo']) && $_POST['activo'] === "on") {
+                    $activo = true;
+                } else {
+                    $activo = false;
+                }
+                $this->camionModel->editCamion($idCamion,$marca, $modelo, $patente, $chasis, $motor, $kilometraje,$fabricacion,$arrastre,$activo);
+                $_SESSION['mensajeModificar'] = 1;
+                header("Location: /tpFinalGrupo13/Camion");
+            } else {
+                $_SESSION['mensajeError'] = 1;
+                header("Location: /tpFinalGrupo13/Camion");
             }
-
-            if(isset($_GET['arrastre']) && $_GET['arrastre'] != "" )
-            {
-                $arrastre = $_GET['arrastre'];
-            }else{
-                $arrastre = ($this->camionModel->getCamionById($id)[0]['Id_arrastre']);
-            }
-/*
-            if(isset($_GET['mantenimiento']) && $_GET['mantenimiento'] != "" )
-            {
-                $mantenimiento = $_GET['mantenimiento'];
-            }else{
-                $mantenimiento = ($this->camionModel->getCamionById($id)[0]['Mantenimiento']);
-            }
-*/
-            if(isset($_GET['marca']) && $_GET['marca'] != "" )
-            {
-                $marca = $_GET['marca'];
-            }else{
-                $marca = ($this->camionModel->getCamionById($id)[0]['Id_marca']);
-            }
-
-            $this->camionModel->editCamion($id,$patente,$chasis,$motor,$aniofab,$km,$modelo,$arrastre,$marca);
-            $_SESSION['mensajeModificar'] = 1;
-            header("Location: /tpfinalGrupo13/Camion");
-
         } else {
             header("location: /tpFinalGrupo13");
             exit();
         }
     }
+
+
+
 }

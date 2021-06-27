@@ -33,56 +33,56 @@ class ArrastreController
         echo $this->render->renderizar("view/altaArrastre.mustache");
     }
 
+    public function registrarArrastre()
+    {
+        if (isset($_SESSION["logueado"])) {
+            if (isset($_POST['carga']) && isset($_POST['patente']) && isset($_POST['chasis'])) {
+                $carga = $_POST['carga'];
+                $patente = $_POST['patente'];
+                $chasis = $_POST['chasis'];
+
+                if (!$this->arrastreModel->getArrastreSiExistePatente($patente)) {
+                    $this->arrastreModel->registrarArrastre($carga, $patente, $chasis);
+                    $_SESSION['registroCorrecto'] = 1;
+                    header("Location: /tpFinalGrupo13/Arrastre");
+                } else {
+                    $_SESSION['patenteExistente'] = 1;
+                    header("Location: /tpFinalGrupo13/Arrastre");
+                }
+            } else {
+                $_SESSION['registroIncorrecto'] = 1;
+                header("Location: /tpFinalGrupo13/Arrastre");
+            }
+        }
+    }
+
     public function modificarArrastre()
     {
         $data = array();
         if (isset($_SESSION["logueado"])) {
-            $data["acoplado"]= $this->arrastreModel->getRemolques();
-        echo $this->render->renderizar("view/modificarArrastre.mustache");
+            $idArrastre = $_POST['idArrastre'];
+            $data["arrastre"]= $this->arrastreModel->getArrastreById($idArrastre);
+            echo $this->render->renderizar("view/modificarArrastre.mustache",$data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
         }
     }
-
-    public function procesoModificarRemolque(){
+    public function procesoModificarArrastre(){
         if (isset($_SESSION["logueado"])) {
-            $id = $_GET['id'];
-            $nombre = $_GET['nombre'];
-            $apellido = $_GET['apellido'];
-            $email = $_GET['email'];
+            if (isset($_POST['idArrastre']) && isset($_POST['carga']) && isset($_POST['patente']) && isset($_POST['chasis'])) {
+                $idArrastre = $_POST['idArrastre'];
+                $carga = $_POST['carga'];
+                $patente = $_POST['patente'];
+                $chasis = $_POST['chasis'];
 
-            if(isset($_GET['active']) && $_GET['active'] === "on" ){
-                $active = 1;
-            }else{
-                $active = 0;
+                $this->arrastreModel->editArrastre($idArrastre,$carga,$patente, $chasis);
+                $_SESSION['mensajeModificar'] = 1;
+                header("Location: /tpFinalGrupo13/Arrastre");
+            } else {
+                $_SESSION['mensajeError'] = 1;
+                header("Location: /tpFinalGrupo13/Arrastre");
             }
-
-            if(isset($_GET['contrasenia']) && $_GET['contrasenia'] != "" )
-            {
-                $contrasenia = md5($_GET['contrasenia']);
-            }else{
-                $contrasenia = ($this->usuarioModel->getUsuarioById($id)[0]['Password']);
-            }
-
-            if(isset($_GET['rol']) && $_GET['rol'] != "" )
-            {
-                $rol = $_GET['rol'];
-            }else{
-                $rol = ($this->usuarioModel->getUsuarioById($id)[0]['pTipoUsuario']);
-            }
-
-            if(isset($_GET['licencia']) && $_GET['licencia'] != "" )
-            {
-                $licencia = $_GET['licencia'];
-            }else{
-                $licencia = ($this->usuarioModel->getUsuarioById($id)[0]['pLicencia']);
-            }
-
-            $this->usuarioModel->editUsuario($id,$nombre,$apellido,$email,$contrasenia,$active,$rol,$licencia);
-            $_SESSION['mensajeModificar'] = 1;
-            header("Location: /tpfinalGrupo13/Usuario");
-
         } else {
             header("location: /tpFinalGrupo13");
             exit();

@@ -14,19 +14,50 @@
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Camion.." name="busqueda">
             </div>
             {{#_SESSION.esAdministrador}}
-            <form action="camion/altaVehiculo">
-                <button name="camion" class="w3-button w3-green">Agregar Camion</button>
-            </form>
+                <a href="/tpfinalgrupo13/Camion/altaCamion" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Camion</a>
             {{/_SESSION.esAdministrador}}
             {{#_SESSION.esSupervisor}}
-                <form action="camion/altaVehiculo">
-                    <button name="camion" class="w3-button w3-green">Agregar Camion</button>
-                </form>
+                <a href="/tpfinalgrupo13/Camion/altaCamion" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Camion</a>
             {{/_SESSION.esSupervisor}}
             <br>
         </div>
     </div>
     <div style="overflow: auto;">
+        {{#mensajeModificar}}
+            <div class="w3-container w3-green w3-display-topmiddle w3-round" style="margin-top: 3em; width: 33%">
+                <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <p class="w3-text w3-center">{{mensajeModificar}}</p>
+            </div>
+        {{/mensajeModificar}}
+        {{#mensajeError}}
+            <div class="w3-container w3-red w3-display-topmiddle w3-round" style="margin-top: 3em; width: 33%">
+                <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <p class="w3-text w3-center">{{mensajeError}}</p>
+            </div>
+        {{/mensajeError}}
+        {{#registroCorrecto}}
+            <div class="w3-container w3-green w3-display-topmiddle w3-round" style="margin-top: 3em; width: 33%">
+                <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <p class="w3-text w3-center">{{registroCorrecto}}</p>
+            </div>
+        {{/registroCorrecto}}
+        {{#patenteExistente}}
+            <div class="w3-container w3-red w3-display-topmiddle w3-round" style="margin-top: 3em; width: 33%">
+                <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <p class="w3-text w3-center">{{patenteExistente}}</p>
+            </div>
+        {{/patenteExistente}}
+        {{#registroIncorrecto}}
+            <div class="w3-container w3-red w3-display-topmiddle w3-round" style="margin-top: 3em; width: 33%">
+                <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <p class="w3-text w3-center">{{registroIncorrecto}}</p>
+            </div>
+        {{/registroIncorrecto}}
         <table class="w3-table">
             <tr class="w3-black">
                 <th>Marca</th>

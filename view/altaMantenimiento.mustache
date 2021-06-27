@@ -7,28 +7,35 @@
         <header class="w3-container w3-teal">
             <h3 class="w3-center">Nuevo Mantenimiento</h3>
         </header>
-            <form action="/action_page.php">
+            <form action="registrarMantenimiento" method="post">
 
-                <label> Tipo de servicio</label><br>
-                <select name="marca" id="">
-                    <option value="externo">Taller externo </option>
-                    <option value="interno">Taller interno</option>
+                <label> Tipo de servicio*</label><br>
+                <select name="service" id="" required>
+                    <option value="1">Taller externo </option>
+                    <option value="2">Taller interno</option>
                 </select>
 
-                <label for="fname">Importe</label><br><br>
-                <input type="number" id="fname" name="firstname" placeholder="Tu patente.."><br><br>
+                <label for="fname" >Importe*</label><br>
+                <input type="f" id="fname" name="importe" placeholder="Importe.." required><br><br>
 
-                <label for="lname">Fecha desde</label><br><br>
-                <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."><br><br>
+                <label for="lname">Descripcion del service*</label><br>
+                <textarea name="descripcion" id="" cols="25" rows="1" placeholder="Ingrese detalle del service" required></textarea><br><br>
 
-                <label for="lname">Fecha hasta</label><br><br>
-                <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."><br><br>
 
-                <label> Vehiculo</label><br>
-                <select name="vehiculo" id="">
-                    <option value=""></option>
+                <label for="lname">Fecha desde*</label><br>
+                <input type="date" id="lname" name="fdesde"required><br><br>
+
+                <label for="lname">Fecha hasta*</label><br>
+                <input type="date" id="lname" name="fhasta"required><br><br>
+
+                <label> Vehiculo*</label><br>
+                <select name="vehiculo" id=""required>
+                    <option value="">Seleccione patente del vehiculo</option>
+                    <option value="3">AA123CD</option>
+                    <option value="4">AA150QW</option>
+                    <option value="5">AD870QW</option>
+                    <option value="6">AC342WW</option>
                 </select>
-
                 <br>
                 <input type="submit" value="Guardar">
                 <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/mantenimiento">Volver</a>

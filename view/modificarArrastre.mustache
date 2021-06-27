@@ -5,28 +5,28 @@
 
 <div class="w3-card-4"  style="width:40%;margin: auto">
         <header class="w3-container w3-teal">
-            <h1 class="w3-center">Modificar carga</h1>
+            <h1 class="w3-center">Modificar Arrastre</h1>
         </header>
-            <form action="/action_page.php">
-                <input type="hidden" name="id"  value="{{Id}}" placeholder="{{Id}}">
-                <label> Descripcion</label><br>
-                <select name="carga" id="">
-                    <option value="1">Araña</option>
-                    <option value="2">Jaula</option>
-                    <option value="3">Tanque</option>
-                    <option value="4">Granel</option>
+    {{#arrastre}}
+            <form action="procesoModificarArrastre" method="post">
+                <input type="hidden" name="idArrastre"  value="{{Id}}" placeholder="{{Id}}">
+                <label>Tipo de Arrastre</label><br>
+                <select name="carga">
+                    <option value="{{Descripcion}}" style="color: teal">{{Descripcion}}</option>
+                    <option value="Araña">Araña</option>
+                    <option value="Jaula">Jaula</option>
+                    <option value="Tanque">Tanque</option>
+                    <option value="Granel">Granel</option>
                 </select>
-                <label for="fname">Patente</label>
-                <input type="text" id="fname" name="patente" placeholder="Tu patente..">
-                <label for="lname">Nro chasis</label>
-                <input type="text" id="lname" name="chasis" placeholder="Nro chasis.." autocomplete="off">
-                <br> <br><input type="checkbox" id="active" name="active" value="active" checked>
-                <label for="active">Activo</label><br>
+                <label for="fpatente">Patente</label>
+                <input type="text" id="fpatente" name="patente" placeholder="Tu patente.." value="{{Patente}}">
+                <label for="lchasis">Nro chasis</label>
+                <input type="text" id="lchasis" name="chasis" placeholder="Nro chasis.." value="{{NroChasis}}">
                 <br>
                 <input type="submit" value="Guardar">
                 <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/arrastre">Volver</a>
             </form>
-
+    {{/arrastre}}
         </div>
 </body>
 </html>

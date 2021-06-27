@@ -19,22 +19,16 @@ class ClienteModel{
     }
 
     public function getClienteSiExisteDni($dni){
-        return $this->database->consulta("SELECT * FROM usuario WHERE Dni ='$dni'");
+        return $this->database->consulta("SELECT * FROM cliente WHERE Dni ='$dni'");
     }
 
-    public function registrarCliente($nombre, $apellido, $dni){
-        return $this->database->ejecutar("INSERT INTO cliente(Nombre, Apellido, Dni, Activo) 
-                                            VALUES ('$nombre', '$apellido', '$dni', 1)");
+    public function registrarCliente($nombre, $apellido, $dni,$domicilio){
+        return $this->database->ejecutar("INSERT INTO cliente(Nombre, Apellido, Dni,Domicilio, Activo) 
+                                            VALUES ('$nombre', '$apellido', '$dni','$domicilio', 1)");
     }
 
-    public function editCliente($id,$nombre,$apellido,$dni,$active)
+    public function editCliente($id,$nombre,$apellido,$dni,$domicilio,$activo)
     {
-        return $this->database->ejecutar("UPDATE cliente 
-                                              SET Nombre = '$nombre', 
-                                                  Apellido = '$apellido', 
-                                                  Dni = '$dni', 
-                                                  Activo = '$active'
-                                              WHERE Id ='$id'");
+        return $this->database->ejecutar("UPDATE cliente SET Nombre = '$nombre', Apellido = '$apellido', Dni = '$dni', Domicilio = '$domicilio', Activo = '$activo' WHERE Id = '$id'");
     }
-
 }
