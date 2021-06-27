@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
+<div class="w3-card-4"  style="width:40%;margin: auto">
+    <header class="w3-container w3-teal">
+        <h3 class="w3-center">Modificar Viajardo</h3>
+    </header>
+    {{#viaje}}
+        <form action="procesoModificarUsuario" method="get" autocomplete="off">
+            <input type="hidden" name="id"  value="{{Id}}" placeholder="{{Id}}">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre.." value="{{Nombre}}" required>
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Tu apellido.." value="{{Apellido}}" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Tu email.." value="{{Email}}" required>
+            <label for="contrasenia">Contraseña</label>
+            <input type="password" id="contrasenia" name="contrasenia" placeholder="Tu contraseña..">
+            <label for="rol">Rol</label>
+            <select name="rol" id="rol">
+                <option selected  value="{{id_tipo}}">{{Descrip}}</option>
+                <option value="1">Administrador</option>
+                <option value="2">Supervisor</option>
+                <option value="3">Chofer</option>
+                <option value="5">Encargado de taller</option>
+                <option value="4">Llano</option>
+            </select>
+            <label> Licencias</label><br>
+
+            <select name="licencia" id="">
+                <option selected  value="{{Id_licencia}}">{{Descripcion_licencia}}</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="4">Class 4.1</option>
+                <option value="5">Class 4.2</option>
+                <option value="6">Class 4.3</option>
+                <option value="7">Class 5.1</option>
+                <option value="8">Class 5.2</option>
+                <option value="9">Class 6.1</option>
+                <option value="10">Class 6.2</option>
+                <option value="11">Class 7</option>
+                <option value="12">Class 8</option>
+                <option value="13">Class 9</option>
+            </select>
+            <br><input type="checkbox" id="active" name="active" {{#Active}}checked="checked"{{/Active}}>
+            <label for="active">Activo</label><br>
+            <br>
+            <button class="w3-green w3-button" style="width: 100%">Guardar</button>
+            <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/usuario">Volver</a>
+        </form>
+    {{/viaje}}
+</div>
+</body>
+</html>
