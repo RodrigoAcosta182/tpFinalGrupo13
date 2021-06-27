@@ -27,4 +27,14 @@ class ViajeController
             exit();
         }
     }
+
+    public function altaViaje()
+    {
+        echo $this->render->renderizar("view/altaViaje.mustache");
+    }
+
+    public function modificarCliente()
+    {
+        echo $this->render->renderizar("view/modificarViaje.mustache");
+    }
 }

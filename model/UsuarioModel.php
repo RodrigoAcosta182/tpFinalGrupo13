@@ -31,7 +31,7 @@ class UsuarioModel
     public function getUsuarioById($id){
         return $this->database->consulta("SELECT u.*, 
                                                      t.Id AS Id_tipo, 
-                                                     t.Descripcion AS Descrip, 
+                                                     t.Descripcion AS Descrip,
                                                      l.Id As Id_licencia,
                                                      l.Codigo AS Descripcion_licencia
                                               FROM usuario u 
@@ -61,7 +61,5 @@ class UsuarioModel
     {
         return $this->database->consulta("SELECT * FROM licencia");
     }
-
-
 
 }

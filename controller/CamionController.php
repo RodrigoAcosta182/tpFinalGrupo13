@@ -40,7 +40,7 @@ class CamionController
 
         if (isset($_SESSION["logueado"])) {
             $data["camion"] = $this->camionModel->listarCamiones();
-        echo $this->render->renderizar("view/camion.mustache", $data);
+            echo $this->render->renderizar("view/camion.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
@@ -54,31 +54,31 @@ class CamionController
 
     public function registrarCamion(){
         if (isset($_SESSION["logueado"])) {
-        if(isset($_POST['marca']) && isset($_POST['modelo']) && isset($_POST['patente']) && isset($_POST['chasis']) &&
-            isset($_POST['motor']) && isset($_POST['kilometraje']) && isset($_POST['fabricacion']) && isset($_POST['arrastre'])){
-            $marca = $_POST['marca'];
-            $modelo = $_POST['modelo'];
-            $patente = $_POST['patente'];
-            $chasis = $_POST['chasis'];
-            $motor = $_POST['motor'];
-            $kilometraje = $_POST['kilometraje'];
-            $fabricacion = $_POST['fabricacion'];
-            $arrastre = $_POST['arrastre'];
+            if(isset($_POST['marca']) && isset($_POST['modelo']) && isset($_POST['patente']) && isset($_POST['chasis']) &&
+                isset($_POST['motor']) && isset($_POST['kilometraje']) && isset($_POST['fabricacion']) && isset($_POST['arrastre'])){
+                $marca = $_POST['marca'];
+                $modelo = $_POST['modelo'];
+                $patente = $_POST['patente'];
+                $chasis = $_POST['chasis'];
+                $motor = $_POST['motor'];
+                $kilometraje = $_POST['kilometraje'];
+                $fabricacion = $_POST['fabricacion'];
+                $arrastre = $_POST['arrastre'];
 
-            if(!$this->camionModel->getCamionSiExistePatente($patente)){
-            $this->camionModel->registrarCamion($marca,$modelo,$patente,$chasis,$motor,$kilometraje,$fabricacion,$arrastre,true);
-                $_SESSION['registroCorrecto'] = 1;
-                header("Location: /tpFinalGrupo13/Camion");
+                if(!$this->camionModel->getCamionSiExistePatente($patente)){
+                    $this->camionModel->registrarCamion($marca,$modelo,$patente,$chasis,$motor,$kilometraje,$fabricacion,$arrastre,true);
+                    $_SESSION['registroCorrecto'] = 1;
+                    header("Location: /tpFinalGrupo13/Camion");
+                }else{
+                    $_SESSION['patenteExistente'] = 1;
+                    header("Location: /tpFinalGrupo13/Camion");
+                }
             }else{
-                $_SESSION['patenteExistente'] = 1;
+                $_SESSION['registroIncorrecto'] = 1;
                 header("Location: /tpFinalGrupo13/Camion");
             }
-        }else{
-            $_SESSION['registroIncorrecto'] = 1;
-            header("Location: /tpFinalGrupo13/Camion");
         }
     }
-}
     public function modificarCamion()
     {
         $data = array();
@@ -111,17 +111,17 @@ class CamionController
                 } else {
                     $activo = false;
                 }
-                    $this->camionModel->editCamion($idCamion,$marca, $modelo, $patente, $chasis, $motor, $kilometraje,$fabricacion,$arrastre,$activo);
-                    $_SESSION['mensajeModificar'] = 1;
-                    header("Location: /tpFinalGrupo13/Camion");
-                } else {
-                    $_SESSION['mensajeError'] = 1;
-                    header("Location: /tpFinalGrupo13/Camion");
-                }
+                $this->camionModel->editCamion($idCamion,$marca, $modelo, $patente, $chasis, $motor, $kilometraje,$fabricacion,$arrastre,$activo);
+                $_SESSION['mensajeModificar'] = 1;
+                header("Location: /tpFinalGrupo13/Camion");
             } else {
-                header("location: /tpFinalGrupo13");
-                exit();
+                $_SESSION['mensajeError'] = 1;
+                header("Location: /tpFinalGrupo13/Camion");
             }
+        } else {
+            header("location: /tpFinalGrupo13");
+            exit();
+        }
     }
 
 
