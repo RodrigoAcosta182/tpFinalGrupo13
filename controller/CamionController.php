@@ -115,7 +115,6 @@ class CamionController
                     $_SESSION['mensajeModificar'] = 1;
                     header("Location: /tpFinalGrupo13/Camion");
                 } else {
-                    echo "2";
                     $_SESSION['mensajeError'] = 1;
                     header("Location: /tpFinalGrupo13/Camion");
                 }
