@@ -63,8 +63,8 @@ class MantenimientoController
         $data = array();
         if (isset($_SESSION["logueado"])) {
             $idMantenimiento = $_POST['IdMantenimiento'];
-
             $data["mantenim"]= $this->mantenimientoModel->getMantenimientoById($idMantenimiento);
+
             echo $this->render->renderizar("view/modificarMantenimiento.mustache",$data);
         } else {
             header("location: /tpFinalGrupo13");
@@ -89,6 +89,14 @@ class MantenimientoController
                 } else {
                     $activo = false;
                 }
+
+//                echo $id_mantenimiento. "IdMantenimiento". "<br>";
+//                echo $service. "service". "<br>";
+//                echo $vehiculo. "vehiculo". "<br>";
+//                echo $importe. "importe". "<br>";
+//                echo $fdesde. "fdesde". "<br>";
+//                echo $fhasta. "fhasta". "<br>";
+//                echo $descripcion. "descripcion". "<br>";
                 $this->mantenimientoModel->editMantenimiento($id_mantenimiento,$service, $vehiculo, $importe,$fdesde,$fhasta,$descripcion);
                 $_SESSION['mensajeModificar'] = 1;
                 header("Location: /tpFinalGrupo13/Mantenimiento");
