@@ -192,6 +192,21 @@ class Configuracion
         return new PosicionController($render, $PosicionModel);
     }
 
+    public static function getProformaModel(){
+        $database = self::getDatabase();
+        include_once ("model/ProformaModel.php");
+        return new ProformaModel($database);
+    }
+
+    public static function getProformaController()
+    {
+        $render = self::getRender();
+        $proformaModel = self::getProformaModel();
+        include_once("controller/ProformaController.php");
+        return new ProformaController($render, $proformaModel);
+    }
+
+
     public function getRouter(){
         include_once("Router.php");
         return new Router($this);

@@ -54,12 +54,12 @@ class MantenimientoModel{
     public function editMantenimiento($id_mantenimiento,$service, $vehiculo, $importe,$fdesde,$fhasta,$descripcion)
     {
         return $this->database->ejecutar("UPDATE mantenimiento SET 
+                                                    pService  = '$service',
                                                     pVehiculo  = '$vehiculo', 
                                                     Importe = '$importe', 
                                                     FechaDesde = '$fdesde', 
                                                     FechaHasta = '$fhasta', 
-                                                    Descripcion = '$descripcion',
-                                                    pService  = '$service' 
+                                                    Descripcion = '$descripcion'
                                                     WHERE Id = '$id_mantenimiento'");
     }
 

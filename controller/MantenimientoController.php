@@ -45,8 +45,6 @@ class MantenimientoController
                 $fhasta = $_POST['fhasta'];
                 $descripcion = $_POST['descripcion'];
 
-
-
                     $this->mantenimientoModel->registrarMantenimiento($service, $vehiculo, $importe,$fdesde,$fhasta,$descripcion);
                     $_SESSION['registroCorrecto'] = 1;
                     header("Location: /tpFinalGrupo13/Mantenimiento");
@@ -63,8 +61,8 @@ class MantenimientoController
         $data = array();
         if (isset($_SESSION["logueado"])) {
             $idMantenimiento = $_POST['IdMantenimiento'];
-
             $data["mantenim"]= $this->mantenimientoModel->getMantenimientoById($idMantenimiento);
+
             echo $this->render->renderizar("view/modificarMantenimiento.mustache",$data);
         } else {
             header("location: /tpFinalGrupo13");
@@ -84,11 +82,6 @@ class MantenimientoController
                 $fhasta = $_POST['fhasta'];
                 $descripcion = $_POST['descripcion'];
 
-                if (isset($_POST['activo']) && $_POST['activo'] === "on") {
-                    $activo = true;
-                } else {
-                    $activo = false;
-                }
                 $this->mantenimientoModel->editMantenimiento($id_mantenimiento,$service, $vehiculo, $importe,$fdesde,$fhasta,$descripcion);
                 $_SESSION['mensajeModificar'] = 1;
                 header("Location: /tpFinalGrupo13/Mantenimiento");
