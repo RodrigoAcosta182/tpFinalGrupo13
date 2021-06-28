@@ -41,21 +41,18 @@
                     <option value="2">Tanque</option>
                     <option value="2">Granel</option>
                 </select>
-                <div class="w3-row" style="background-color: #181818">
-                    <div class="w3-col s4 w3-center" style="background-color: #181818" >
+                <br><br>
                         <label for="lkm">Kilometraje</label><br>
-                        <input type="number" id="lkm" name="kilometraje" placeholder="Kilometraje del vehiculo.." value="{{Km}}">
-                    </div>
-                    <div class="w3-col s4 w3-center" style="background-color: #181818">
+                        <input type="number" id="lkm" name="kilometraje" placeholder="Kilometraje del vehiculo.." value="{{Km}}"><br><br>
                         <label for="lfabri">Año de fabricacion</label> <br>
                         <input type="date" id="lfabri" name="fabricacion" placeholder="Año de fabricacion.." value="{{aFab}}">
-                    </div>
-                    <div class="w3-col s4 w3-center" style="background-color: #181818">
-                        <br>
+                        <br><br>
                         <input type="checkbox" id="activo" name="activo" {{#Activo}}checked="checked"{{/Activo}}>
                         <label for="activo">Activo</label>
-                    </div>
-                </div>
+                <br>
+                <br>
+
+
                 <input type="submit" value="Guardar">
                 <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/camion">Volver</a>
             </form>
