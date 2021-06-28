@@ -15,6 +15,11 @@ class UsuarioModel
                                               INNER JOIN tipousuario t ON u.pTipoUsuario = t.Id ");
     }
 
+    public function listarUsuario2(){
+
+        return $this->database->consulta("SELECT * FROM usuario");
+    }
+
     public function getUsuarioByEmailPassword($email,$password){
         return $this->database->consulta("SELECT * FROM usuario where Email = '$email' and Password = '$password'");
     }

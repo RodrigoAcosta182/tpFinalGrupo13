@@ -7,68 +7,65 @@
     <header class="w3-container w3-teal">
         <h3 class="w3-center">Nuevo Viaje</h3>
     </header>
-    <form action="/action_page.php">
+    <form action="registrarViaje" method="post">
+        <input type="hidden" name="id">
+            <label>Usuario</label><br>
+            <select name="usuario" id="">
+        {{#viaje}}
+                <option value="{{Id}}">{{Nombre}} {{Apellido}}</option>
+        {{/viaje}}
+            </select>
 
-        <label>Usuario</label><br>
-        <select name="usuario" id="">
-            <option value="externo">Taller externo </option>
-            <option value="interno">Taller interno</option>
-        </select>
+
 
         <label>Sucursal Origen</label><br>
-        <select name="usuario" id="">
-            <option value="externo">Taller externo </option>
-            <option value="interno">Taller interno</option>
+        <select name="sucOrig" id="">
+            <option value="1">Bolivia </option>
+            <option value="2">Taller interno</option>
         </select>
 
         <label>Sucursal Destino</label><br>
-        <select name="usuario" id="">
-            <option value="externo">Taller externo </option>
-            <option value="interno">Taller interno</option>
+        <select name="sucDest" id="">
+            <option value="1">Peru</option>
+            <option value="2">Taller interno</option>
         </select>
 
         <label>Cliente</label><br>
-        <select name="usuario" id="">
-            <option value="externo">Taller externo </option>
-            <option value="interno">Taller interno</option>
+        <select name="cliente" id="">
+            <option value="1">Taller externo </option>
+            <option value="2">Taller interno</option>
         </select>
 
         <label>Vehiculo</label><br>
-        <select name="usuario" id="">
-            <option value="externo">Taller externo </option>
-            <option value="interno">Taller interno</option>
+        <select name="vehiculo" id="">
+            <option value="1">Taller externo </option>
+            <option value="2">Taller interno</option>
         </select>
 
         <label>Arrastre</label><br>
-        <select name="usuario" id="">
-            <option value="externo">Taller externo </option>
-            <option value="interno">Taller interno</option>
+        <select name="arrastre" id="">
+            <option value="1">Taller externo </option>
+            <option value="2">Taller interno</option>
         </select>
 
         <label for="lname">Fecha Origen</label><br><br>
-        <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."><br><br>
+        <input type="date" id="lname" name="fechaOrig"><br><br>
 
         <label for="lname">Fecha Estimada</label><br><br>
-        <input type="date" id="lname" name="dni" placeholder="Año de fabricacion.."><br><br>
+        <input type="date" id="lname" name="fechaEst"><br><br>
 
         <label for="fname">Kilometraje Estimado</label><br><br>
-        <input type="number" id="fname" name="firstname" placeholder="Km.."><br><br>
+        <input type="number" id="fname" name="kmEst" placeholder="Km.."><br><br>
 
         <label for="fname">Combustible Estimado</label><br><br>
-        <input type="number" id="fname" name="firstname" placeholder="Combustible.."><br><br>
+        <input type="number" id="fname" name="combEst" placeholder="Combustible.."><br><br>
 
         <label for="fname">Precio</label><br><br>
-        <input type="number" id="fname" name="firstname" placeholder="Precio.."><br><br>
-
-        <label>Factura</label><br>
-        <select name="usuario" id="">
-            <option value="externo">Taller externo </option>
-            <option value="interno">Taller interno</option>
-        </select>
+        <input type="number" id="fname" name="precio" placeholder="Precio.."><br><br>
 
         <br>
         <input type="submit" value="Guardar">
-        <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/mantenimiento">Volver</a>
+        <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/viaje">Volver</a>
     </form>
 
 </div>

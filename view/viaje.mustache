@@ -20,14 +20,14 @@
                 {{/_SESSION.esAdministrador}}
 
                 {{#_SESSION.esSupervisor}}
-                    <button name="sacar" class="w3-button w3-green">
-                        <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none"> Agregar Viaje </a>
-                    </button>
+                    <form action="viaje/altaViaje">
+                        <button name="viaje" class="w3-button w3-green">Agregar Viaje</button>
+                    </form>
                 {{/_SESSION.esSupervisor}}
                 {{#_SESSION.esChofer}}
-                    <button name="sacar" class="w3-button w3-green">
-                        <a href="recursos/funciones/process.php?eliminar={{Id}}" style="text-decoration: none"> Agregar Viaje </a>
-                    </button>
+                    <form action="viaje/altaViaje">
+                        <button name="viaje" class="w3-button w3-green">Agregar Viaje</button>
+                    </form>
                 {{/_SESSION.esChofer}}
             </form>
             <br>
@@ -42,20 +42,20 @@
                 <th>Tiempo Salida</th>
                 <th>Tiempo Arribo</th>
                 <th>Chofer</th>
-                <th>NO SE EH</th>
+                <th>Estado</th>
                 <th>Proforma</th>
                 <th>Acciones</th>
             </tr>
             {{#viaje}}
                 <tr class="w3-border-bottom w3-light-grey">
                     <td>{{IdViaje}}</td>
-                    <td>{{DireccionOrigen}}, {{ProvinciaOrigen}}</td>
-                    <td>{{DireccionOrigen}}, {{ProvinciaOrigen}}</td>
+                    <td>{{DireccionOrigen}}, {{Provincia}}</td>
+                    <td>{{DireccionDestino}}, {{Provincia}}</td>
                     <td>{{FechOrig}}</td>
                     <td>{{FechEst}}</td>
                     <td>{{EmpNomb}} {{EmpAp}}</td>
-                    <td>{{Id}}</td>
-                    <td>{{Id}}</td>
+                    <td>{{Estado}}</td>
+                    <td>{{IdViaje}}</td>
                     <td>
                         <div>
                             {{#_SESSION.esAdministrador}}
