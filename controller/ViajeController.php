@@ -2,15 +2,13 @@
 class ViajeController
 {
 
-    private $usuarioModel;
     private $viajeModel;
     private $render;
 
-    public function __construct(\Render $render, \ViajeModel $viajeModel, \UsuarioModel $usuarioModel)
+    public function __construct(\Render $render, \ViajeModel $viajeModel)
     {
         $this->render = $render;
         $this->viajeModel = $viajeModel;
-        $this->usuarioModel = $usuarioModel;
     }
 
     public function execute()
@@ -33,17 +31,21 @@ class ViajeController
     public function altaViaje()
     {
         $data["viaje"] = $this->viajeModel->listarChoferes();
+        $data["sucursal"] = $this->viajeModel->listarSucursales();
+        $data["cliente"] = $this->viajeModel->listarClientes();
+        $data["vehiculo"] = $this->viajeModel->listarVehiculos();
+        $data["arrastre"] = $this->viajeModel->listarArrastres();
         echo $this->render->renderizar("view/altaViaje.mustache", $data);
     }
 
     public function registrarViaje(){
         if (isset($_SESSION["logueado"])) {
-            if(isset($_POST['usuario']) && isset($_POST['sucOrig']) && isset($_POST['sucDest']) && isset($_POST['cliente']) &&
+            if(isset($_POST['usuario']) && isset($_POST['sucuOrig']) && isset($_POST['sucuDest']) && isset($_POST['cliente']) && isset($_POST['combEst']) &&
                 isset($_POST['vehiculo']) && isset($_POST['arrastre']) && isset($_POST['fechaOrig']) && isset($_POST['fechaEst']) &&
-                isset($_POST['kmEst']) && isset($_POST['combEst']) && isset($_POST['precio'])) {
+                isset($_POST['kmEst']) && isset($_POST['otrosG']) && isset($_POST['precio'])) {
                 $usuario = $_POST['usuario'];
-                $sucOrig = $_POST['sucOrig'];
-                $sucDest = $_POST['sucDest'];
+                $sucuOrig = $_POST['sucuOrig'];
+                $sucuDest = $_POST['sucuDest'];
                 $cliente = $_POST['cliente'];
                 $vehiculo = $_POST['vehiculo'];
                 $arrastre = $_POST['arrastre'];
@@ -51,9 +53,10 @@ class ViajeController
                 $fechaEst = $_POST['fechaEst'];
                 $kmEst = $_POST['kmEst'];
                 $combEst = $_POST['combEst'];
+                $otrosG = $_POST['otrosG'];
                 $precio = $_POST['precio'];
 
-                   $this->viajeModel->registrarViaje($usuario, $sucOrig, $sucDest, $cliente, $vehiculo, $arrastre, $fechaOrig, $fechaEst, $kmEst, $combEst, $precio);
+                   $this->viajeModel->registrarViaje($usuario, $sucuOrig, $sucuDest, $cliente, $vehiculo, $arrastre, $fechaOrig, $fechaEst, $kmEst, $combEst, $otrosG, $precio);
                    $_SESSION['registroCorrecto'] = 1;
                    header("Location: /tpFinalGrupo13/Viaje");
 

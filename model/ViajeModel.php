@@ -11,25 +11,7 @@ class ViajeModel{
 
     public function listarViajes(){
 
-        return $this->database->consulta("select
-                                              viajes.Id as IdViaje,
-                                              usuario.Id as IdUsuario,
-                                              sucursalorigen.Direccion as DireccionOrigen,
-                                              sucursaldestino.Descripcion as DireccionDestino,
-                                              provincia.Descripcion as Provincia,
-                                              viajes.FechaOrigen as FechOrig,
-                                              viajes.FechaEstimada as FechEst,
-                                              usuario.Nombre as EmpNomb,
-                                              usuario.Apellido as EmpAp,
-                                              viajes.Finalizado as Estado
-                                              from viajes
-                                              inner join sucursalorigen on viajes.pSucursalOrigen = sucursalorigen.Id
-                                              inner join sucursaldestino on viajes.pSucursalDestino = sucursaldestino.Id
-                                              inner join provincia on sucursalorigen.pProvincia = provincia.Id
-                                              inner join usuario on viajes.pUsuario = usuario.Id
-                                              inner join cliente on viajes.pCliente = cliente.Id
-                                              inner join vehiculo on viajes.pVehiculo = vehiculo.Id
-                                              inner join arrastre on viajes.pArrastre = arrastre.Id");
+        return $this->database->consulta("select * from vproforma");
     }
 
     public function listarChoferes(){
@@ -38,9 +20,32 @@ class ViajeModel{
                                               where pTipoUsuario = 1");
     }
 
-    public function registrarViaje($usuario,$sucOrig,$sucDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$precio){
-        return $this->database->ejecutar("INSERT INTO viajes (pUsuario ,pSucursalOrigen ,pSucursalDestino , pCliente ,pVehiculo ,pArrastre ,FechaOrigen ,FechaEstimada ,KmEstimado ,CombustibleEst ,Precio ,Finalizado ,pFactura) 
-                                            VALUES ('$usuario', '$sucOrig', '$sucDest', '$cliente', '$vehiculo', '$arrastre', '$fechaOrig', '$fechaEst', '$kmEst', '$combEst', '$precio' , 0 , 1)");
+    public function listarSucursales(){
+        return $this->database->consulta("select sucursales.Id as IdSuc,
+                                              sucursales.Direccion as DireccionSuc,
+                                              provincia.Descripcion as Provincia
+                                              from sucursales
+                                              inner join provincia on sucursales.pProvincia = provincia.Id");
+    }
+
+    public function listarClientes(){
+        return $this->database->consulta("select *
+                                              from cliente");
+    }
+
+    public function listarVehiculos(){
+        return $this->database->consulta("select *
+                                              from vehiculo");
+    }
+
+    public function listarArrastres(){
+        return $this->database->consulta("select *
+                                              from arrastre");
+    }
+
+    public function registrarViaje($usuario,$sucuOrig,$sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$otrosG,$precio){
+        return $this->database->ejecutar("INSERT INTO viajes (pUsuario, pCliente ,pSucursalOrigen,pSucursalDestino ,pVehiculo ,pArrastre ,FechaOrigen ,FechaEstimada ,KmEstimado ,CombustibleEst, Precio, OtrosGastos ,Finalizado) 
+                                            VALUES ('$usuario', '$cliente', '$sucuOrig', '$sucuDest' , '$vehiculo', '$arrastre', '$fechaOrig', '$fechaEst', '$kmEst', '$combEst', '$precio', '$otrosG' , 0)");
     }
 
 }

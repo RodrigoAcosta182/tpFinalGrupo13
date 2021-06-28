@@ -39,23 +39,35 @@
                 <th>Codigo</th>
                 <th>Origen</th>
                 <th>Destino</th>
-                <th>Tiempo Salida</th>
-                <th>Tiempo Arribo</th>
+                <th>Fecha Salida</th>
+                <th>Fecha llegada</th>
                 <th>Chofer</th>
-                <th>Estado</th>
+                <th>Vehiculo</th>
+                <th>Arrastre</th>
+                <th>Km estimado</th>
+                <th>Combustible estimado</th>
+                <th>Precio del viaje</th>
+                <th>Otros gastos</th>
+                <th>Finalizado</th>
                 <th>Proforma</th>
                 <th>Acciones</th>
             </tr>
             {{#viaje}}
                 <tr class="w3-border-bottom w3-light-grey">
-                    <td>{{IdViaje}}</td>
-                    <td>{{DireccionOrigen}}, {{Provincia}}</td>
-                    <td>{{DireccionDestino}}, {{Provincia}}</td>
-                    <td>{{FechOrig}}</td>
-                    <td>{{FechEst}}</td>
-                    <td>{{EmpNomb}} {{EmpAp}}</td>
-                    <td>{{Estado}}</td>
-                    <td>{{IdViaje}}</td>
+                    <td>{{viajeId}}</td>
+                    <td>{{SucursalOrigen}}</td>
+                    <td>{{SucursalDestino}}</td>
+                    <td>{{fechaOrigen}}</td>
+                    <td>{{fechaEstimada}}</td>
+                    <td>{{usuario}}</td>
+                    <td>{{patenteVehiculo}}</td>
+                    <td>{{patenteArrastre}}</td>
+                    <td>{{KmEstimado}}</td>
+                    <td>{{CombustibleEst}}</td>
+                    <td>{{Precio}}</td>
+                    <td>{{OtrosGastos}}</td>
+                    <td>{{Finalizado}}</td>
+                    <td>0</td>
                     <td>
                         <div>
                             {{#_SESSION.esAdministrador}}

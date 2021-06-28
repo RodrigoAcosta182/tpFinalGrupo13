@@ -16,36 +16,39 @@
         {{/viaje}}
             </select>
 
-
-
         <label>Sucursal Origen</label><br>
-        <select name="sucOrig" id="">
-            <option value="1">Bolivia </option>
-            <option value="2">Taller interno</option>
+        <select name="sucuOrig" id="">
+        {{#sucursal}}
+            <option value="{{IdSuc}}">{{DireccionSuc}}, {{Provincia}}</option>
+        {{/sucursal}}
         </select>
 
         <label>Sucursal Destino</label><br>
-        <select name="sucDest" id="">
-            <option value="1">Peru</option>
-            <option value="2">Taller interno</option>
+        <select name="sucuDest" id="">
+        {{#sucursal}}
+            <option value="{{IdSuc}}">{{DireccionSuc}}, {{Provincia}}</option>
+        {{/sucursal}}
         </select>
 
         <label>Cliente</label><br>
         <select name="cliente" id="">
-            <option value="1">Taller externo </option>
-            <option value="2">Taller interno</option>
+        {{#cliente}}
+            <option value="{{Id}}">{{Apellido}}, {{Nombre}}</option>
+        {{/cliente}}
         </select>
 
         <label>Vehiculo</label><br>
         <select name="vehiculo" id="">
-            <option value="1">Taller externo </option>
-            <option value="2">Taller interno</option>
+        {{#vehiculo}}
+            <option value="{{Id}}">{{Patente}}</option>
+        {{/vehiculo}}
         </select>
 
         <label>Arrastre</label><br>
         <select name="arrastre" id="">
-            <option value="1">Taller externo </option>
-            <option value="2">Taller interno</option>
+        {{#arrastre}}
+            <option value="{{Id}}">{{Patente}}</option>
+        {{/arrastre}}
         </select>
 
         <label for="lname">Fecha Origen</label><br><br>
@@ -59,6 +62,9 @@
 
         <label for="fname">Combustible Estimado</label><br><br>
         <input type="number" id="fname" name="combEst" placeholder="Combustible.."><br><br>
+
+        <label for="fname">Otros Gastos</label><br><br>
+        <input type="number" id="fname" name="otrosG" placeholder="Gastos.."><br><br>
 
         <label for="fname">Precio</label><br><br>
         <input type="number" id="fname" name="precio" placeholder="Precio.."><br><br>
