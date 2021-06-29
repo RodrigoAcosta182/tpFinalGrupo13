@@ -2,53 +2,86 @@
 <link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
 <div class="w3-card-4"  style="width:40%;margin: auto">
     <header class="w3-container w3-teal">
-        <h3 class="w3-center">Modificar Viajardo</h3>
+        <h3 class="w3-center">Modificar Viaje</h3>
     </header>
-    {{#viaje}}
-        <form action="procesoModificarUsuario" method="get" autocomplete="off">
-            <input type="hidden" name="id"  value="{{Id}}" placeholder="{{Id}}">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre.." value="{{Nombre}}" required>
-            <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" placeholder="Tu apellido.." value="{{Apellido}}" required>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Tu email.." value="{{Email}}" required>
-            <label for="contrasenia">Contraseña</label>
-            <input type="password" id="contrasenia" name="contrasenia" placeholder="Tu contraseña..">
-            <label for="rol">Rol</label>
-            <select name="rol" id="rol">
-                <option selected  value="{{id_tipo}}">{{Descrip}}</option>
-                <option value="1">Administrador</option>
-                <option value="2">Supervisor</option>
-                <option value="3">Chofer</option>
-                <option value="5">Encargado de taller</option>
-                <option value="4">Llano</option>
-            </select>
-            <label> Licencias</label><br>
+{{#viajes}}
+        <form action="procesoModificarViaje" method="post">
+            <input type="hidden" name="viajeId" value="{{viajeId}}">
 
-            <select name="licencia" id="">
-                <option selected  value="{{Id_licencia}}">{{Descripcion_licencia}}</option>
-                <option value="1">Class 1</option>
-                <option value="2">Class 2</option>
-                <option value="3">Class 3</option>
-                <option value="4">Class 4.1</option>
-                <option value="5">Class 4.2</option>
-                <option value="6">Class 4.3</option>
-                <option value="7">Class 5.1</option>
-                <option value="8">Class 5.2</option>
-                <option value="9">Class 6.1</option>
-                <option value="10">Class 6.2</option>
-                <option value="11">Class 7</option>
-                <option value="12">Class 8</option>
-                <option value="13">Class 9</option>
+            <label>Usuario</label><br>
+            <select name="usuario" id="">
+                <option value="{{usuarioId}}">{{usuario}}</option>
             </select>
-            <br><input type="checkbox" id="active" name="active" {{#Active}}checked="checked"{{/Active}}>
-            <label for="active">Activo</label><br>
+
+            <label>Sucursal Origen</label><br>
+            <select name="sucuOrig" id="">
+                <option value="{{sucOrigenId}}">{{SucursalOrigen}}</option>
+                <option value="1">Urquiza 2856, Buenos Aires, Caseros</option>
+                <option value="2">Brandsen, Mendoza, San Rafael</option>
+            </select>
+
+            <label>Sucursal Destino</label><br>
+            <select name="sucuDest" id="">
+                <option value="{{sucDestinoId}}">{{SucursalDestino}}</option>
+                <option value="1">Urquiza 2856, Buenos Aires, Caseros</option>
+                <option value="2">Brandsen, Mendoza, San Rafael</option>
+            </select>
+
+            <label>Cliente</label><br>
+            <select name="cliente" id="">
+                <option value="{{clienteId}}">{{cliente}}</option>
+                <option value="1">Gordo Gordomedov</option>
+                <option value="2">Marcelo Hugo Tinelli</option>
+                <option value="3">Lionel Andres Messi</option>
+                <option value="4">Jean Claudio Van-Damme</option>
+            </select>
+
+            <label>Vehiculo</label><br>
+            <select name="vehiculo" id="">
+                <option value="{{vehiculoId}}">{{patenteVehiculo}}</option>
+                <option value="3">AA123CD</option>
+                <option value="4">AA150QW</option>
+                <option value="5">AD870QW</option>
+                <option value="6">AC342WW</option>
+            </select>
+
+            <label>Arrastre</label><br>
+            <select name="arrastre" id="">
+                <option value="{{arrastreId}}">{{patenteArrastre}}</option>
+                <option value="1">AA100AS</option>
+                <option value="2">AC125AD</option>
+                <option value="3">AC296AS</option>
+                <option value="4">AB318AD</option>
+                <option value="5">AB405AG</option>
+                <option value="6">AA624AS</option>
+            </select>
+
+            <label for="lname">Fecha Origen</label><br><br>
+            <input type="date" id="lname" name="fechaOrig" value="{{fechaOrigen}}"><br><br>
+
+            <label for="lname">Fecha Estimada</label><br><br>
+            <input type="date" id="lname" name="fechaEst" value="{{fechaEstimada}}"><br><br>
+
+            <label for="fname">Kilometraje Estimado</label><br><br>
+            <input type="number" id="fname" name="kmEst" placeholder="Km.." value="{{KmEstimado}}"><br><br>
+
+            <label for="fname">Combustible Estimado</label><br><br>
+            <input type="number" id="fname" name="combEst" placeholder="Combustible.." value="{{CombustibleEst}}"><br><br>
+
+            <label for="fname">Precio</label><br><br>
+            <input type="number" id="fname" name="precio" placeholder="Precio.." value="{{Precio}}"><br><br>
+
+            <label for="fname">Otros Gastos</label><br><br>
+            <input type="number" id="fname" name="otrosG" placeholder="Gastos.." value="{{OtrosGastos}}"><br><br>
+
+            <input type="checkbox" id="activo" name="finalizado" {{#Finalizado}}checked="checked"{{/Finalizado}}>
+            <label for="activo">Finalizado</label><br>
+
             <br>
-            <button class="w3-green w3-button" style="width: 100%">Guardar</button>
-            <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/usuario">Volver</a>
+            <input type="submit" value="Guardar">
+            <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/viaje">Volver</a>
         </form>
-    {{/viaje}}
+    {{/viajes}}
 </div>
 </body>
 </html>

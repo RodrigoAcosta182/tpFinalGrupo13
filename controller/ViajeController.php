@@ -68,8 +68,73 @@ class ViajeController
         }
     }
 
-    public function modificarCliente()
-    {
-        echo $this->render->renderizar("view/modificarViaje.mustache");
+
+        public function modificarViaje()
+        {
+            $data = array();
+             if (isset($_SESSION["logueado"])) {
+                $idViaje = $_POST['idViaje'];
+                $data["viajes"]= $this->viajeModel->getViajeById($idViaje);
+                $data["cliente"] = $this->viajeModel->listarClientes();
+               echo $this->render->renderizar("view/modificarViaje.mustache", $data);
+            }
+             else {
+                header("location: /tpFinalGrupo13");
+                exit();
+            }
+        }
+
+    public function procesoModificarViaje(){
+        if (isset($_SESSION["logueado"])) {
+            if (isset($_POST['usuario']) && isset($_POST['sucuOrig']) && isset($_POST['sucuDest']) &&
+                isset($_POST['cliente']) && isset($_POST['vehiculo']) && isset($_POST['arrastre']) &&
+                isset($_POST['fechaOrig']) && isset($_POST['fechaEst']) && isset($_POST['kmEst']) &&
+                isset($_POST['combEst']) && isset($_POST['precio']) && isset($_POST['otrosG'])) {
+                $idViaje =  $_POST['viajeId'];
+                $usuario = $_POST['usuario'];
+                $sucuOrig = $_POST['sucuOrig'];
+                $sucuDest = $_POST['sucuDest'];
+                $cliente = $_POST['cliente'];
+                $vehiculo = $_POST['vehiculo'];
+                $arrastre = $_POST['arrastre'];
+                $fechaOrig = $_POST['fechaOrig'];
+                $fechaEst = $_POST['fechaEst'];
+                $kmEst = $_POST['kmEst'];
+                $combEst = $_POST['combEst'];
+                $precio = $_POST['precio'];
+                $otrosG = $_POST['otrosG'];
+
+                /*
+                if(isset($_GET['finalizado']) && $_GET['finalizado'] === "on" ){
+                    $active = true;
+                }else{
+                    $active = false;
+                }*/
+
+//                echo $idViaje . ' ' . "Viaje"."<br>";
+//                echo $arrastre. ' ' . "arrastre"."<br>";
+//                echo $usuario. ' ' . "usuario"."<br>";
+//                echo $sucuOrig . ' ' . "sucorigen"."<br>";
+//                echo $sucuDest . ' ' . "sucdestino"."<br>";
+//                echo $cliente. ' ' . "cliente"."<br>";
+//                echo $vehiculo. ' ' . "vehiculo"."<br>";
+//                echo $fechaOrig. ' ' . "fechaOrig"."<br>";
+//                echo $fechaEst . ' ' . "fechaEst"."<br>";
+//                echo $kmEst. ' ' . "kmEst"."<br>";
+//                echo $combEst. ' ' . "combEst"."<br>";
+//                echo $precio . ' ' . "precio"."<br>";
+//                echo $otrosG. ' ' . "otrosG"."<br>";
+
+                $this->viajeModel->editViaje($idViaje,$usuario, $sucuOrig, $sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$precio,$otrosG);
+                $_SESSION['mensajeModificar'] = 1;
+                header("Location: /tpFinalGrupo13/Viaje");
+            } else {
+                $_SESSION['mensajeError'] = 1;
+                header("Location: /tpFinalGrupo13/Viaje");
+            }
+        } else {
+            header("location: /tpFinalGrupo13");
+            exit();
+        }
     }
 }
