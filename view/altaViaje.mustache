@@ -11,9 +11,9 @@
         <input type="hidden" name="id">
             <label>Usuario</label><br>
             <select name="usuario" id="">
-        {{#viaje}}
+        {{#chofer}}
                 <option value="{{Id}}">{{Nombre}} {{Apellido}}</option>
-        {{/viaje}}
+        {{/chofer}}
             </select>
 
         <label>Sucursal Origen</label><br>
@@ -51,23 +51,23 @@
         {{/arrastre}}
         </select>
 
-        <label for="lname">Fecha Origen</label><br><br>
-        <input type="date" id="lname" name="fechaOrig"><br><br>
+        <label for="ldateorigen">Fecha Origen</label><br><br>
+        <input type="date" id="ldateorigen" name="fechaOrig"><br><br>
 
-        <label for="lname">Fecha Estimada</label><br><br>
-        <input type="date" id="lname" name="fechaEst"><br><br>
+        <label for="ldateestimada">Fecha Estimada</label><br><br>
+        <input type="date" id="ldateestimada" name="fechaEst"><br><br>
 
-        <label for="fname">Kilometraje Estimado</label><br><br>
-        <input type="number" id="fname" name="kmEst" placeholder="Km.."><br><br>
+        <label for="fkm">Kilometraje Estimado</label><br><br>
+        <input type="number" id="fkm" name="kmEst" placeholder="Km.."><br><br>
 
-        <label for="fname">Combustible Estimado</label><br><br>
-        <input type="number" id="fname" name="combEst" placeholder="Combustible.."><br><br>
+        <label for="fkm">Combustible Estimado</label><br><br>
+        <input type="number" id="fkm" name="combEst" placeholder="Combustible.."><br><br>
 
-        <label for="fname">Otros Gastos</label><br><br>
-        <input type="number" id="fname" name="otrosG" placeholder="Gastos.."><br><br>
+        <label for="fotros">Otros Gastos</label><br><br>
+        <input type="number" id="fotros" name="otrosG" placeholder="Gastos.."><br><br>
 
-        <label for="fname">Precio</label><br><br>
-        <input type="number" id="fname" name="precio" placeholder="Precio.."><br><br>
+        <label for="fprecio">Precio</label><br><br>
+        <input type="number" id="fprecio" name="precio" placeholder="Precio.."><br><br>
 
         <br>
         <input type="submit" value="Guardar">
