@@ -13,22 +13,15 @@
             <div class="w3-section w3-bottombar w3-padding-16">
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Viaje.." name="busqueda">
             </div>
-                {{#_SESSION.esAdministrador}}
-                    <form action="viaje/altaViaje">
-                        <button name="viaje" class="w3-button w3-green">Agregar Viaje</button>
-                    </form>
-                {{/_SESSION.esAdministrador}}
-
-                {{#_SESSION.esSupervisor}}
-                    <form action="viaje/altaViaje">
-                        <button name="viaje" class="w3-button w3-green">Agregar Viaje</button>
-                    </form>
-                {{/_SESSION.esSupervisor}}
-                {{#_SESSION.esChofer}}
-                    <form action="viaje/altaViaje">
-                        <button name="viaje" class="w3-button w3-green">Agregar Viaje</button>
-                    </form>
-                {{/_SESSION.esChofer}}
+            {{#_SESSION.esAdministrador}}
+                <a href="/tpfinalgrupo13/viaje/altaViaje" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Viaje</a>
+            {{/_SESSION.esAdministrador}}
+            {{#_SESSION.esSupervisor}}
+                <a href="/tpfinalgrupo13/viaje/altaViaje" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Viaje</a>
+            {{/_SESSION.esSupervisor}}
+            {{#_SESSION.esChofer}}
+                <a href="/tpfinalgrupo13/viaje/altaViaje" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Viaje</a>
+            {{/_SESSION.esChofer}}
             </form>
             <br>
         </div>
@@ -73,20 +66,23 @@
                     <td>
                         <div>
                             {{#_SESSION.esAdministrador}}
-                            <form action="" method="post">
+                            <form action="" method="post" style="margin-bottom: 5px">
                                 <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
                             </form>
-                            <form action="viaje/modificarViaje" method="post">
+                            <form action="viaje/modificarViaje" method="post" style="margin-bottom: 5px">
                                 <button class='w3-button w3-blue' style="width: 100%;" name="idViaje" value="{{viajeId}}">Modificar</button>
+                            </form>
+                            <form action="/tpFinalGrupo13/proforma" method="post" style="margin-bottom: 5px">
+                                <button class='w3-button w3-green' style="width: 100%;" name="proforma" value="{{Id}}">Ver Proforma</button>
                             </form>
                             {{/_SESSION.esAdministrador}}
                             {{#_SESSION.esSupervisor}}
-                                <form action="" method="post">
+                                <form action="" method="post" style="margin-bottom: 5px">
                                     <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
                                 </form>
                             {{/_SESSION.esSupervisor}}
                             {{#_SESSION.esChofer}}
-                                <form action="" method="post">
+                                <form action="" method="post" style="margin-bottom: 5px">
                                     <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
                                 </form>
                             {{/_SESSION.esChofer}}
