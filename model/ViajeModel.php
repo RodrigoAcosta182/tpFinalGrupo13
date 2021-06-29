@@ -54,7 +54,7 @@ class ViajeModel{
     }
 
     public function editViaje($idViaje, $usuario, $sucuOrig, $sucuDest, $cliente, $vehiculo, $arrastre,
-                              $fechaOrig, $fechaEst, $kmEst, $combEst, $precio, $otrosG)
+                              $fechaOrig, $fechaEst, $kmEst, $combEst, $precio, $otrosG,$activo)
     {
         return $this->database->ejecutar("UPDATE viajes SET
                                                     pUsuario = '$usuario',
@@ -68,7 +68,8 @@ class ViajeModel{
                                                     FechaEstimada = '$fechaEst', 
                                                     KmEstimado = '$kmEst',
                                                     CombustibleEst = '$combEst',
-                                                    OtrosGastos = '$otrosG'
+                                                    OtrosGastos = '$otrosG',
+                                                    Finalizado = '$activo'
                                                     WHERE Id = '$idViaje'");
     }
 

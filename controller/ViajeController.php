@@ -104,13 +104,11 @@ class ViajeController
                 $precio = $_POST['precio'];
                 $otrosG = $_POST['otrosG'];
 
-                /*
-                if(isset($_GET['finalizado']) && $_GET['finalizado'] === "on" ){
-                    $active = true;
-                }else{
-                    $active = false;
-                }*/
-
+                if (isset($_POST['activo']) && $_POST['activo'] === "on") {
+                    $activo = true;
+                } else {
+                    $activo = false;
+                }
 //                echo $idViaje . ' ' . "Viaje"."<br>";
 //                echo $arrastre. ' ' . "arrastre"."<br>";
 //                echo $usuario. ' ' . "usuario"."<br>";
@@ -124,8 +122,9 @@ class ViajeController
 //                echo $combEst. ' ' . "combEst"."<br>";
 //                echo $precio . ' ' . "precio"."<br>";
 //                echo $otrosG. ' ' . "otrosG"."<br>";
+//                echo $activo. ' ' . "activo"."<br>";
 
-                $this->viajeModel->editViaje($idViaje,$usuario, $sucuOrig, $sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$precio,$otrosG);
+                $this->viajeModel->editViaje($idViaje,$usuario, $sucuOrig, $sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$precio,$otrosG,$activo);
                 $_SESSION['mensajeModificar'] = 1;
                 header("Location: /tpFinalGrupo13/Viaje");
             } else {
