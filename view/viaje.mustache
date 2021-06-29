@@ -37,6 +37,7 @@
         <table class="w3-table">
             <tr class="w3-black">
                 <th>Codigo</th>
+                <th>Cliente</th>
                 <th>Origen</th>
                 <th>Destino</th>
                 <th>Fecha Salida</th>
@@ -55,6 +56,7 @@
             {{#viaje}}
                 <tr class="w3-border-bottom w3-light-grey">
                     <td>{{viajeId}}</td>
+                    <td>{{cliente}}</td>
                     <td>{{SucursalOrigen}}</td>
                     <td>{{SucursalDestino}}</td>
                     <td>{{fechaOrigen}}</td>
@@ -62,10 +64,10 @@
                     <td>{{usuario}}</td>
                     <td>{{patenteVehiculo}}</td>
                     <td>{{patenteArrastre}}</td>
-                    <td>{{KmEstimado}}</td>
-                    <td>{{CombustibleEst}}</td>
-                    <td>{{Precio}}</td>
-                    <td>{{OtrosGastos}}</td>
+                    <td>{{KmEstimado}}km</td>
+                    <td>{{CombustibleEst}} Lt</td>
+                    <td>${{Precio}}</td>
+                    <td>${{OtrosGastos}}</td>
                     <td>{{Finalizado}}</td>
                     <td>0</td>
                     <td>
