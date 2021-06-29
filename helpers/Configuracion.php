@@ -168,10 +168,10 @@ class Configuracion
     public static function getViajeController()
     {
         $render = self::getRender();
-        $ViajeModel = self::getViajeModel();
+        $viajeModel = self::getViajeModel();
 
         include_once("controller/ViajeController.php");
-        return new ViajeController($render, $ViajeModel);
+        return new ViajeController($render, $viajeModel);
     }
 
     public static function getPosicionModel(){
