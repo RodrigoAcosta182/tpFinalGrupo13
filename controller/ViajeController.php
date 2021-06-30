@@ -75,7 +75,6 @@ class ViajeController
              if (isset($_SESSION["logueado"])) {
                 $idViaje = $_POST['idViaje'];
                 $data["viajes"]= $this->viajeModel->getViajeById($idViaje);
-                $data["cliente"] = $this->viajeModel->listarClientes();
                echo $this->render->renderizar("view/modificarViaje.mustache", $data);
             }
              else {
