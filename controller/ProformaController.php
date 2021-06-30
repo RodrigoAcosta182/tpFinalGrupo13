@@ -129,8 +129,6 @@ class ProformaController
         $pdf->Cell(100, 8, "$precioFinal", 1, 1, 'C', 0);
 
 
-
-
-        $pdf->Output("", "Proforma  - ID Viaje $idProforma");
+        $pdf->Output("D", "Proforma  - ID Viaje $idProforma.pdf");
     }
 }
