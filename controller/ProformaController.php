@@ -40,11 +40,13 @@ class ProformaController
 
     public function generarProforma(){
         $data = array();
-        if (isset($_SESSION["logueado"])) {
+        if (isset($_SESSION["logueado"]))
+        {
             if (isset($_POST['usuario']) && isset($_POST['sucuOrig']) && isset($_POST['sucuDest']) &&
                 isset($_POST['cliente']) && isset($_POST['vehiculo']) && isset($_POST['arrastre']) &&
                 isset($_POST['fechaOrig']) && isset($_POST['fechaEst']) && isset($_POST['kmEst']) &&
-                isset($_POST['combEst']) && isset($_POST['precio']) && isset($_POST['otrosG'])){
+                isset($_POST['combEst']) && isset($_POST['precio']) && isset($_POST['otrosG']))
+            {
                 $idProforma =  $_POST['viajeId'];
                 $usuario = $_POST['usuario'];
                 $sucuOrig = $_POST['sucuOrig'];
@@ -58,11 +60,11 @@ class ProformaController
                 $combEst = $_POST['combEst'];
                 $precio = $_POST['precio'];
                 $otrosG = $_POST['otrosG'];
+            } else {
+            $_SESSION['mensajeError'] = 1;
+            header("Location: /tpFinalGrupo13/Viaje");
             }
-
-
-        }
-        else {
+        } else {
             header("location: /tpFinalGrupo13");
             exit();
         }
