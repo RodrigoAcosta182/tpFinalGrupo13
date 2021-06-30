@@ -1,0 +1,46 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
+
+
+    <div class="w3-card-4"  style="width:40%;margin: auto">
+        <header class="w3-container w3-teal">
+            <h1 class="w3-center">Nueva Proforma</h1>
+        </header>
+            <form action="proforma/generarProforma" method="post">
+                <label> ID Viaje</label><br>
+                <select name="viaje">
+                    <option value="">Viaje</option>
+                </select>
+
+                <label>Tipo de Carga</label><br>
+                <select name="carga">
+                    <option value="">Carga</option>
+                </select>
+                <label for="lviaticos">Viaticos</label>
+                <input type="text" id="lviaticos" name="viaticos" placeholder="Ingresar gasto estimado" required>
+                <br>
+                <label for="lpeaje">Peajes y Pesajes</label>
+                <input type="text" id="lpeaje" name="peaje" placeholder="Ingresar gasto estimado" required>
+                <br>
+                <label for="lextra">Extras</label>
+                <input type="text" id="lextra" name="extra" placeholder="Ingresar gasto estimado" required>
+                <br>
+                <label for="lhazard">Hazard</label>
+                <input type="text" id="lhazard" name="hazard" placeholder="Ingresar gasto estimado" required>
+                <br>
+                <label for="lreefer">Reefer </label>
+                <input type="text" id="lreefer" name="reefer" placeholder="Ingresar gasto estimado" required>
+                <br>
+                <label for="lfee">Fee </label>
+                <input type="text" id="lfee" name="fee" placeholder="Ingresar gasto estimado" required>
+
+                <button class="w3-button w3-green w3-margin-top" style="width: 100%">Generar Proforma</button>
+                <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/home">Volver</a>
+            </form>
+    </div>
+
+
+</body>
+</html>

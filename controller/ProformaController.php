@@ -16,8 +16,9 @@ class ProformaController
         $data = array();
 
         if (isset($_SESSION["logueado"])) {
-
-
+            $idProforma = $_POST['idProforma'];
+            $data["proforma"]= $this->proformaModel->getProformaById($idProforma);
+            echo $this->render->renderizar("view/proforma.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
@@ -27,11 +28,7 @@ class ProformaController
     public function generarProforma(){
         require('third-party/fpdf/fpdf.php');
         $idViaje = $_POST['idProforma'];
-        $arrayProforma [] = $this->proformaModel->getProformaById($idViaje);
 
-        $jsonProforma = json_encode($arrayProforma);
-
-        json_decode($jsonProforma);
 
 //        $newClient = array(
 //            $idViajardo =>"email"
