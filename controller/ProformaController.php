@@ -61,6 +61,8 @@ class ProformaController
                 $combEst = $_POST['combEst'];
                 $precio = $_POST['precio'];
                 $otrosG = $_POST['otrosG'];
+
+                $precioFinal = $precio + $otrosG;
             } else {
                 $_SESSION['mensajeError'] = 1;
                 header("Location: /tpFinalGrupo13/Viaje");
@@ -111,12 +113,21 @@ class ProformaController
         $pdf->Cell(50, 8, "Fecha Estimada Llegada", 1);
         $pdf->Cell(100, 8, $fechaEst ,1,1,'C');
 
+        $pdf->Cell(50, 8, "Kilometros Estimados", 1);
+        $pdf->Cell(100, 8, $kmEst ,1,1,'C');
 
+        $pdf->Cell(50, 8, "Combustibles Estimados", 1);
+        $pdf->Cell(100, 8, $combEst ,1,1,'C');
 
 
         $pdf->Cell(50, 8, "Gastos", 0, 1);
+        $pdf->Cell(50, 8, "Precio de viaje", 1);
+        $pdf->Cell(100, 8, $precio ,1,1,'C');
         $pdf->Cell(50, 8, "Otros Gastos", 1, 0);
         $pdf->Cell(100, 8, "$otrosG", 1, 1, 'C', 0);
+        $pdf->Cell(50, 8, "Precio Final", 1, 0);
+        $pdf->Cell(100, 8, "$precioFinal", 1, 1, 'C', 0);
+
 
 
 
