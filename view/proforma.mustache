@@ -1,0 +1,69 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
+
+
+<div class="w3-card-4"  style="width:40%;margin: auto">
+    <header class="w3-container w3-teal">
+        <h1 class="w3-center">Nueva Proforma</h1>
+    </header>
+{{#proforma}}
+    <form action="generarProforma" method="post">
+        <input type="hidden" name="viajeId" value="{{viajeId}}">
+
+        <label>Usuario</label><br>
+        <select name="usuario" id="">
+            <option value="{{usuario}}">{{usuario}}</option>
+        </select>
+
+        <label>Sucursal Origen</label><br>
+        <select name="sucuOrig" id="">
+            <option value="{{SucursalOrigen}}">{{SucursalOrigen}}</option>
+        </select>
+
+        <label>Sucursal Destino</label><br>
+        <select name="sucuDest" id="">
+            <option value="{{SucursalDestino}}">{{SucursalDestino}}</option>
+        </select>
+
+        <label>Cliente</label><br>
+        <select name="cliente" id="">
+            <option value="{{cliente}}">{{cliente}}</option>
+        </select>
+
+        <label>Vehiculo</label><br>
+        <select name="vehiculo" id="">
+            <option value="{{patenteVehiculo}}">{{patenteVehiculo}}</option>
+        </select>
+
+        <label>Arrastre</label><br>
+        <select name="arrastre" id="">
+            <option value="{{patenteArrastre}}">{{patenteArrastre}}</option>
+        </select>
+
+        <label for="lname">Fecha Origen</label><br><br>
+        <input type="date" id="lname" name="fechaOrig" value="{{fechaOrigen}}"><br><br>
+
+        <label for="lname">Fecha Estimada</label><br><br>
+        <input type="date" id="lname" name="fechaEst" value="{{fechaEstimada}}"><br><br>
+
+        <label for="fname">Kilometraje Estimado</label><br><br>
+        <input type="number" id="fname" name="kmEst" placeholder="Km.." value="{{KmEstimado}}"><br><br>
+
+        <label for="fname">Combustible Estimado</label><br><br>
+        <input type="number" id="fname" name="combEst" placeholder="Combustible.." value="{{CombustibleEst}}"><br><br>
+
+        <label for="fname">Precio</label><br><br>
+        <input type="number" id="fname" name="precio" placeholder="Precio.." value="{{Precio}}"><br><br>
+
+        <label for="fname">Otros Gastos</label><br><br>
+        <input type="number" id="fname" name="otrosG" placeholder="Gastos.." value="{{OtrosGastos}}"><br><br>
+
+        <button class="w3-button w3-green w3-margin-top" style="width: 100%">Generar Proforma</button>
+        <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/home">Volver</a>
+    </form>
+</div>
+{{/proforma}}
+
+</body>
+</html>
