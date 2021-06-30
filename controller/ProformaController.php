@@ -78,13 +78,16 @@ class ProformaController
         $pdf->AddPage();
         $pdf->AliasNbPages();
 
+        $logo = 'public/images/logo.jpeg';
 
-
-        //$pdf->Image($logo,161, 0, 50, 0, "png");
+        $pdf->Image($logo,75, 0, 50, 0, "jpg");
 
         $pdf->SetFont('Arial', '', 12);
+        $pdf->Cell(50, 8, "", 0, 1);
+        $pdf->Cell(50, 8, "", 0, 1);
+        $pdf->Cell(50, 8, "", 0, 1);
+        $pdf->Cell(50, 8, "", 0, 1);
         $pdf->Cell(50, 8, "Proforma Garlopa Company", 0, 1 );
-
         $pdf->Cell(150, 8, utf8_decode("N° de Viaje: $idProforma"), 1, 1, 'C', 0);
         $pdf->Cell(50, 8, "Cliente", 1);
         $pdf->Cell(100, 8, $cliente ,1,1,'C');
