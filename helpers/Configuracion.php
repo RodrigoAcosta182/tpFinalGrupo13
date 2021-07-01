@@ -192,6 +192,12 @@ class Configuracion
         return new PosicionController($render, $PosicionModel);
     }
 
+    public static function getQRModel(){
+        $database = self::getDatabase();
+        include_once ("model/QRModel.php");
+        return new QRModel($database);
+    }
+
     public static function getProformaModel(){
         $database = self::getDatabase();
         include_once ("model/ProformaModel.php");
@@ -202,8 +208,9 @@ class Configuracion
     {
         $render = self::getRender();
         $proformaModel = self::getProformaModel();
+        $qrModel = self::getQRModel();
         include_once("controller/ProformaController.php");
-        return new ProformaController($render, $proformaModel);
+        return new ProformaController($render, $proformaModel,$qrModel);
     }
 
 
