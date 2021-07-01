@@ -27,6 +27,20 @@
         </div>
     </div>
     <div style="overflow: auto;">
+        {{#mensajeModificar}}
+            <div class="w3-container w3-green w3-display-topmiddle w3-round" style="margin-top: 3em; width: 33%">
+                <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <p class="w3-text w3-center">{{mensajeModificar}}</p>
+            </div>
+        {{/mensajeModificar}}
+        {{#mensajeFinalizar}}
+            <div class="w3-container w3-green w3-display-topmiddle w3-round" style="margin-top: 3em; width: 33%">
+                <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <p class="w3-text w3-center">{{mensajeFinalizar}}</p>
+            </div>
+        {{/mensajeFinalizar}}
         <table class="w3-table">
             <tr class="w3-black">
                 <th>Codigo</th>
@@ -66,8 +80,8 @@
                     <td>
                         <div>
                             {{#_SESSION.esAdministrador}}
-                            <form action="" method="post" style="margin-bottom: 5px">
-                                <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
+                            <form action="viaje/finalizarViaje" method="post" style="margin-bottom: 5px">
+                                <button class='w3-button w3-red' style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Finalizar Viaje</button>
                             </form>
                             <form action="viaje/modificarViaje" method="post" style="margin-bottom: 5px">
                                 <button class='w3-button w3-blue' style="width: 100%;" name="idViaje" value="{{viajeId}}">Modificar</button>
@@ -79,13 +93,13 @@
                             </form>
                             {{/_SESSION.esAdministrador}}
                             {{#_SESSION.esSupervisor}}
-                                <form action="" method="post" style="margin-bottom: 5px">
-                                    <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
+                                <form action="viaje/finalizarViaje" method="post" style="margin-bottom: 5px">
+                                    <button class='w3-button w3-red' style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Finalizar Viaje</button>
                                 </form>
                             {{/_SESSION.esSupervisor}}
                             {{#_SESSION.esChofer}}
-                                <form action="" method="post" style="margin-bottom: 5px">
-                                    <button class='w3-button w3-red' style="width: 100%;" name="modificar" value="{{Id}}">Finalizar Viaje</button>
+                                <form action="viaje/finalizarViaje" method="post" style="margin-bottom: 5px">
+                                    <button class='w3-button w3-red' style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Finalizar Viaje</button>
                                 </form>
                             {{/_SESSION.esChofer}}
                         </div>
