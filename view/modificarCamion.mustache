@@ -41,11 +41,11 @@
                     <option value="2">Tanque</option>
                     <option value="2">Granel</option>
                 </select>
-                <br><br>
+                <br>
                         <label for="lkm">Kilometraje</label><br>
-                        <input type="number" id="lkm" name="kilometraje" placeholder="Kilometraje del vehiculo.." value="{{Km}}"><br><br>
+                        <input class="numberInput" type="number" id="lkm" name="kilometraje" placeholder="Kilometraje del vehiculo.." value="{{Km}}"><br>
                         <label for="lfabri">Año de fabricacion</label> <br>
-                        <input type="date" id="lfabri" name="fabricacion" placeholder="Año de fabricacion.." value="{{aFab}}">
+                        <input class="dateInput" type="date" id="lfabri" name="fabricacion" placeholder="Año de fabricacion.." value="{{aFab}}">
                         <br><br>
                         <input type="checkbox" id="activo" name="activo" {{#Activo}}checked="checked"{{/Activo}}>
                         <label for="activo">Activo</label>
