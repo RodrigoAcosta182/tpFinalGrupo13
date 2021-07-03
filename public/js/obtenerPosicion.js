@@ -30,7 +30,7 @@
         //alert("Lat=" + lat + "; Lon=" + lng);
         $.ajax({
         data:  posicion,
-        url:   'Posicion/obtenerPosicion',
+        url:   'obtenerPosicion',
         type:  'post',
         dataType: "json",
         beforeSend: function () {
