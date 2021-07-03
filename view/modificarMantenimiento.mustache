@@ -17,21 +17,21 @@
                     <option value="2">Taller interno</option>
                 </select>
 
-                <label for="fname" >Importe*</label><br>
-                <input type="number" id="fname" name="importe" placeholder="Importe.." value="{{Importe}}" required><br><br>
+                <label for="importe" >Importe*</label><br>
+                <input class="numberInput" type="number" id="importe" name="importe" placeholder="Importe.." value="{{Importe}}" required><br><br>
 
-                <label for="lname">Descripcion del service*</label><br>
-                <textarea name="descripcion" id="" cols="25" rows="1" placeholder="Ingrese detalle del service" required>{{Descripcion}}</textarea><br><br>
+                <label for="descripcion">Descripcion del service*</label><br>
+                <textarea class="textAreaInput" style="height: 120px" name="descripcion" id="descripcion" cols="25" rows="1" placeholder="Ingrese detalle del service" required>{{Descripcion}}</textarea><br><br>
 
 
-                <label for="lname">Fecha desde*</label><br>
-                <input type="date" id="lname" name="fdesde" value="{{FechaDesde}}" required><br><br>
+                <label for="fdesde">Fecha desde*</label><br>
+                <input class="dateInput" type="date" id="fdesde" name="fdesde" value="{{FechaDesde}}" required><br><br>
 
-                <label for="lname">Fecha hasta*</label><br>
-                <input type="date" id="lname" name="fhasta" value="{{FechaHasta}}" required><br><br>
+                <label for="fhasta">Fecha hasta*</label><br>
+                <input class="dateInput" type="date" id="fhasta" name="fhasta" value="{{FechaHasta}}" required><br><br>
 
                 <label> Vehiculo*</label><br>
-                <select name="vehiculo" id=""required>
+                <select name="vehiculo" required>
                     <option value="{{Id_vehiculo}}">{{Patente}}</option>
                     <option value="3">AA123CD</option>
                     <option value="4">AA150QW</option>
