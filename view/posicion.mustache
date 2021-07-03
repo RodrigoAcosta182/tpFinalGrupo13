@@ -13,16 +13,6 @@
             <div class="w3-section w3-bottombar w3-padding-16">
                 <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Viaje.." name="busqueda">
             </div>
-            {{#_SESSION.esAdministrador}}
-                <a href="/tpfinalgrupo13/viaje/altaViaje" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Viaje</a>
-            {{/_SESSION.esAdministrador}}
-            {{#_SESSION.esSupervisor}}
-                <a href="/tpfinalgrupo13/viaje/altaViaje" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Viaje</a>
-            {{/_SESSION.esSupervisor}}
-            {{#_SESSION.esChofer}}
-                <a href="/tpfinalgrupo13/viaje/altaViaje" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Viaje</a>
-            {{/_SESSION.esChofer}}
-            </form>
             <br>
         </div>
     </div>
