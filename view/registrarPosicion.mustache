@@ -12,10 +12,12 @@
     <form action="procesoRegistrarPosicion" method="post">
         <label for="idViaje">ID Viaje</label><br>
         <input type="text" name="idViaje" placeholder="ID" value="{{viajeId}}" readonly>
-        <label for="chofer">Chofer</label><br>
-        <input type="text" name="chofer"  placeholder="Chofer" value="{{usuarioId}}" readonly>
+        <label for="nombreChofer">Chofer</label><br>
+        <input type="text" name="nombreChofer"  placeholder="nombreChofer" value="{{usuario}}" readonly>
+        <input type="hidden" name="chofer"  placeholder="Chofer" value="{{usuarioId}}" readonly>
         <label for="patente">Vehiculo Patente</label><br>
         <input type="text" name="patenteVehiculo"  placeholder="Pantente" value="{{patenteVehiculo}}" readonly>
+        <input type="hidden" name="vehiculoId"  placeholder="vehiculoId" value="{{vehiculoId}}" readonly>
         <label for="fechaPosicionHoy">Fecha</label><br>
         <input class="dateInput" type="date" id="fechaPosicionHoy" name="fechaPosicionHoy" readonly><br>
         <label for="horaPosicionHoy">Hora</label><br>
