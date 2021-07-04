@@ -9,6 +9,7 @@ class ViajeController
     {
         $this->render = $render;
         $this->viajeModel = $viajeModel;
+
     }
 
     public function execute()
@@ -19,8 +20,20 @@ class ViajeController
             $data["mensajeModificar"] = "El viaje fue editado exitosamente";
             unset($_SESSION["mensajeModificar"]);
         }
+
+        if (isset($_SESSION["mensajeFinalizar"]) && $_SESSION["mensajeFinalizar"] == 1) {
+            $data["mensajeFinalizar"] = "El viaje fue finalizado exitosamente";
+            unset($_SESSION["mensajeFinalizar"]);
+        }
+
+
         if (isset($_SESSION["logueado"])) {
-        $data["viaje"] = $this->viajeModel->listarViajes();
+            if ($_SESSION["esChofer"] == 1){
+                $idChofer =  $_SESSION["id"];
+                $data["viaje"] = $this->viajeModel->listarViajesByChofer($idChofer);
+            }else{
+                $data["viaje"] = $this->viajeModel->listarViajes();
+            }
         echo $this->render->renderizar("view/viaje.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");
@@ -108,20 +121,6 @@ class ViajeController
                 } else {
                     $activo = false;
                 }
-//                echo $idViaje . ' ' . "Viaje"."<br>";
-//                echo $arrastre. ' ' . "arrastre"."<br>";
-//                echo $usuario. ' ' . "usuario"."<br>";
-//                echo $sucuOrig . ' ' . "sucorigen"."<br>";
-//                echo $sucuDest . ' ' . "sucdestino"."<br>";
-//                echo $cliente. ' ' . "cliente"."<br>";
-//                echo $vehiculo. ' ' . "vehiculo"."<br>";
-//                echo $fechaOrig. ' ' . "fechaOrig"."<br>";
-//                echo $fechaEst . ' ' . "fechaEst"."<br>";
-//                echo $kmEst. ' ' . "kmEst"."<br>";
-//                echo $combEst. ' ' . "combEst"."<br>";
-//                echo $precio . ' ' . "precio"."<br>";
-//                echo $otrosG. ' ' . "otrosG"."<br>";
-//                echo $activo. ' ' . "activo"."<br>";
 
                 $this->viajeModel->editViaje($idViaje,$usuario, $sucuOrig, $sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$precio,$otrosG,$activo);
                 $_SESSION['mensajeModificar'] = 1;
@@ -135,4 +134,13 @@ class ViajeController
             exit();
         }
     }
+
+    public function finalizarViaje(){
+        $idViaje = $_POST['finalizarViaje'];
+        $this->viajeModel->finalizarViaje($idViaje);
+        $_SESSION['mensajeFinalizar'] = 1;
+        header("Location: /tpFinalGrupo13/Viaje");
+    }
+
+
 }

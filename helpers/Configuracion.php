@@ -170,6 +170,7 @@ class Configuracion
         $render = self::getRender();
         $viajeModel = self::getViajeModel();
 
+
         include_once("controller/ViajeController.php");
         return new ViajeController($render, $viajeModel);
     }
@@ -187,9 +188,16 @@ class Configuracion
     {
         $render = self::getRender();
         $PosicionModel = self::getPosicionModel();
+        $viajeModel = self::getViajeModel();
 
         include_once("controller/PosicionController.php");
-        return new PosicionController($render, $PosicionModel);
+        return new PosicionController($render, $PosicionModel,$viajeModel);
+    }
+
+    public static function getQRModel(){
+        $database = self::getDatabase();
+        include_once ("model/QRModel.php");
+        return new QRModel($database);
     }
 
     public static function getProformaModel(){
@@ -202,8 +210,10 @@ class Configuracion
     {
         $render = self::getRender();
         $proformaModel = self::getProformaModel();
+        $qrModel = self::getQRModel();
+        $posicionModel = self::getPosicionModel();
         include_once("controller/ProformaController.php");
-        return new ProformaController($render, $proformaModel);
+        return new ProformaController($render, $proformaModel,$qrModel,$posicionModel);
     }
 
 

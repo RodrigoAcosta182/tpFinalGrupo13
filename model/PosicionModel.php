@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection ALL */
 
 class PosicionModel{
 
@@ -9,11 +9,37 @@ class PosicionModel{
         $this->database = $database;
     }
 
-    public function listarPosicion(){
-
-        return $this->database->ejecutar("select ubicaciondiaria.codigo as IdPos, vehiculo.Patente as Patente, vehiculo.NroChasis as Chasis, ubicaciondiaria.Ubicacion as Ubic
-                                              from ubicaciondiaria
-                                              inner join vehiculo on ubicaciondiaria.pEmpleado = vehiculo.id");
+    public function guardarPosicion($idViaje, $chofer, $fechaHoy, $hora, $latitud, $longitud, $kmReales, $combustibleReal, $gastosGenerales,$vehiculoId)
+    {
+        return $this->database->ejecutar("INSERT INTO ubicaciondiaria (
+                             pViaje,
+                             pUsuario ,
+                             Fecha,
+                             Hora ,
+                             Latitud ,
+                             Longitud ,
+                             kmReales ,
+                             combustibleReal ,
+                             gastosGenerales ,
+                             pVehiculo)
+                    VALUES ('$idViaje',
+                            '$chofer',
+                            '$fechaHoy',
+                            '$hora' ,
+                            '$latitud',
+                            '$longitud',
+                            '$kmReales',
+                            '$combustibleReal',
+                            '$gastosGenerales',
+                            '$vehiculoId')");
     }
 
+    public function sumarDatosReales($idViaje)
+    {
+        return $this->database->consulta("SELECT SUM(kmReales) AS kmReales, 
+                                                     SUM(gastosGenerales) AS gastosGenerales,
+                                                     SUM(combustibleReal) AS combustibleReal
+                                                    FROM ubicaciondiaria 
+                                                    WHERE pViaje = '$idViaje'");
+    }
 }

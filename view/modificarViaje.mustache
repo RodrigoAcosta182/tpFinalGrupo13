@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ class="dateInput" <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
 <div class="w3-card-4"  style="width:40%;margin: auto">
     <header class="w3-container w3-teal">
@@ -56,23 +56,23 @@
                 <option value="6">AA624AS</option>
             </select>
 
-            <label for="lname">Fecha Origen</label><br><br>
-            <input type="date" id="lname" name="fechaOrig" value="{{fechaOrigen}}"><br><br>
+            <label for="fechaOrig">Fecha Origen</label><br>
+            <input class="dateInput" type="date" id="fechaOrig" name="fechaOrig" value="{{fechaOrigen}}"><br>
 
-            <label for="lname">Fecha Estimada</label><br><br>
-            <input type="date" id="lname" name="fechaEst" value="{{fechaEstimada}}"><br><br>
+            <label for="fechaEst">Fecha Estimada</label><br>
+            <input class="dateInput" type="date" id="fechaEst" name="fechaEst" value="{{fechaEstimada}}"><br>
 
-            <label for="fname">Kilometraje Estimado</label><br><br>
-            <input type="number" id="fname" name="kmEst" placeholder="Km.." value="{{KmEstimado}}"><br><br>
+            <label for="kmEst">Kilometraje Estimado</label><br>
+            <input class="numberInput" type="number" id="kmEst" name="kmEst" placeholder="Km.." value="{{KmEstimado}}"><br>
 
-            <label for="fname">Combustible Estimado</label><br><br>
-            <input type="number" id="fname" name="combEst" placeholder="Combustible.." value="{{CombustibleEst}}"><br><br>
+            <label for="combEst">Combustible Estimado</label><br>
+            <input class="numberInput" type="number" id="combEst" name="combEst" placeholder="Combustible.." value="{{CombustibleEst}}"><br>
 
-            <label for="fname">Precio</label><br><br>
-            <input type="number" id="fname" name="precio" placeholder="Precio.." value="{{Precio}}"><br><br>
+            <label for="precio">Precio</label><br>
+            <input class="numberInput" type="number" id="precio" name="precio" placeholder="Precio.." value="{{Precio}}"><br>
 
-            <label for="fname">Otros Gastos</label><br><br>
-            <input type="number" id="fname" name="otrosG" placeholder="Gastos.." value="{{OtrosGastos}}"><br><br>
+            <label for="otrosG">Otros Gastos</label><br>
+            <input class="numberInput" type="number" id="otrosG" name="otrosG" placeholder="Gastos.." value="{{OtrosGastos}}"><br>
 
             <input type="checkbox" id="activo" name="activo" {{#Finalizado}}checked="checked"{{/Finalizado}}>
             <label for="activo">Finalizado</label>

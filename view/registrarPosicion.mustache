@@ -1,0 +1,51 @@
+{{> header}}
+<link rel="stylesheet" href="/tpFinalGrupo13/public/css/posicionFormStyle.css">
+<script type="text/javascript" src="/tpFinalGrupo13/public/js/jquery-3.5.1.min.js"></script>
+<script src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyAiq3xISXSZYgkd9GDAOdajy4NK2d3L7dY"></script>
+<script type="text/javascript" src="/tpFinalGrupo13/public/js/obtenerPosicion.js"></script>
+<script type="text/javascript" src="/tpFinalGrupo13/public/js/obtenerFecha.js"></script>
+<div class="w3-card-4"  style="width:40%;margin: 100px auto">
+    <header class="w3-container w3-teal">
+        <h3 class="w3-center">Registrar Posición</h3>
+    </header>
+    {{#viaje}}
+    <form action="procesoRegistrarPosicion" method="post">
+        <label for="idViaje">ID Viaje</label><br>
+        <input type="text" name="idViaje" placeholder="ID" value="{{viajeId}}" readonly>
+        <label for="nombreChofer">Chofer</label><br>
+        <input type="text" name="nombreChofer"  placeholder="nombreChofer" value="{{usuario}}" readonly>
+        <input type="hidden" name="chofer"  placeholder="Chofer" value="{{usuarioId}}" readonly>
+        <label for="patente">Vehiculo Patente</label><br>
+        <input type="text" name="patenteVehiculo"  placeholder="Pantente" value="{{patenteVehiculo}}" readonly>
+        <input type="hidden" name="vehiculoId"  placeholder="vehiculoId" value="{{vehiculoId}}" readonly>
+        <label for="fechaPosicionHoy">Fecha</label><br>
+        <input class="dateInput" type="date" id="fechaPosicionHoy" name="fechaPosicionHoy" readonly><br>
+        <label for="horaPosicionHoy">Hora</label><br>
+        <input class="dateInput" type="text" id="horaPosicionHoy" name="horaPosicionHoy" readonly><br>
+
+        <div id="mapa" style="width:500px; height:400px;margin: 25px auto 0 "></div>
+        <h5 style="text-align: center">Click derecho en el mapa para obtener posición actual.</h5>
+        <label for="latitud">Latitud</label><br>
+        <input type="text" name="latitud" id="latitud" placeholder="Latitud" value="" readonly>
+        <label for="longitud">Longitud</label><br>
+        <input type="text" name="longitud" id="longitud" placeholder="Longitud" value="" readonly>
+
+        <label for="kilometrosReales">Kilometros reales</label><br>
+        <input  class="numberInput" type="number" id="kilometrosReales" name="kmReales" placeholder="Km.." required><br>
+
+        <label for="combustibleReal">Consumo de combustible real</label><br>
+        <input class="numberInput" type="number" id="combustibleReal" name="combustibleReal" placeholder="Combustible.." required><br>
+
+        <label for="gastosGenerales">Gastos Generales</label><br>
+        <input class="numberInput" type="number" id="gastosGenerales" name="gastosGenerales" placeholder="Gastos.." required><br>
+
+        <input type="submit" value="Guardar">
+        <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/home">Volver</a>
+    </form>
+    {{/viaje}}
+</div>
+
+
+
+</body>
+</html>

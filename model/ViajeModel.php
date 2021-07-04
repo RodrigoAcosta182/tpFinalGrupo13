@@ -73,4 +73,14 @@ class ViajeModel{
                                                     WHERE Id = '$idViaje'");
     }
 
+    public function finalizarViaje($idViaje)
+    {
+        return $this->database->ejecutar("UPDATE viajes SET Finalizado = 1 WHERE Id = '$idViaje'");
+    }
+
+    public function listarViajesByChofer($idChofer)
+    {
+        return $this->database->consulta("select * from vviajes where usuarioId = '$idChofer'");
+    }
+
 }
