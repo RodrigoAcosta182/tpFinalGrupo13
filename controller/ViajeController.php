@@ -28,7 +28,12 @@ class ViajeController
 
 
         if (isset($_SESSION["logueado"])) {
-            $data["viaje"] = $this->viajeModel->listarViajes();
+            if ($_SESSION["esChofer"] == 1){
+                $idChofer =  $_SESSION["id"];
+                $data["viaje"] = $this->viajeModel->listarViajesByChofer($idChofer);
+            }else{
+                $data["viaje"] = $this->viajeModel->listarViajes();
+            }
         echo $this->render->renderizar("view/viaje.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");

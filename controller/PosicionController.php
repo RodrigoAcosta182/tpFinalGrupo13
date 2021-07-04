@@ -18,16 +18,18 @@ class PosicionController
 
         $data = array();
         if (isset($_SESSION["logueado"])) {
-            $idChofer =  $_SESSION["id"];
-            $data["viaje"] = $this->viajeModel->listarViajesByChofer($idChofer);
+            if ($_SESSION["esChofer"] == 1){
+                $idChofer =  $_SESSION["id"];
+                $data["viaje"] = $this->viajeModel->listarViajesByChofer($idChofer);
+            }else{
+                $data["viaje"] = $this->viajeModel->listarViajes();
+            }
         echo $this->render->renderizar("view/posicion.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");
             exit();
         }
     }
-
-
     public function obtenerPosicion(){
         $datos = array();
         $datos['latitud'] = $_POST['latitud'];

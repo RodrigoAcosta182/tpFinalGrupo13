@@ -10,61 +10,61 @@
     <form action="registrarViaje" method="post">
         <input type="hidden" name="id">
             <label>Usuario</label><br>
-            <select name="usuario" id="">
+            <select name="usuario" id="" required>
         {{#chofer}}
                 <option value="{{Id}}">{{Nombre}} {{Apellido}}</option>
         {{/chofer}}
             </select>
 
         <label>Sucursal Origen</label><br>
-        <select name="sucuOrig" id="">
+        <select name="sucuOrig" id="" required>
         {{#sucursal}}
             <option value="{{IdSuc}}">{{DireccionSuc}}, {{Provincia}}</option>
         {{/sucursal}}
         </select>
 
         <label>Sucursal Destino</label><br>
-        <select name="sucuDest" id="">
+        <select name="sucuDest" id="" required>
         {{#sucursal}}
             <option value="{{IdSuc}}">{{DireccionSuc}}, {{Provincia}}</option>
         {{/sucursal}}
         </select>
 
         <label>Cliente</label><br>
-        <select name="cliente" id="">
+        <select name="cliente" id="" required>
         {{#cliente}}
             <option value="{{Id}}">{{Apellido}}, {{Nombre}}</option>
         {{/cliente}}
         </select>
 
         <label>Vehiculo</label><br>
-        <select name="vehiculo" id="">
+        <select name="vehiculo" id="" required>
         {{#vehiculo}}
             <option value="{{Id}}">{{Patente}}</option>
         {{/vehiculo}}
         </select>
 
         <label>Arrastre</label><br>
-        <select name="arrastre" id="">
+        <select name="arrastre" id="" required>
         {{#arrastre}}
             <option value="{{Id}}">{{Patente}}</option>
         {{/arrastre}}
         </select>
 
         <label for="ldateorigen">Fecha Origen</label><br>
-        <input class="dateInput" type="date" id="ldateorigen" name="fechaOrig"><br>
+        <input class="dateInput" type="date" id="ldateorigen" name="fechaOrig" required><br>
 
         <label for="ldateestimada">Fecha Estimada</label><br>
-        <input class="dateInput" type="date" id="ldateestimada" name="fechaEst"><br>
+        <input class="dateInput" type="date" id="ldateestimada" name="fechaEst" required><br>
 
         <label for="fkm">Kilometraje Estimado</label><br>
-        <input class="numberInput" type="number" id="fkm" name="kmEst" placeholder="Km.."><br>
+        <input class="numberInput" type="number" id="fkm" name="kmEst" placeholder="Km.." required><br>
 
         <label for="fkm">Combustible Estimado</label><br>
-        <input class="numberInput" type="number" id="fkm" name="combEst" placeholder="Combustible.."><br>
+        <input class="numberInput" type="number" id="fkm" name="combEst" placeholder="Combustible.." required><br>
 
-        <label for="fotros">Otros Gastos</label><br>
-        <input class="numberInput" type="number" id="fotros" name="otrosG" placeholder="Gastos.."><br>
+        <label for="fotros">Gastos Estimados</label><br>
+        <input class="numberInput" type="number" id="fotros" name="otrosG" placeholder="Gastos.." required><br>
 
         <label for="fprecio">Precio</label><br>
         <input class="numberInput" type="number" id="fprecio" name="precio" placeholder="Precio.."><br>
