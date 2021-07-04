@@ -71,17 +71,17 @@
                         <div>
                             {{#_SESSION.esAdministrador}}
                             <form action="posicion/registrarPosicion" method="post" style="margin-bottom: 5px">
-                                <button class='w3-button w3-green' style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Registrar Posición</button>
+                                <button class='w3-button w3-green' {{#Finalizado}} disabled {{/Finalizado}} style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Registrar Posición</button>
                             </form>
                             {{/_SESSION.esAdministrador}}
                             {{#_SESSION.esSupervisor}}
                                 <form action="posicion/registrarPosicion" method="post" style="margin-bottom: 5px">
-                                    <button class='w3-button w3-green' style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Registrar Posición</button>
+                                    <button class='w3-button w3-green' {{#Finalizado}} disabled {{/Finalizado}} style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Registrar Posición</button>
                                 </form>
                             {{/_SESSION.esSupervisor}}
                             {{#_SESSION.esChofer}}
                                 <form action="posicion/registrarPosicion" method="post" style="margin-bottom: 5px">
-                                    <button class='w3-button w3-green' style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Registrar Posición</button>
+                                    <button class='w3-button w3-green' {{#Finalizado}} disabled {{/Finalizado}} style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Registrar Posición</button>
                                 </form>
                             {{/_SESSION.esChofer}}
                         </div>

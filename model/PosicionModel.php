@@ -33,4 +33,13 @@ class PosicionModel{
                             '$gastosGenerales',
                             '$vehiculoId')");
     }
+
+    public function sumarDatosReales($idViaje)
+    {
+        return $this->database->consulta("SELECT SUM(kmReales) AS kmReales, 
+                                                     SUM(gastosGenerales) AS gastosGenerales,
+                                                     SUM(combustibleReal) AS combustibleReal
+                                                    FROM ubicaciondiaria 
+                                                    WHERE pViaje = '$idViaje'");
+    }
 }

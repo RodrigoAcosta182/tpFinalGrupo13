@@ -170,6 +170,7 @@ class Configuracion
         $render = self::getRender();
         $viajeModel = self::getViajeModel();
 
+
         include_once("controller/ViajeController.php");
         return new ViajeController($render, $viajeModel);
     }
@@ -210,8 +211,9 @@ class Configuracion
         $render = self::getRender();
         $proformaModel = self::getProformaModel();
         $qrModel = self::getQRModel();
+        $posicionModel = self::getPosicionModel();
         include_once("controller/ProformaController.php");
-        return new ProformaController($render, $proformaModel,$qrModel);
+        return new ProformaController($render, $proformaModel,$qrModel,$posicionModel);
     }
 
 

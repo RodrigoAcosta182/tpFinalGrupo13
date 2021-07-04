@@ -9,6 +9,7 @@ class ViajeController
     {
         $this->render = $render;
         $this->viajeModel = $viajeModel;
+
     }
 
     public function execute()
@@ -27,7 +28,7 @@ class ViajeController
 
 
         if (isset($_SESSION["logueado"])) {
-        $data["viaje"] = $this->viajeModel->listarViajes();
+            $data["viaje"] = $this->viajeModel->listarViajes();
         echo $this->render->renderizar("view/viaje.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");
