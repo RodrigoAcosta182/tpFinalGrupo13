@@ -53,7 +53,7 @@ class PosicionController
         if (isset($_SESSION["logueado"])) {
             if (isset($_POST['idViaje']) && isset($_POST['chofer']) && isset($_POST['fechaPosicionHoy']) &&
                 isset($_POST['horaPosicionHoy']) && isset($_POST['latitud']) && isset($_POST['longitud']) &&
-                isset($_POST['kmReales']) && isset($_POST['combustibleReal']) && isset($_POST['gastosGenerales']) && $_POST['patenteVehiculo']) {
+                isset($_POST['kmReales']) && isset($_POST['combustibleReal']) && isset($_POST['gastosGenerales']) && $_POST['vehiculoId']) {
                 $idViaje =  $_POST['idViaje'];
                 $chofer = $_POST['chofer'];
                 $fechaHoy = $_POST['fechaPosicionHoy'];
@@ -63,12 +63,12 @@ class PosicionController
                 $kmReales = $_POST['kmReales'];
                 $combustibleReal = $_POST['combustibleReal'];
                 $gastosGenerales = $_POST['gastosGenerales'];
-                $patenteVehiculo = $_POST['patenteVehiculo'];
+                $vehiculoId = $_POST['vehiculoId'];
 
 
-                $this->posicionModel->guardarPosicion($idViaje,$chofer, $fechaHoy, $hora,$latitud,$longitud,$kmReales,$combustibleReal,$gastosGenerales,$patenteVehiculo);
+                $this->posicionModel->guardarPosicion($idViaje,$chofer, $fechaHoy, $hora,$latitud,$longitud,$kmReales,$combustibleReal,$gastosGenerales,$vehiculoId);
                 //$_SESSION['mensajeModificar'] = 1;
-                //header("Location: /tpFinalGrupo13/Posicion");
+                header("Location: /tpFinalGrupo13/Posicion");
             } else {
                 $_SESSION['mensajeError'] = 1;
                 echo "error 1";
