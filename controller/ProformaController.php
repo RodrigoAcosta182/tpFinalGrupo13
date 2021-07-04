@@ -81,6 +81,7 @@ class ProformaController
 
                 $precioReal = $combustibleReal * 90;
 
+                $precioFinalReal = $precioReal + $gastosGenerales;
                 $qr = $this->qrModel->generateQRbyId($idProforma);
 
 
@@ -123,24 +124,30 @@ class ProformaController
                 $pdf->Cell(50, 8, "Fecha Salida", 1);
                 $pdf->Cell(50, 8, $fechaOrig ,1,0,'C');
                 $pdf->Cell(50, 8, $fechaOrig ,1,1,'C');
+
                 $pdf->Cell(50, 8, "Fecha Llegada", 1);
                 $pdf->Cell(50, 8, $fechaEst ,1,0,'C');
                 $pdf->Cell(50, 8, $fechaEst ,1,1,'C');
+
                 $pdf->Cell(50, 8, "Kilometros", 1);
-                $pdf->Cell(50, 8, $kmEst ,1,0,'C');
-                $pdf->Cell(50, 8, $kmReales ,1,1,'C');
-                $pdf->Cell(50, 8, "Combustible", 1);
-                $pdf->Cell(50, 8, $combEst ,1,0,'C');
-                $pdf->Cell(50, 8, $combustibleReal ,1,1,'C');
-                $pdf->Cell(50, 8, "Precio de viaje", 1);
-                $pdf->Cell(50, 8, $precio ,1,0,'C');
-                $pdf->Cell(50, 8, $precioReal ,1,1,'C');
+                $pdf->Cell(50, 8, $kmEst ." KM" ,1,0,'C');
+                $pdf->Cell(50, 8, $kmReales ." KM" ,1,1,'C');
+
+                $pdf->Cell(50, 8, "Litros Combustible", 1);
+                $pdf->Cell(50, 8, $combEst ." L",1,0,'C');
+                $pdf->Cell(50, 8, $combustibleReal ." L",1,1,'C');
+
                 $pdf->Cell(50, 8, "Otros Gastos", 1, 0);
-                $pdf->Cell(50, 8, "$otrosG", 1, 0, 'C');
-                $pdf->Cell(50, 8, "$gastosGenerales", 1, 1, 'C');
+                $pdf->Cell(50, 8, "$"."$otrosG", 1, 0, 'C');
+                $pdf->Cell(50, 8, "$"."$gastosGenerales", 1, 1, 'C');
+
+                $pdf->Cell(50, 8, "Costo de viaje", 1);
+                $pdf->Cell(50, 8, "$".$precio ,1,0,'C');
+                $pdf->Cell(50, 8, "$".$precioReal ,1,1,'C');
+
                 $pdf->Cell(50, 8, "Precio Final", 1, 0);
-                $pdf->Cell(50, 8, "$precioFinal", 1, 0, 'C');
-                $pdf->Cell(50, 8, "$precioFinal", 1, 1, 'C');
+                $pdf->Cell(50, 8, "$"."$precioFinal", 1, 0, 'C');
+                $pdf->Cell(50, 8, "$"."$precioFinalReal", 1, 1, 'C');
 
                 $pdf->Output("", "Proforma  - ID Viaje $idProforma.pdf");
             } else {

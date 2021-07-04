@@ -67,9 +67,10 @@ class ViajeController
                 $kmEst = $_POST['kmEst'];
                 $combEst = $_POST['combEst'];
                 $otrosG = $_POST['otrosG'];
+                $precioCombustible =$_POST['precioCombustibleEstimado'];
                 $precio = $_POST['precio'];
 
-                   $this->viajeModel->registrarViaje($usuario, $sucuOrig, $sucuDest, $cliente, $vehiculo, $arrastre, $fechaOrig, $fechaEst, $kmEst, $combEst, $otrosG, $precio);
+                   $this->viajeModel->registrarViaje($usuario, $sucuOrig, $sucuDest, $cliente, $vehiculo, $arrastre, $fechaOrig, $fechaEst, $kmEst, $combEst, $otrosG, $precio,$precioCombustible);
                    $_SESSION['registroCorrecto'] = 1;
                    header("Location: /tpFinalGrupo13/Viaje");
 
@@ -113,6 +114,7 @@ class ViajeController
                 $fechaEst = $_POST['fechaEst'];
                 $kmEst = $_POST['kmEst'];
                 $combEst = $_POST['combEst'];
+                $precioCombustible = $_POST['precioCombustibleEstimado'];
                 $precio = $_POST['precio'];
                 $otrosG = $_POST['otrosG'];
 
@@ -122,7 +124,7 @@ class ViajeController
                     $activo = false;
                 }
 
-                $this->viajeModel->editViaje($idViaje,$usuario, $sucuOrig, $sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$precio,$otrosG,$activo);
+                $this->viajeModel->editViaje($idViaje,$usuario, $sucuOrig, $sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$precio,$otrosG,$activo,$precioCombustible);
                 $_SESSION['mensajeModificar'] = 1;
                 header("Location: /tpFinalGrupo13/Viaje");
             } else {

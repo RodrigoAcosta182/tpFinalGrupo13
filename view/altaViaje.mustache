@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/tpFinalGrupo13/public/css/formStyle.css">
+<script type="text/javascript" src="/tpFinalGrupo13/public/js/subTotalesReales.js"></script>
 
 <div class="w3-card-4"  style="width:40%;margin: auto">
     <header class="w3-container w3-teal">
@@ -51,31 +52,32 @@
         {{/arrastre}}
         </select>
 
-        <label for="ldateorigen">Fecha Origen</label><br>
+        <label for="ldateorigen">Fecha Salida Origen</label><br>
         <input class="dateInput" type="date" id="ldateorigen" name="fechaOrig" required><br>
 
-        <label for="ldateestimada">Fecha Estimada</label><br>
+        <label for="ldateestimada">Fecha Llegada Estimada</label><br>
         <input class="dateInput" type="date" id="ldateestimada" name="fechaEst" required><br>
 
         <label for="fkm">Kilometraje Estimado</label><br>
-        <input class="numberInput" type="number" id="fkm" name="kmEst" placeholder="Km.." required><br>
+        <input class="numberInput" type="number" id="fkm" name="kmEst" placeholder="Km.." onchange="calulcarKilometroPorCombustible(this.value)" required><br>
 
-        <label for="fkm">Combustible Estimado</label><br>
-        <input class="numberInput" type="number" id="fkm" name="combEst" placeholder="Combustible.." required><br>
+        <label for="combEstimado">Litros de Combustible Estimado</label><br>
+        <input class="numberInput" type="number" id="combEstimado" name="combEst" placeholder="Combustible.." required readonly><br>
+
+        <label for="precioCombustibleEstimado">Precio de Combustible Estimado</label><br>
+        <input class="numberInput" type="number" id="precioCombustibleEstimado" name="precioCombustibleEstimado" placeholder="Precio combustible estimado.."s required readonly><br>
 
         <label for="fotros">Gastos Estimados</label><br>
-        <input class="numberInput" type="number" id="fotros" name="otrosG" placeholder="Gastos.." required><br>
+        <input class="numberInput" type="number" id="fotros" name="otrosG" placeholder="Gastos.." onchange="gastosEstimados(this.value)" required><br>
 
-        <label for="fprecio">Precio</label><br>
-        <input class="numberInput" type="number" id="fprecio" name="precio" placeholder="Precio.."><br>
+        <label for="fprecio">Precio Final Estimado</label><br>
+        <input class="numberInput" type="number" id="fprecio" name="precio" placeholder="Precio.." required readonly><br>
 
         <br>
         <input type="submit" value="Guardar">
         <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/viaje">Volver</a>
     </form>
-
 </div>
-
-
 </body>
 </html>
+
