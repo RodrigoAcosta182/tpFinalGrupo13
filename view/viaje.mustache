@@ -19,9 +19,6 @@
             {{#_SESSION.esSupervisor}}
                 <a href="/tpfinalgrupo13/viaje/altaViaje" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Viaje</a>
             {{/_SESSION.esSupervisor}}
-            {{#_SESSION.esChofer}}
-                <a href="/tpfinalgrupo13/viaje/altaViaje" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Viaje</a>
-            {{/_SESSION.esChofer}}
             </form>
             <br>
         </div>
@@ -98,6 +95,9 @@
                             {{#_SESSION.esChofer}}
                                 <form action="viaje/finalizarViaje" method="post" style="margin-bottom: 5px">
                                     <button class='w3-button w3-red' {{#Finalizado}} disabled {{/Finalizado}} style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Finalizar Viaje</button>
+                                </form>
+                                <form action="proforma/consultarProforma" method="post" style="margin-bottom: 5px">
+                                    <button class='w3-button w3-green' style="width: 100%;" name="idProforma" value="{{viajeId}}">Ver Proforma</button>
                                 </form>
                             {{/_SESSION.esChofer}}
                         </div>
