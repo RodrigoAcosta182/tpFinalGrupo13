@@ -15,9 +15,11 @@ class PosicionController
 
     public function execute()
     {
+
         $data = array();
         if (isset($_SESSION["logueado"])) {
-            $data["viaje"] = $this->viajeModel->listarViajes();
+            $idChofer =  $_SESSION["id"];
+            $data["viaje"] = $this->viajeModel->listarViajesByChofer($idChofer);
         echo $this->render->renderizar("view/posicion.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");
@@ -40,7 +42,8 @@ class PosicionController
     public function registrarPosicion(){
         $data = array();
         if (isset($_SESSION["logueado"])) {
-            $data["viaje"] = $this->viajeModel->listarViajes();
+            $idViaje = $_POST['finalizarViaje'];
+            $data["viaje"] = $this->viajeModel->getViajeById($idViaje);
             echo $this->render->renderizar("view/registrarPosicion.mustache", $data);
         } else {
             header("location: /tpFinalGrupo13");
@@ -65,17 +68,15 @@ class PosicionController
                 $gastosGenerales = $_POST['gastosGenerales'];
                 $vehiculoId = $_POST['vehiculoId'];
 
-
                 $this->posicionModel->guardarPosicion($idViaje,$chofer, $fechaHoy, $hora,$latitud,$longitud,$kmReales,$combustibleReal,$gastosGenerales,$vehiculoId);
-                //$_SESSION['mensajeModificar'] = 1;
+                $_SESSION['mensajeModificar'] = 1;
                 header("Location: /tpFinalGrupo13/Posicion");
             } else {
                 $_SESSION['mensajeError'] = 1;
-                echo "error 1";
-                //header("Location: /tpFinalGrupo13/Posicion");
+                header("Location: /tpFinalGrupo13/Posicion");
             }
         } else {
-            //header("location: /tpFinalGrupo13");
+            header("location: /tpFinalGrupo13");
             exit();
         }
     }
