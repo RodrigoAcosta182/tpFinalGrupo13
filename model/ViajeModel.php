@@ -43,9 +43,9 @@ class ViajeModel{
                                               from arrastre");
     }
 
-    public function registrarViaje($usuario,$sucuOrig,$sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$otrosG,$precio){
-        return $this->database->ejecutar("INSERT INTO viajes (pUsuario, pCliente ,pSucursalOrigen,pSucursalDestino ,pVehiculo ,pArrastre ,FechaOrigen ,FechaEstimada ,KmEstimado ,CombustibleEst, Precio, OtrosGastos ,Finalizado) 
-                                            VALUES ('$usuario', '$cliente', '$sucuOrig', '$sucuDest' , '$vehiculo', '$arrastre', '$fechaOrig', '$fechaEst', '$kmEst', '$combEst', '$precio', '$otrosG' , 0)");
+    public function registrarViaje($usuario,$sucuOrig,$sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$otrosG,$precio,$precioCombustible){
+        return $this->database->ejecutar("INSERT INTO viajes (pUsuario, pCliente ,pSucursalOrigen,pSucursalDestino ,pVehiculo ,pArrastre ,FechaOrigen ,FechaEstimada ,KmEstimado ,CombustibleEst, Precio, OtrosGastos ,Finalizado,PrecioCombustibleEstimado) 
+                                            VALUES ('$usuario', '$cliente', '$sucuOrig', '$sucuDest' , '$vehiculo', '$arrastre', '$fechaOrig', '$fechaEst', '$kmEst', '$combEst', '$precio', '$otrosG' , 0,'$precioCombustible')");
     }
 
     public function getViajeById($idViaje)
@@ -54,7 +54,7 @@ class ViajeModel{
     }
 
     public function editViaje($idViaje, $usuario, $sucuOrig, $sucuDest, $cliente, $vehiculo, $arrastre,
-                              $fechaOrig, $fechaEst, $kmEst, $combEst, $precio, $otrosG,$activo)
+                              $fechaOrig, $fechaEst, $kmEst, $combEst, $precio, $otrosG,$activo,$precioCombustible)
     {
         return $this->database->ejecutar("UPDATE viajes SET
                                                     pUsuario = '$usuario',
@@ -69,7 +69,8 @@ class ViajeModel{
                                                     KmEstimado = '$kmEst',
                                                     CombustibleEst = '$combEst',
                                                     OtrosGastos = '$otrosG',
-                                                    Finalizado = '$activo'
+                                                    Finalizado = '$activo',
+                                                    PrecioCombustibleEstimado = '$precioCombustible'
                                                     WHERE Id = '$idViaje'");
     }
 
