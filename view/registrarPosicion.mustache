@@ -11,24 +11,24 @@
     {{#viaje}}
     <form action="procesoRegistrarPosicion" method="post">
         <label for="idViaje">ID Viaje</label><br>
-        <input type="text" name="idViaje" placeholder="ID" value="{{viajeId}}" readonly>
+        <input type="text" name="idViaje" placeholder="ID" value="{{viajeId}}" readonly required>
         <label for="nombreChofer">Chofer</label><br>
-        <input type="text" name="nombreChofer"  placeholder="nombreChofer" value="{{usuario}}" readonly>
-        <input type="hidden" name="chofer"  placeholder="Chofer" value="{{usuarioId}}" readonly>
+        <input type="text" name="nombreChofer"  placeholder="nombreChofer" value="{{usuario}}" readonly required>
+        <input type="hidden" name="chofer"  placeholder="Chofer" value="{{usuarioId}}" readonly required>
         <label for="patente">Vehiculo Patente</label><br>
-        <input type="text" name="patenteVehiculo"  placeholder="Pantente" value="{{patenteVehiculo}}" readonly>
-        <input type="hidden" name="vehiculoId"  placeholder="vehiculoId" value="{{vehiculoId}}" readonly>
+        <input type="text" name="patenteVehiculo"  placeholder="Pantente" value="{{patenteVehiculo}}" readonly required>
+        <input type="hidden" name="vehiculoId"  placeholder="vehiculoId" value="{{vehiculoId}}" readonly required>
         <label for="fechaPosicionHoy">Fecha</label><br>
-        <input class="dateInput" type="date" id="fechaPosicionHoy" name="fechaPosicionHoy" readonly><br>
+        <input class="dateInput" type="date" name="fechaPosicionHoy" required><br>
         <label for="horaPosicionHoy">Hora</label><br>
-        <input class="dateInput" type="text" id="horaPosicionHoy" name="horaPosicionHoy" readonly><br>
+        <input class="dateInput" type="text" id="horaPosicionHoy" name="horaPosicionHoy" readonly required><br>
 
         <div id="mapa" style="width:500px; height:400px;margin: 25px auto 0 "></div>
         <h5 style="text-align: center">Click derecho en el mapa para obtener posición actual.</h5>
         <label for="latitud">Latitud</label><br>
-        <input type="text" name="latitud" id="latitud" placeholder="Latitud" value="" readonly>
+        <input type="text" name="latitud" id="latitud" placeholder="Latitud" value="" readonly required>
         <label for="longitud">Longitud</label><br>
-        <input type="text" name="longitud" id="longitud" placeholder="Longitud" value="" readonly>
+        <input type="text" name="longitud" id="longitud" placeholder="Longitud" value="" readonly required>
 
         <label for="kilometrosReales">Kilometros reales</label><br>
         <input  class="numberInput" type="number" id="kilometrosReales" name="kmReales" placeholder="Km.." required><br>
