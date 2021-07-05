@@ -42,4 +42,15 @@ class PosicionModel{
                                                     FROM ubicaciondiaria 
                                                     WHERE pViaje = '$idViaje'");
     }
+
+    public function getFechaInicial($idViaje,$usuarioId)
+    {
+        return $this->database->consulta("SELECT MIN(Fecha) AS FechaInicial FROM ubicaciondiaria WHERE pUsuario = '$usuarioId' AND pViaje = '$idViaje' GROUP BY '$idViaje' ");
+
+    }
+
+    public function getFechaFinal($idViaje,$usuarioId)
+    {
+        return $this->database->consulta("SELECT MAX(Fecha) AS FechaLlegada FROM ubicaciondiaria WHERE pUsuario = '$usuarioId' AND pViaje = '$idViaje' GROUP BY '$idViaje' ");
+    }
 }

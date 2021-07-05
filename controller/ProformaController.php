@@ -51,8 +51,9 @@ class ProformaController
                 isset($_POST['fechaOrig']) && isset($_POST['fechaEst']) && isset($_POST['kmEst']) &&
                 isset($_POST['combEst']) && isset($_POST['precio']) && isset($_POST['otrosG']))
             {
-                $idProforma =  $_POST['viajeId'];
+                $idViaje =  $_POST['viajeId'];
                 $usuario = $_POST['usuario'];
+                $usuarioId = $_POST['usuarioId'];
                 $fechaHoy = date('d/m/Y');
                 $sucuOrig = $_POST['sucuOrig'];
                 $sucuDest = $_POST['sucuDest'];
@@ -73,18 +74,19 @@ class ProformaController
                 $pdf->AddPage();
                 $pdf->AliasNbPages();
                 $logo = 'public/images/logo.jpeg';
-
-
-                $kmReales = $this->posicionModel->sumarDatosReales($idProforma)[0]['kmReales'];
-                $combustibleReal = $this->posicionModel->sumarDatosReales($idProforma)[0]['combustibleReal'];
-                $gastosGenerales = $this->posicionModel->sumarDatosReales($idProforma)[0]['gastosGenerales'];
-
+                $kmReales = $this->posicionModel->sumarDatosReales($idViaje)[0]['kmReales'];
+                $combustibleReal = $this->posicionModel->sumarDatosReales($idViaje)[0]['combustibleReal'];
+                $gastosGenerales = $this->posicionModel->sumarDatosReales($idViaje)[0]['gastosGenerales'];
                 $precioReal = $combustibleReal * 90;
 
                 $precioFinalReal = $precioReal + $gastosGenerales;
-                $qr = $this->qrModel->generateQRbyId($idProforma);
+                $qr = $this->qrModel->generateQRbyId($idViaje);
 
+                isset($this->posicionModel->getFechaInicial($idViaje,$usuarioId)[0]['FechaInicial']) == true  ?
+                    $fechaInicioReal = $this->posicionModel->getFechaInicial($idViaje,$usuarioId)[0]['FechaInicial'] : $fechaInicioReal = "Sin registro";
 
+                isset($this->posicionModel->getFechaFinal($idViaje,$usuarioId)[0]['FechaLlegada']) == true  ?
+                    $fechaFinalReal = $this->posicionModel->getFechaFinal($idViaje,$usuarioId)[0]['FechaLlegada'] : $fechaFinalReal = "Sin registro";
 
 
                 $pdf->Image($logo,75, 0, 50, 0, "jpg");
@@ -98,7 +100,7 @@ class ProformaController
                 $pdf->Cell(50, 8, "", 0, 1);
                 $pdf->Cell(50, 8, "", 0, 1);
                 $pdf->Cell(50, 8, "Proforma Garlopa Company", 0, 1 );
-                $pdf->Cell(150, 8, utf8_decode("N° de Viaje: $idProforma"), 1, 1, 'C', 0);
+                $pdf->Cell(150, 8, utf8_decode("N° de Viaje: $idViaje"), 1, 1, 'C', 0);
                 $pdf->Cell(50, 8, "Cliente", 1);
                 $pdf->Cell(100, 8, $cliente ,1,1,'C');
                 $pdf->Cell(50, 8, "Fecha Salida", 1);
@@ -123,11 +125,11 @@ class ProformaController
                 $pdf->Cell(50, 8, "", 0, 1);
                 $pdf->Cell(50, 8, "Fecha Salida", 1);
                 $pdf->Cell(50, 8, $fechaOrig ,1,0,'C');
-                $pdf->Cell(50, 8, $fechaOrig ,1,1,'C');
+                $pdf->Cell(50, 8, $fechaInicioReal ,1,1,'C');
 
                 $pdf->Cell(50, 8, "Fecha Llegada", 1);
                 $pdf->Cell(50, 8, $fechaEst ,1,0,'C');
-                $pdf->Cell(50, 8, $fechaEst ,1,1,'C');
+                $pdf->Cell(50, 8, $fechaFinalReal ,1,1,'C');
 
                 $pdf->Cell(50, 8, "Kilometros", 1);
                 $pdf->Cell(50, 8, $kmEst ." KM" ,1,0,'C');
@@ -149,7 +151,7 @@ class ProformaController
                 $pdf->Cell(50, 8, "$"."$precioFinal", 1, 0, 'C');
                 $pdf->Cell(50, 8, "$"."$precioFinalReal", 1, 1, 'C');
 
-                $pdf->Output("", "Proforma  - ID Viaje $idProforma.pdf");
+                $pdf->Output("D", "Proforma  - ID Viaje $idViaje.pdf");
             } else {
                 $_SESSION['mensajeError'] = 1;
                 header("Location: /tpFinalGrupo13/Viaje");
