@@ -64,20 +64,24 @@ class ProformaController
                 $fechaEst = $_POST['fechaEst'];
                 $kmEst = $_POST['kmEst'];
                 $combEst = $_POST['combEst'];
+                $precioCombustibleEstimado = $_POST['precioCombustibleEstimado'];
                 $precio = $_POST['precio'];
                 $otrosG = $_POST['otrosG'];
 
-                $precioFinal = $precio + $otrosG;
+                $precioFinal = $precioCombustibleEstimado + $otrosG;
 
                 require('third-party/fpdf/fpdf.php');
                 $pdf = new FPDF();
                 $pdf->AddPage();
                 $pdf->AliasNbPages();
                 $logo = 'public/images/logo.jpeg';
+
+
                 $kmReales = $this->posicionModel->sumarDatosReales($idViaje)[0]['kmReales'];
                 $combustibleReal = $this->posicionModel->sumarDatosReales($idViaje)[0]['combustibleReal'];
                 $gastosGenerales = $this->posicionModel->sumarDatosReales($idViaje)[0]['gastosGenerales'];
-                $precioReal = $combustibleReal * 90;
+                $precioCombustible = 90;
+                $precioReal = $combustibleReal * $precioCombustible;
 
                 $precioFinalReal = $precioReal + $gastosGenerales;
                 $qr = $this->qrModel->generateQRbyId($idViaje);
@@ -139,13 +143,20 @@ class ProformaController
                 $pdf->Cell(50, 8, $combEst ." L",1,0,'C');
                 $pdf->Cell(50, 8, $combustibleReal ." L",1,1,'C');
 
+                $pdf->Cell(50, 8, "Precio Combustible", 1);
+                $pdf->Cell(50, 8, '$'.$precioCombustible,1,0,'C');
+                $pdf->Cell(50, 8, '$'.$precioCombustible,1,1,'C');
+
+                $pdf->Cell(50, 8, "", 0, 1);
+                $pdf->Cell(50, 8, "Sub total (KM x L)", 1);
+                $pdf->Cell(50, 8, "$".$precioCombustibleEstimado ,1,0,'C');
+                $pdf->Cell(50, 8, "$".$precioReal ,1,1,'C');
+                $pdf->Cell(50, 8, "", 0, 1);
+
                 $pdf->Cell(50, 8, "Otros Gastos", 1, 0);
                 $pdf->Cell(50, 8, "$"."$otrosG", 1, 0, 'C');
                 $pdf->Cell(50, 8, "$"."$gastosGenerales", 1, 1, 'C');
 
-                $pdf->Cell(50, 8, "Costo de viaje", 1);
-                $pdf->Cell(50, 8, "$".$precio ,1,0,'C');
-                $pdf->Cell(50, 8, "$".$precioReal ,1,1,'C');
 
                 $pdf->Cell(50, 8, "Precio Final", 1, 0);
                 $pdf->Cell(50, 8, "$"."$precioFinal", 1, 0, 'C');
