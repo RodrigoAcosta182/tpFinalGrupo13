@@ -71,7 +71,7 @@ class PosicionController
                 $vehiculoId = $_POST['vehiculoId'];
 
                 $this->posicionModel->guardarPosicion($idViaje,$chofer, $fechaHoy, $hora,$latitud,$longitud,$kmReales,$combustibleReal,$gastosGenerales,$vehiculoId);
-                $_SESSION['mensajeModificar'] = 1;
+                $_SESSION['mensajeRegistroPosicion'] = 1;
                 header("Location: /tpFinalGrupo13/Posicion");
             } else {
                 $_SESSION['mensajeError'] = 1;
