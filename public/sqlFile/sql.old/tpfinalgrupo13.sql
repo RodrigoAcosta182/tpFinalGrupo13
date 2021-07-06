@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2021 a las 01:48:47
+-- Tiempo de generación: 06-07-2021 a las 05:15:03
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -48,6 +48,22 @@ INSERT INTO `arrastre` (`Id`, `Descripcion`, `Patente`, `NroChasis`) VALUES
 (5, 'Tanque', 'AB405AG', '583419'),
 (6, 'Granel', 'AA624AS', '852157'),
 (7, 'Tanque', 'AAA420N', '420LG4NTE');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cargascombustible`
+--
+
+CREATE TABLE `cargascombustible` (
+  `Id` int(255) NOT NULL,
+  `LitroCargado` int(11) NOT NULL,
+  `PrecioxLitro` int(11) NOT NULL,
+  `Importe` double NOT NULL,
+  `pUsuario` int(11) NOT NULL,
+  `pVehiculo` int(11) NOT NULL,
+  `Ubicacion` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -358,8 +374,7 @@ INSERT INTO `ubicaciondiaria` (`Id`, `pUsuario`, `pVehiculo`, `Latitud`, `Longit
 (32, 2, 3, '-34.68894716792296', '-58.5918787637207', 16, '2021-07-09', '23:16:2', 200, 70, 4000),
 (33, 2, 3, '-34.70164962357388', '-58.59462534575195', 16, '2021-07-10', '23:17:13', 50, 10, 0),
 (34, 2, 3, '-34.6463091280621', '-58.57265268950195', 16, '2021-07-11', '23:21:32', 100, 50, 0),
-(35, 2, 3, '-34.694028384138726', '-58.585012308642575', 16, '2021-07-13', '23:41:3', 100, 200, 0),
-(36, 2, 3, '-34.664874859591905', '-58.49773810677471', 16, '2021-07-06', '20:26:49', 200, 50, 100);
+(35, 2, 3, '-34.694028384138726', '-58.585012308642575', 16, '2021-07-13', '23:41:3', 100, 200, 0);
 
 -- --------------------------------------------------------
 
@@ -384,7 +399,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`Id`, `Nombre`, `Apellido`, `Email`, `Password`, `Active`, `pTipoUsuario`, `pLicencia`) VALUES
 (1, 'admin', 'admin', 'garlopacompany@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1, 3, 14),
-(2, 'Emilianos', 'Nahuel Ortizs', 'emiortiz2001@gmail.coms', '81dc9bdb52d04dc20036dbd8313ed055', 0, 1, 3),
+(2, 'Emiliano', 'Nahuel Ortiz', 'emiortiz2001@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1, 1, 3),
 (3, 'Ariel', 'Molina', 'arielMolina@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1, 1, 5),
 (16, 'Rodrigo', 'Acosta', 'jracosta1991@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1, 3, 14);
 
@@ -402,7 +417,7 @@ CREATE TABLE `vehiculo` (
   `NroMotor` varchar(20) NOT NULL,
   `AñoFabricacion` date NOT NULL,
   `kilometraje` bigint(255) UNSIGNED NOT NULL,
-  `MantenimientoActivo` bit(1) NOT NULL DEFAULT b'0',
+  `pMantenimiento` int(50) DEFAULT NULL,
   `pMarca` int(50) NOT NULL,
   `Alarma` bit(1) DEFAULT b'0',
   `Activo` bit(1) NOT NULL DEFAULT b'1'
@@ -412,14 +427,14 @@ CREATE TABLE `vehiculo` (
 -- Volcado de datos para la tabla `vehiculo`
 --
 
-INSERT INTO `vehiculo` (`Id`, `pModelo`, `Patente`, `NroChasis`, `NroMotor`, `AñoFabricacion`, `kilometraje`, `MantenimientoActivo`, `pMarca`, `Alarma`, `Activo`) VALUES
-(3, 1, 'AA123CD', 'L53879558', '53879558', '2010-11-06', 20, b'0', 1, b'0', b'1'),
-(4, 2, 'AA150QW', 'I82039512', '82039512', '2012-06-24', 56, b'0', 2, b'0', b'1'),
-(5, 6, 'AD870QW', 'M30207594', '30207594', '2020-05-12', 5, b'0', 3, b'0', b'1'),
-(6, 1, 'AC342WW', 'D44260023', '44260023', '2015-11-25', 18, b'0', 1, b'0', b'1'),
-(7, 2, 'AA2200EE', '2513088A5', '25001503445', '2021-07-04', 1200, b'0', 3, b'0', b'1'),
-(8, 6, '000122', '420420420', '888888', '2021-07-15', 1000, b'0', 3, b'0', b'1'),
-(9, 2, '000321321', '000000555', '1000002000000', '2021-07-05', 100, b'0', 3, b'0', b'1');
+INSERT INTO `vehiculo` (`Id`, `pModelo`, `Patente`, `NroChasis`, `NroMotor`, `AñoFabricacion`, `kilometraje`, `pMantenimiento`, `pMarca`, `Alarma`, `Activo`) VALUES
+(3, 1, 'AA123CD', 'L53879558', '53879558', '2010-11-06', 20, NULL, 1, b'0', b'1'),
+(4, 2, 'AA150QW', 'I82039512', '82039512', '2012-06-24', 56, NULL, 2, b'0', b'1'),
+(5, 6, 'AD870QW', 'M30207594', '30207594', '2020-05-12', 5, NULL, 3, b'0', b'1'),
+(6, 1, 'AC342WW', 'D44260023', '44260023', '2015-11-25', 18, NULL, 1, b'0', b'1'),
+(7, 2, 'AA2200EE', '2513088A5', '25001503445', '2021-07-04', 1200, NULL, 3, b'0', b'1'),
+(8, 6, '000122', '420420420', '888888', '2021-07-15', 1000, NULL, 3, b'0', b'1'),
+(9, 2, '000321321', '000000555', '1000002000000', '2021-07-05', 100, NULL, 3, b'0', b'1');
 
 -- --------------------------------------------------------
 
@@ -451,7 +466,7 @@ CREATE TABLE `viajes` (
 --
 
 INSERT INTO `viajes` (`Id`, `pUsuario`, `pCliente`, `pSucursalOrigen`, `pSucursalDestino`, `pVehiculo`, `pArrastre`, `FechaOrigen`, `FechaEstimada`, `KmEstimado`, `CombustibleEst`, `PrecioCombustibleEstimado`, `Precio`, `OtrosGastos`, `Finalizado`, `pFactura`) VALUES
-(16, 2, 1, 1, 1, 3, 1, '2021-07-05', '2021-07-12', 1000, 200, 18000, 21000, '3000', b'1', NULL);
+(16, 2, 1, 1, 1, 3, 1, '2021-07-05', '2021-07-12', 1000, 200, 18000, 21000, '3000', b'0', NULL);
 
 -- --------------------------------------------------------
 
@@ -535,6 +550,14 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 ALTER TABLE `arrastre`
   ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `cargascombustible`
+--
+ALTER TABLE `cargascombustible`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `pUsuario` (`pUsuario`),
+  ADD KEY `pVehiculo` (`pVehiculo`);
 
 --
 -- Indices de la tabla `cliente`
@@ -632,7 +655,7 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `vehiculo`
   ADD PRIMARY KEY (`Id`),
-  ADD KEY `pMantenimiento` (`MantenimientoActivo`),
+  ADD KEY `pMantenimiento` (`pMantenimiento`),
   ADD KEY `pMarca` (`pMarca`),
   ADD KEY `pModelo` (`pModelo`);
 
@@ -658,6 +681,12 @@ ALTER TABLE `viajes`
 --
 ALTER TABLE `arrastre`
   MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `cargascombustible`
+--
+ALTER TABLE `cargascombustible`
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
@@ -729,7 +758,7 @@ ALTER TABLE `tipousuario`
 -- AUTO_INCREMENT de la tabla `ubicaciondiaria`
 --
 ALTER TABLE `ubicaciondiaria`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -752,6 +781,13 @@ ALTER TABLE `viajes`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `cargascombustible`
+--
+ALTER TABLE `cargascombustible`
+  ADD CONSTRAINT `cargascombustible_ibfk_1` FOREIGN KEY (`pUsuario`) REFERENCES `usuario` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cargascombustible_ibfk_2` FOREIGN KEY (`pVehiculo`) REFERENCES `vehiculo` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `factura`
@@ -805,6 +841,7 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `vehiculo`
 --
 ALTER TABLE `vehiculo`
+  ADD CONSTRAINT `vehiculo_ibfk_2` FOREIGN KEY (`pMantenimiento`) REFERENCES `mantenimiento` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `vehiculo_ibfk_3` FOREIGN KEY (`pMarca`) REFERENCES `marca` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `vehiculo_ibfk_4` FOREIGN KEY (`pModelo`) REFERENCES `modelo` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 

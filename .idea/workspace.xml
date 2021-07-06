@@ -1,101 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="bdd43a72-a48a-4079-8c97-54c1d15fe22c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="95f41833-4724-4827-b546-58178b07df18" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tpFinalGrupo13.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tpFinalGrupo13.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/Configuracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Configuracion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/partial/navbar.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/navbar.mustache" afterDir="false" />
-=======
-<<<<<<< HEAD
-    <list default="true" id="c62d6e6b-c4c1-40ab-be6b-c11724755004" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/AltaClienteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/LogoutController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/ModificarUsuarioController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/UsuarioModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/sqlFile/tpfinalgrupo13.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/HELP-US-OUT.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/animated.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/bordered-pulled.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/core.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/fixed-width.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/font-awesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/icons.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/larger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/path.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/rotated-flipped.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/screen-reader.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/stacked.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/less/variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_animated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_core.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_fixed-width.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_larger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_path.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_stacked.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/font-awesome/scss/font-awesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-=======
-    <list default="true" id="bdd43a72-a48a-4079-8c97-54c1d15fe22c" name="Default Changelist" comment="">
->>>>>>> 6a21c1a75985db9f1f6a6bfb0a27a596df5d4d0c
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/Configuracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Configuracion.php" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/helpers/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/loginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/loginStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sqlFile/tpfinal-grupo06.sql" beforeDir="false" afterPath="$PROJECT_DIR$/public/sqlFile/tpfinalgrupo13.old.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/CLIENTE.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaCliente.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/abmCamion.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaCamion.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/modificarUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/modificarUsuario.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/partial/header.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/header.mustache" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/model/LoginModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/LoginModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sqlFile/tpfinal-grupo06.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/login.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/login.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/partial/navbar.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/partial/navbar.mustache" afterDir="false" />
->>>>>>> 6a21c1a75985db9f1f6a6bfb0a27a596df5d4d0c
->>>>>>> 68e5242f7ed84e8a5123b544e5ceaf101546e9a8
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,179 +14,36 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-<<<<<<< HEAD
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP-LOCAL" />
-=======
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
->>>>>>> 68e5242f7ed84e8a5123b544e5ceaf101546e9a8
-  <component name="ProjectId" id="1tXiSlsqeWwi7cfFxiqvLrQoH48" />
+  <component name="ProjectId" id="1uvO6dTyXZrnVZVYic2XMUMraQv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pw2-grupo03" />
-<<<<<<< HEAD
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-=======
->>>>>>> 68e5242f7ed84e8a5123b544e5ceaf101546e9a8
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-<<<<<<< HEAD
-      <recent name="C:\xampp\htdocs\tpFinalGrupo13\view" />
-      <recent name="C:\xampp\htdocs\tpFinalGrupo13\public" />
-      <recent name="C:\xampp\htdocs\tpFinalGrupo13\public\css" />
-      <recent name="C:\xampp\htdocs\tpFinalGrupo13\public\sqlFile" />
-=======
-      <recent name="C:\xampp\htdocs\tpFinalGrupo13\controller" />
-      <recent name="C:\xampp\htdocs\tpFinalGrupo13\view" />
->>>>>>> 68e5242f7ed84e8a5123b544e5ceaf101546e9a8
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c62d6e6b-c4c1-40ab-be6b-c11724755004" name="Default Changelist" comment="" />
-      <created>1622674523438</created>
+      <changelist id="95f41833-4724-4827-b546-58178b07df18" name="Default Changelist" comment="" />
+      <created>1625542424047</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1622921838795</updated>
-      <workItem from="1622921840739" duration="260000" />
-      <workItem from="1622922511757" duration="47000" />
-      <workItem from="1622922695125" duration="516000" />
-      <workItem from="1622923670414" duration="448000" />
-      <workItem from="1622928337128" duration="2089000" />
-<<<<<<< HEAD
-      <workItem from="1622938391576" duration="2352000" />
-      <workItem from="1623004593864" duration="8311000" />
-      <workItem from="1623020252751" duration="3940000" />
-=======
-      <workItem from="1622938391576" duration="5276000" />
-      <workItem from="1622947550821" duration="1467000" />
->>>>>>> 68e5242f7ed84e8a5123b544e5ceaf101546e9a8
+      <updated>1625542424047</updated>
+      <workItem from="1625542426053" duration="12000" />
+      <workItem from="1625542454051" duration="156000" />
+      <workItem from="1625612647894" duration="1980000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-<<<<<<< HEAD
-  <component name="WindowStateProjectService">
-    <state x="390" y="7" key="#PHP" timestamp="1623006031695">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="390" y="7" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1623006031695" />
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623023045408">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1623023045408" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623012548400">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1623012548400" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1623020752843">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1623020752843" />
-    <state x="516" y="287" key="NewPhpFileDialog" timestamp="1623022389913">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="1880" y="287" key="NewPhpFileDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1622951703552" />
-    <state x="516" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1623022389913" />
-    <state x="500" y="176" width="1009" height="715" key="dock-window-1" timestamp="1623006716382">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="500" y="176" width="1009" height="715" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1623006716382" />
-=======
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="326" y="7" key="#PHP" timestamp="1622675097905">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="326" y="7" key="#PHP/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622675097905" />
-    <state x="405" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1622941574288">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="405" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622941574288" />
-    <state x="373" y="66" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1622944191066">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="373" y="66" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622944191066" />
-    <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622847951060">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622847951060" />
-    <state x="514" y="287" key="NewPhpFileDialog" timestamp="1623016593350">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="514" y="287" key="NewPhpFileDialog/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1623016593350" />
-    <state x="1876" y="287" key="NewPhpFileDialog/0.0.1360.728/1360.0.1366.728@1360.0.1366.728" timestamp="1622724662070" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1622993928940">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622993928940" />
-    <state x="336" y="162" key="run.anything.popup" timestamp="1622758905750">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="336" y="162" key="run.anything.popup/0.0.1360.728/1360.0.1366.728@0.0.1360.728" timestamp="1622758905750" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
->>>>>>> 68e5242f7ed84e8a5123b544e5ceaf101546e9a8
   </component>
 </project>
