@@ -1,7 +1,7 @@
-function calulcarKilometroPorCombustible (valor){
+function calulcarKilometroPorCombustible (kilometros){
     var combustibleXLitro = 0.20;
     var combustible = 0;
-    combustible = valor * combustibleXLitro;
+    combustible = kilometros * combustibleXLitro;
     document.getElementById('combEstimado').value = combustible;
     calulcarPrecioCombustible (combustible);
 }

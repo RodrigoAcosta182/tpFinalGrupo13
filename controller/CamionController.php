@@ -55,7 +55,7 @@ class CamionController
     public function registrarCamion(){
         if (isset($_SESSION["logueado"])) {
             if(isset($_POST['marca']) && isset($_POST['modelo']) && isset($_POST['patente']) && isset($_POST['chasis']) &&
-                isset($_POST['motor']) && isset($_POST['kilometraje']) && isset($_POST['fabricacion']) && isset($_POST['arrastre'])){
+                isset($_POST['motor']) && isset($_POST['kilometraje']) && isset($_POST['fabricacion'])){
                 $marca = $_POST['marca'];
                 $modelo = $_POST['modelo'];
                 $patente = $_POST['patente'];
@@ -63,10 +63,10 @@ class CamionController
                 $motor = $_POST['motor'];
                 $kilometraje = $_POST['kilometraje'];
                 $fabricacion = $_POST['fabricacion'];
-                $arrastre = $_POST['arrastre'];
+
 
                 if(!$this->camionModel->getCamionSiExistePatente($patente)){
-                    $this->camionModel->registrarCamion($marca,$modelo,$patente,$chasis,$motor,$kilometraje,$fabricacion,$arrastre,true);
+                    $this->camionModel->registrarCamion($marca,$modelo,$patente,$chasis,$motor,$kilometraje,$fabricacion,true);
                     $_SESSION['registroCorrecto'] = 1;
                     header("Location: /tpFinalGrupo13/Camion");
                 }else{
@@ -95,7 +95,7 @@ class CamionController
     public function procesoModificarCamion(){
         if (isset($_SESSION["logueado"])) {
             if (isset($_POST['marca']) && isset($_POST['modelo']) && isset($_POST['patente']) && isset($_POST['chasis']) &&
-                isset($_POST['motor']) && isset($_POST['kilometraje']) && isset($_POST['fabricacion']) && isset($_POST['arrastre'])) {
+                isset($_POST['motor']) && isset($_POST['kilometraje']) && isset($_POST['fabricacion'])) {
                 $idCamion = $_POST['idCamion'];
                 $marca = $_POST['marca'];
                 $modelo = $_POST['modelo'];
@@ -104,14 +104,14 @@ class CamionController
                 $motor = $_POST['motor'];
                 $kilometraje = $_POST['kilometraje'];
                 $fabricacion = $_POST['fabricacion'];
-                $arrastre = $_POST['arrastre'];
+
 
                 if (isset($_POST['activo']) && $_POST['activo'] === "on") {
                     $activo = true;
                 } else {
                     $activo = false;
                 }
-                $this->camionModel->editCamion($idCamion,$marca, $modelo, $patente, $chasis, $motor, $kilometraje,$fabricacion,$arrastre,$activo);
+                $this->camionModel->editCamion($idCamion,$marca, $modelo, $patente, $chasis, $motor, $kilometraje,$fabricacion,$activo);
                 $_SESSION['mensajeModificar'] = 1;
                 header("Location: /tpFinalGrupo13/Camion");
             } else {
