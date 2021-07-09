@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95f41833-4724-4827-b546-58178b07df18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tpFinalGrupo13.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tpFinalGrupo13.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/formStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/formStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/posicionFormStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/posicionFormStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/altaArrastre.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaArrastre.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/altaCamion.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaCamion.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/altaCliente.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaCliente.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/altaMantenimiento.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaMantenimiento.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/altaViaje.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaViaje.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/modificarArrastre.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/modificarArrastre.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/modificarCamion.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/modificarCamion.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/modificarCliente.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/modificarCliente.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/modificarMantenimiento.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/modificarMantenimiento.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/modificarUsuario.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/modificarUsuario.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/modificarViaje.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/modificarViaje.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/proforma.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/proforma.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/registrarPosicion.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/registrarPosicion.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +39,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\tpFinalGrupo13\public\css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -39,11 +58,25 @@
       <updated>1625542424047</updated>
       <workItem from="1625542426053" duration="12000" />
       <workItem from="1625542454051" duration="156000" />
-      <workItem from="1625612647894" duration="1980000" />
+      <workItem from="1625612647894" duration="2621000" />
+      <workItem from="1625765954170" duration="56000" />
+      <workItem from="1625771506231" duration="596000" />
+      <workItem from="1625845574939" duration="1779000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
