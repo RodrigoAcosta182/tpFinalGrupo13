@@ -9,6 +9,16 @@ class PosicionModel{
         $this->database = $database;
     }
 
+    public function listarPosiciones(){
+        return $this->database->consulta("SELECT * FROM ubicaciondiaria ub 
+                                            INNER JOIN usuario us ON ub.pUsuario = us.Id
+                                            INNER JOIN vehiculo ve ON ub.Pvehiculo = ve.Id");
+    }
+
+    public function listarPosicionesByIdChofer($idChofer){
+        return $this->database->consulta("SELECT * FROM ubicaciondiaria WHERE pUsuario = '$idChofer'");
+    }
+
     public function guardarPosicion($idViaje, $chofer, $fechaHoy, $hora, $latitud, $longitud, $kmReales, $combustibleReal, $gastosGenerales,$vehiculoId)
     {
         return $this->database->ejecutar("INSERT INTO ubicaciondiaria (

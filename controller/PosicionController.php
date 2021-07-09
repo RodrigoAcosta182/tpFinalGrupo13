@@ -20,9 +20,9 @@ class PosicionController
         if (isset($_SESSION["logueado"])) {
             if ($_SESSION["esChofer"] == 1){
                 $idChofer =  $_SESSION["id"];
-                $data["viaje"] = $this->viajeModel->listarViajesByChofer($idChofer);
+                $data["posicion"] = $this->posicionModel->listarPosicionesByIdChofer($idChofer);
             }else{
-                $data["viaje"] = $this->viajeModel->listarViajes();
+                $data["posicion"] = $this->posicionModel->listarPosiciones();
             }
         echo $this->render->renderizar("view/posicion.mustache", $data);
         } else {
@@ -72,10 +72,10 @@ class PosicionController
 
                 $this->posicionModel->guardarPosicion($idViaje,$chofer, $fechaHoy, $hora,$latitud,$longitud,$kmReales,$combustibleReal,$gastosGenerales,$vehiculoId);
                 $_SESSION['mensajeRegistroPosicion'] = 1;
-                header("Location: /tpFinalGrupo13/Posicion");
+                header("Location: /tpFinalGrupo13/Viaje");
             } else {
                 $_SESSION['mensajeError'] = 1;
-                header("Location: /tpFinalGrupo13/Posicion");
+                header("Location: /tpFinalGrupo13/Viaje");
             }
         } else {
             header("location: /tpFinalGrupo13");

@@ -85,9 +85,13 @@
                             <form action="viaje/modificarViaje" method="post" style="margin-bottom: 5px">
                                 <button class='w3-button w3-blue' {{#Finalizado}} disabled {{/Finalizado}} style="width: 100%;" name="idViaje" value="{{viajeId}}">Modificar</button>
                             </form>
+                            <form action="posicion/registrarPosicion" method="post" style="margin-bottom: 5px">
+                                <button class='w3-button w3-yellow' {{#Finalizado}} disabled {{/Finalizado}} style="width: 100%;" name="finalizarViaje" value="{{viajeId}}">Registrar Posición</button>
+                            </form>
                             <form action="proforma/consultarProforma" method="post" style="margin-bottom: 5px">
                                 <button class='w3-button w3-green' style="width: 100%;" name="idProforma" value="{{viajeId}}">Ver Proforma</button>
                             </form>
+
                             {{/_SESSION.esAdministrador}}
                             {{#_SESSION.esSupervisor}}
                                 <form action="viaje/finalizarViaje" method="post" style="margin-bottom: 5px">
