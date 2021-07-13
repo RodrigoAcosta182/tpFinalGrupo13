@@ -3,12 +3,14 @@ class MantenimientoController
 {
 
     private $mantenimientoModel;
+    private $camionModel;
     private $render;
 
-    public function __construct(\Render $render, \MantenimientoModel $mantenimientoModel)
+    public function __construct(\Render $render, \MantenimientoModel $mantenimientoModel,\CamionModel $camionModel)
     {
         $this->render = $render;
         $this->mantenimientoModel = $mantenimientoModel;
+        $this->camionModel = $camionModel;
     }
 
     public function execute()
@@ -29,8 +31,9 @@ class MantenimientoController
     }
 
     public function altaMantenimiento()
-    {
-        echo $this->render->renderizar("view/altaMantenimiento.mustache");
+    {   $data = array();
+        $data['camiones'] = $this->camionModel->listarCamiones();
+        echo $this->render->renderizar("view/altaMantenimiento.mustache",$data);
     }
 
     public function registrarMantenimiento()
@@ -45,9 +48,10 @@ class MantenimientoController
                 $fhasta = $_POST['fhasta'];
                 $descripcion = $_POST['descripcion'];
 
-                    $this->mantenimientoModel->registrarMantenimiento($service, $vehiculo, $importe,$fdesde,$fhasta,$descripcion);
-                    $_SESSION['registroCorrecto'] = 1;
-                    header("Location: /tpFinalGrupo13/Mantenimiento");
+                $this->camionModel->camionEnMantenimiento($vehiculo);
+                $this->mantenimientoModel->registrarMantenimiento($service, $vehiculo, $importe,$fdesde,$fhasta,$descripcion);
+                $_SESSION['registroCorrecto'] = 1;
+                header("Location: /tpFinalGrupo13/Mantenimiento");
 
             } else {
                 $_SESSION['registroIncorrecto'] = 1;
@@ -94,4 +98,13 @@ class MantenimientoController
             exit();
         }
     }
+
+    public function finalizarMantenimiento(){
+        $idMantenimiento = $_POST['IdMantenimiento'];
+        $idVehiculo = $_POST['IdVehiculo'];
+        $this->camionModel->camionFinalizarMantenimiento($idVehiculo);
+        $this->mantenimientoModel->finalizarMantenimiento($idMantenimiento);
+        header("Location: /tpFinalGrupo13/Mantenimiento");
+    }
+
 }

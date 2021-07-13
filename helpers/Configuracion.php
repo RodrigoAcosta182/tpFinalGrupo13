@@ -133,9 +133,10 @@ class Configuracion
     {
         $render = self::getRender();
         $MantenimientoModel = self::getMantenimientoModel();
+        $camionModel = self::getCamionModel();
 
         include_once("controller/MantenimientoController.php");
-        return new MantenimientoController($render, $MantenimientoModel);
+        return new MantenimientoController($render, $MantenimientoModel,$camionModel);
     }
 
     public static function getFacturaModel(){

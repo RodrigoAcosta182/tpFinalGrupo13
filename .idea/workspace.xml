@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="95f41833-4724-4827-b546-58178b07df18" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/PosicionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/PosicionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/PosicionModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/PosicionModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/posicion.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/posicion.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/registrarPosicion.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/registrarPosicion.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/viaje.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/viaje.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/MantenimientoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/MantenimientoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ViajeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ViajeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/Configuracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Configuracion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/CamionModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/CamionModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/MantenimientoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/MantenimientoModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ViajeModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ViajeModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/altaMantenimiento.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaMantenimiento.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/mantenimiento.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/mantenimiento.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1uvO6dTyXZrnVZVYic2XMUMraQv" />
@@ -53,6 +61,7 @@
       <workItem from="1625771506231" duration="596000" />
       <workItem from="1625845574939" duration="1779000" />
       <workItem from="1625851105957" duration="1532000" />
+      <workItem from="1626126859781" duration="6907000" />
     </task>
     <servers />
   </component>

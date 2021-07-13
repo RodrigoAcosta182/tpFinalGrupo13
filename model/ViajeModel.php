@@ -33,9 +33,9 @@ class ViajeModel{
                                               from cliente");
     }
 
-    public function listarVehiculos(){
+    public function listarVehiculosActivos(){
         return $this->database->consulta("select *
-                                              from vehiculo");
+                                              from vehiculo where MantenimientoActivo = 0");
     }
 
     public function listarArrastres(){
@@ -83,5 +83,6 @@ class ViajeModel{
     {
         return $this->database->consulta("select * from vviajes where usuarioId = '$idChofer'");
     }
+
 
 }

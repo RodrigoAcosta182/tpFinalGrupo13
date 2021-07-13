@@ -71,4 +71,14 @@ class CamionModel{
                                                     Activo='$activo'
                                                     WHERE Id = '$idCamion'");
     }
+
+    public function camionEnMantenimiento($idVehiculo)
+    {
+        return $this->database->ejecutar("UPDATE vehiculo SET MantenimientoActivo = 1 WHERE Id = '$idVehiculo'");
+    }
+
+    public function camionFinalizarMantenimiento($idVehiculo)
+    {
+        return $this->database->ejecutar("UPDATE vehiculo SET MantenimientoActivo = 0 WHERE Id = '$idVehiculo'");
+    }
 }
