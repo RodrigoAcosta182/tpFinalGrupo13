@@ -19,18 +19,10 @@
             </select>
 
         <label>Sucursal Origen</label><br>
-        <select name="sucuOrig" id="" required>
-        {{#sucursal}}
-            <option value="{{IdSuc}}">{{DireccionSuc}}, {{Provincia}}</option>
-        {{/sucursal}}
-        </select>
+        <input class="textAreaInput" name="sucuOrig" placeholder="Sucursal Origen.." required><br>
 
         <label>Sucursal Destino</label><br>
-        <select name="sucuDest" id="" required>
-        {{#sucursal}}
-            <option value="{{IdSuc}}">{{DireccionSuc}}, {{Provincia}}</option>
-        {{/sucursal}}
-        </select>
+        <input class="textAreaInput" name="sucuDest" placeholder="Sucursal Destino.." required><br>
 
         <label>Cliente</label><br>
         <select name="cliente" id="" required>

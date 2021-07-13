@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="95f41833-4724-4827-b546-58178b07df18" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/PosicionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/PosicionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/PosicionModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/PosicionModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/posicion.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/posicion.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/registrarPosicion.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/registrarPosicion.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/viaje.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/viaje.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ViajeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ViajeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ViajeModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ViajeModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/altaViaje.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaViaje.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/modificarViaje.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/modificarViaje.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

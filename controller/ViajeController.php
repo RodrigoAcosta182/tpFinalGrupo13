@@ -44,7 +44,6 @@ class ViajeController
     public function altaViaje()
     {
         $data["chofer"] = $this->viajeModel->listarChoferes();
-        $data["sucursal"] = $this->viajeModel->listarSucursales();
         $data["cliente"] = $this->viajeModel->listarClientes();
         $data["vehiculo"] = $this->viajeModel->listarVehiculos();
         $data["arrastre"] = $this->viajeModel->listarArrastres();
