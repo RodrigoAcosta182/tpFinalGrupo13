@@ -20,22 +20,15 @@ class ViajeModel{
                                               where pTipoUsuario = 1");
     }
 
-    public function listarSucursales(){
-        return $this->database->consulta("select sucursales.Id as IdSuc,
-                                              sucursales.Direccion as DireccionSuc,
-                                              provincia.Descripcion as Provincia
-                                              from sucursales
-                                              inner join provincia on sucursales.pProvincia = provincia.Id");
-    }
 
     public function listarClientes(){
         return $this->database->consulta("select *
                                               from cliente");
     }
 
-    public function listarVehiculos(){
+    public function listarVehiculosActivos(){
         return $this->database->consulta("select *
-                                              from vehiculo");
+                                              from vehiculo where MantenimientoActivo = 0");
     }
 
     public function listarArrastres(){
@@ -83,5 +76,6 @@ class ViajeModel{
     {
         return $this->database->consulta("select * from vviajes where usuarioId = '$idChofer'");
     }
+
 
 }

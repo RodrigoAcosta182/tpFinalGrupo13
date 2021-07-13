@@ -45,7 +45,7 @@ class ViajeController
     {
         $data["chofer"] = $this->viajeModel->listarChoferes();
         $data["cliente"] = $this->viajeModel->listarClientes();
-        $data["vehiculo"] = $this->viajeModel->listarVehiculos();
+        $data["vehiculo"] = $this->viajeModel->listarVehiculosActivos();
         $data["arrastre"] = $this->viajeModel->listarArrastres();
         echo $this->render->renderizar("view/altaViaje.mustache", $data);
     }

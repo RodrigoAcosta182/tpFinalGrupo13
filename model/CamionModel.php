@@ -21,7 +21,8 @@ class CamionModel{
                                                 v.NroMotor as Motor, 
                                                 v.AñoFabricacion as aFab,
                                                 v.kilometraje as Km,
-                                                v.Activo as Activo
+                                                v.Activo as Activo,
+                                                v.MantenimientoActivo as MantenimientoActivo
                                               from vehiculo v
                                               inner join modelo mo on v.pModelo = mo.Id
                                               inner join marca ma on v.pMarca = ma.Id
@@ -70,5 +71,15 @@ class CamionModel{
                                                     AñoFabricacion='$fabricacion',
                                                     Activo='$activo'
                                                     WHERE Id = '$idCamion'");
+    }
+
+    public function camionEnMantenimiento($idVehiculo)
+    {
+        return $this->database->ejecutar("UPDATE vehiculo SET MantenimientoActivo = 1 WHERE Id = '$idVehiculo'");
+    }
+
+    public function camionFinalizarMantenimiento($idVehiculo)
+    {
+        return $this->database->ejecutar("UPDATE vehiculo SET MantenimientoActivo = 0 WHERE Id = '$idVehiculo'");
     }
 }

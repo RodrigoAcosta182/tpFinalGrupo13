@@ -30,12 +30,11 @@
                 <input class="dateInput" type="date" id="fechaHasta" name="fhasta"required><br><br>
 
                 <label> Vehiculo*</label><br>
-                <select name="vehiculo" id=""required>
-                    <option value="">Seleccione patente del vehiculo</option>
-                    <option value="3">AA123CD</option>
-                    <option value="4">AA150QW</option>
-                    <option value="5">AD870QW</option>
-                    <option value="6">AC342WW</option>
+                <select name="vehiculo" required>
+                    <option value="">Seleccionar un camion</option>
+                {{#camiones}}
+                    <option value="{{Id_camion}}">{{Patente}}</option>
+                {{/camiones}}
                 </select>
                 <br>
                 <input type="submit" value="Guardar">

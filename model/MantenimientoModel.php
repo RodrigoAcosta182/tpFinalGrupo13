@@ -20,7 +20,9 @@ class MantenimientoModel{
                                                 mantenimiento.Descripcion as Descripcion,
                                                 vehiculo.kilometraje as Km, 
                                                 tiposervice.Descripcion as Tipo, 
-                                                mantenimiento.importe as Importe
+                                                mantenimiento.importe as Importe,
+                                                mantenimiento.Finalizado as MantenimientoFinalizado,
+                                                mantenimiento.pVehiculo as IdVehiculo
                                                  from mantenimiento  
                                                  inner join tiposervice on mantenimiento.pservice = tiposervice.id
                                                  inner join vehiculo on mantenimiento.pVehiculo = vehiculo.id
@@ -62,5 +64,11 @@ class MantenimientoModel{
                                                     Descripcion = '$descripcion'
                                                     WHERE Id = '$id_mantenimiento'");
     }
+
+    public function finalizarMantenimiento($idMantenimiento)
+    {
+        return $this->database->ejecutar("UPDATE mantenimiento SET Finalizado = 1 where Id= '$idMantenimiento' ");
+    }
+
 
 }
