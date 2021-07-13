@@ -44,7 +44,7 @@ class ViajeModel{
     }
 
     public function registrarViaje($usuario,$sucuOrig,$sucuDest,$cliente,$vehiculo,$arrastre,$fechaOrig,$fechaEst,$kmEst,$combEst,$otrosG,$precio,$precioCombustible){
-        return $this->database->ejecutar("INSERT INTO viajes (pUsuario, pCliente ,pSucursalOrigen,pSucursalDestino ,pVehiculo ,pArrastre ,FechaOrigen ,FechaEstimada ,KmEstimado ,CombustibleEst, Precio, OtrosGastos ,Finalizado,PrecioCombustibleEstimado) 
+        return $this->database->ejecutar("INSERT INTO viajes (pUsuario, pCliente ,SucursalOrigen,SucursalDestino ,pVehiculo ,pArrastre ,FechaOrigen ,FechaEstimada ,KmEstimado ,CombustibleEst, Precio, OtrosGastos ,Finalizado,PrecioCombustibleEstimado) 
                                             VALUES ('$usuario', '$cliente', '$sucuOrig', '$sucuDest' , '$vehiculo', '$arrastre', '$fechaOrig', '$fechaEst', '$kmEst', '$combEst', '$precio', '$otrosG' , 0,'$precioCombustible')");
     }
 
@@ -59,8 +59,8 @@ class ViajeModel{
         return $this->database->ejecutar("UPDATE viajes SET
                                                     pUsuario = '$usuario',
                                                     pCliente = '$cliente',
-                                                    pSucursalOrigen = '$sucuOrig',
-                                                    pSucursalDestino = '$sucuDest', 
+                                                    SucursalOrigen = '$sucuOrig',
+                                                    SucursalDestino = '$sucuDest', 
                                                     pArrastre = '$arrastre',
                                                     pVehiculo  = '$vehiculo', 
                                                     Precio = '$precio', 
