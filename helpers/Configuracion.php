@@ -138,25 +138,7 @@ class Configuracion
         include_once("controller/MantenimientoController.php");
         return new MantenimientoController($render, $MantenimientoModel,$camionModel);
     }
-
-    public static function getFacturaModel(){
-
-        $database = self::getDatabase();
-
-        include_once ("model/FacturaModel.php");
-
-        return new FacturaModel($database);
-    }
-
-    public static function getFacturaController()
-    {
-        $render = self::getRender();
-        $FacturaModel = self::getFacturaModel();
-
-        include_once("controller/FacturaController.php");
-        return new FacturaController($render, $FacturaModel);
-    }
-
+    
     public static function getViajeModel(){
 
         $database = self::getDatabase();
