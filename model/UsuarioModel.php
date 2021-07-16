@@ -67,4 +67,10 @@ class UsuarioModel
         return $this->database->consulta("SELECT * FROM licencia");
     }
 
+    public function listarChoferes(){
+        return $this->database->consulta("select *
+                                              from usuario
+                                              where pTipoUsuario = 1");
+    }
+
 }

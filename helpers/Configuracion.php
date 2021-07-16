@@ -138,7 +138,7 @@ class Configuracion
         include_once("controller/MantenimientoController.php");
         return new MantenimientoController($render, $MantenimientoModel,$camionModel);
     }
-    
+
     public static function getViajeModel(){
 
         $database = self::getDatabase();
@@ -152,10 +152,13 @@ class Configuracion
     {
         $render = self::getRender();
         $viajeModel = self::getViajeModel();
-
+        $usuarioModel = self::getUsuarioModel();
+        $clienteModel = self::getClienteModel();
+        $camionModel = self::getCamionModel();
+        $arrastreModel = self::getArrastreModel();
 
         include_once("controller/ViajeController.php");
-        return new ViajeController($render, $viajeModel);
+        return new ViajeController($render, $viajeModel,$usuarioModel,$clienteModel,$camionModel,$arrastreModel);
     }
 
     public static function getPosicionModel(){

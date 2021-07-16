@@ -3,13 +3,21 @@ class ViajeController
 {
 
     private $viajeModel;
+    private $usuarioModel;
+    private $clienteModel;
+    private $camionModel;
+    private $arrastreModel;
     private $render;
 
-    public function __construct(\Render $render, \ViajeModel $viajeModel)
+    public function __construct(\Render $render, \ViajeModel $viajeModel, \UsuarioModel $usuarioModel,
+                                \ClienteModel $clienteModelModel,\CamionModel $camionModel,\ArrastreModel $arrastreModel)
     {
         $this->render = $render;
         $this->viajeModel = $viajeModel;
-
+        $this->usuarioModel = $usuarioModel;
+        $this->clienteModel = $clienteModelModel;
+        $this->camionModel = $camionModel;
+        $this->arrastreModel = $arrastreModel;
     }
 
     public function execute()
@@ -43,10 +51,10 @@ class ViajeController
 
     public function altaViaje()
     {
-        $data["chofer"] = $this->viajeModel->listarChoferes();
-        $data["cliente"] = $this->viajeModel->listarClientes();
-        $data["vehiculo"] = $this->viajeModel->listarVehiculosActivos();
-        $data["arrastre"] = $this->viajeModel->listarArrastres();
+        $data["chofer"] = $this->usuarioModel->listarChoferes();
+        $data["cliente"] = $this->clienteModel->listarClientes();
+        $data["vehiculo"] = $this->camionModel->listarVehiculosActivos();
+        $data["arrastre"] = $this->arrastreModel->listarArrastre();
         echo $this->render->renderizar("view/altaViaje.mustache", $data);
     }
 
