@@ -181,25 +181,19 @@ class Configuracion
     }
 
     public static function getQRModel(){
-        $database = self::getDatabase();
         include_once ("model/QRModel.php");
-        return new QRModel($database);
+        return new QRModel();
     }
 
-    public static function getProformaModel(){
-        $database = self::getDatabase();
-        include_once ("model/ProformaModel.php");
-        return new ProformaModel($database);
-    }
 
     public static function getProformaController()
     {
         $render = self::getRender();
-        $proformaModel = self::getProformaModel();
+        $viajeModel = self::getViajeModel();
         $qrModel = self::getQRModel();
         $posicionModel = self::getPosicionModel();
         include_once("controller/ProformaController.php");
-        return new ProformaController($render, $proformaModel,$qrModel,$posicionModel);
+        return new ProformaController($render, $viajeModel,$qrModel,$posicionModel);
     }
 
 
