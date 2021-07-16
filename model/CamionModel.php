@@ -82,4 +82,10 @@ class CamionModel{
     {
         return $this->database->ejecutar("UPDATE vehiculo SET MantenimientoActivo = 0 WHERE Id = '$idVehiculo'");
     }
+
+    public function listarVehiculosActivos()
+    {
+        return $this->database->consulta("select *
+                                              from vehiculo where MantenimientoActivo = 0");
+    }
 }
