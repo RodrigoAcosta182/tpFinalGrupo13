@@ -55,4 +55,8 @@ class ViajeModel{
         return $this->database->consulta("select * from vviajes where usuarioId = '$idChofer'");
     }
 
+    public function getProformaById($idProforma)
+    {
+    }
+
 }

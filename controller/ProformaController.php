@@ -2,15 +2,15 @@
 class ProformaController
 {
 
-    private $proformaModel;
+    private $viajeModel;
     private $qrModel;
     private $posicionModel;
     private $render;
 
-    public function __construct(\Render $render, \ProformaModel $proformaModel,\QRModel $qrModel,\PosicionModel $posicionModel)
+    public function __construct(\Render $render, \ViajeModel $viajeModel,\QRModel $qrModel,\PosicionModel $posicionModel)
     {
         $this->render = $render;
-        $this->proformaModel = $proformaModel;
+        $this->viajeModel = $viajeModel;
         $this->qrModel = $qrModel;
         $this->posicionModel = $posicionModel;
     }
@@ -33,7 +33,7 @@ class ProformaController
         $data = array();
         if (isset($_SESSION["logueado"])) {
             $idProforma = $_POST['idProforma'];
-            $data["proforma"]= $this->proformaModel->getProformaById($idProforma);
+            $data["proforma"]= $this->viajeModel->getViajeById($idProforma);
             echo $this->render->renderizar("view/proforma.mustache", $data);
         }
         else {
