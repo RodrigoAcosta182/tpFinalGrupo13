@@ -86,7 +86,7 @@ class CamionModel{
     public function listarVehiculosActivos()
     {
         return $this->database->consulta("select *
-                                              from vehiculo where MantenimientoActivo = 0");
+                                              from vehiculo where MantenimientoActivo = 0 and Activo = 1");
     }
 
     public function getKmActuales($patente)

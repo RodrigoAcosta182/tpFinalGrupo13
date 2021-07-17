@@ -40,7 +40,4 @@ class ArrastreModel{
         $this->database->ejecutar("UPDATE arrastre SET Descripcion = '$carga', Patente = '$patente', NroChasis = '$chasis'  WHERE Id = '$idArrastre'");
     }
 
-
-
-
 }

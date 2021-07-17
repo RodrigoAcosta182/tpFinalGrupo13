@@ -31,4 +31,9 @@ class ClienteModel{
     {
         return $this->database->ejecutar("UPDATE cliente SET Nombre = '$nombre', Apellido = '$apellido', Dni = '$dni', Domicilio = '$domicilio', Activo = '$activo' WHERE Id = '$id'");
     }
+
+    public function listarClientesActivos()
+    {
+        return $this->database->consulta("select * from cliente where Activo = 1");
+    }
 }
