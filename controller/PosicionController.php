@@ -5,12 +5,15 @@ class PosicionController
     private $posicionModel;
     private $viajeModel;
     private $render;
+    private $camionModel;
 
-    public function __construct(\Render $render, \PosicionModel $posicionModel,\ViajeModel $viajeModel)
+    public function __construct(\Render $render, \PosicionModel $posicionModel,\ViajeModel $viajeModel,
+                                \CamionModel $camionModel)
     {
         $this->render = $render;
         $this->posicionModel = $posicionModel;
         $this->viajeModel = $viajeModel;
+        $this->camionModel = $camionModel;
     }
 
     public function execute()
@@ -70,7 +73,14 @@ class PosicionController
                 $gastosGenerales = $_POST['gastosGenerales'];
                 $vehiculoId = $_POST['vehiculoId'];
 
+
+                $patente = $_POST['patenteVehiculo'];
+                $kmActualesVehiculo = $this->camionModel->getKmActuales($patente)[0]['kilometraje'];;
+                $kmActualesVehiculo = $kmActualesVehiculo + $kmReales;
+                $this->camionModel->setKmActuales($patente,$kmActualesVehiculo);
+
                 $this->posicionModel->guardarPosicion($idViaje,$chofer, $fechaHoy, $hora,$latitud,$longitud,$kmReales,$combustibleReal,$gastosGenerales,$vehiculoId);
+
                 $_SESSION['mensajeRegistroPosicion'] = 1;
                 header("Location: /tpFinalGrupo13/Viaje");
             } else {

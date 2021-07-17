@@ -88,4 +88,16 @@ class CamionModel{
         return $this->database->consulta("select *
                                               from vehiculo where MantenimientoActivo = 0");
     }
+
+    public function getKmActuales($patente)
+    {
+        return $this->database->consulta("select kilometraje from vehiculo where Patente = '$patente'");
+    }
+
+    public function setKmActuales($patente, $kmActualesVehiculo)
+    {
+        return $this->database->ejecutar("UPDATE vehiculo SET kilometraje = '$kmActualesVehiculo' WHERE Patente = '$patente'");
+    }
+
+
 }

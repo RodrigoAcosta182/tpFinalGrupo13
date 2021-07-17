@@ -175,9 +175,10 @@ class Configuracion
         $render = self::getRender();
         $PosicionModel = self::getPosicionModel();
         $viajeModel = self::getViajeModel();
+        $camionModel = self::getCamionModel();
 
         include_once("controller/PosicionController.php");
-        return new PosicionController($render, $PosicionModel,$viajeModel);
+        return new PosicionController($render, $PosicionModel,$viajeModel,$camionModel);
     }
 
     public static function getQRModel(){
