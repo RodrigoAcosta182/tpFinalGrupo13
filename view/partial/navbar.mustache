@@ -6,12 +6,34 @@
         <div class="w3-dropdown-hover">
             <button class="w3-button w3-teal">General</button>
             <div class="w3-dropdown-content w3-bar-block w3-border">
-                <a href="/tpFinalGrupo13/usuario" class="w3-bar-item w3-button">Usuarios</a>
-                <a href="/tpFinalGrupo13/cliente" class="w3-bar-item w3-button">Clientes</a>
-                <a href="/tpFinalGrupo13/camion" class="w3-bar-item w3-button">Camiones</a>
-                <a href="/tpFinalGrupo13/arrastre" class="w3-bar-item w3-button">Remolques</a>
-                <a href="/tpFinalGrupo13/mantenimiento" class="w3-bar-item w3-button">Mantenimiento</a>
-                <a href="/tpFinalGrupo13/viaje" class="w3-bar-item w3-button">Viajes</a>
+                {{#_SESSION.esAdministrador}}
+                    <a href="/tpFinalGrupo13/usuario" class="w3-bar-item w3-button">Usuarios</a>
+                    <a href="/tpFinalGrupo13/cliente" class="w3-bar-item w3-button">Clientes</a>
+                    <a href="/tpFinalGrupo13/camion" class="w3-bar-item w3-button">Camiones</a>
+                    <a href="/tpFinalGrupo13/arrastre" class="w3-bar-item w3-button">Remolques</a>
+                    <a href="/tpFinalGrupo13/mantenimiento" class="w3-bar-item w3-button">Mantenimiento</a>
+                    <a href="/tpFinalGrupo13/viaje" class="w3-bar-item w3-button">Viajes</a>
+                {{/_SESSION.esAdministrador}}
+                {{#_SESSION.esSupervisor}}
+                    <a href="/tpFinalGrupo13/usuario" class="w3-bar-item w3-button">Usuarios</a>
+                    <a href="/tpFinalGrupo13/cliente" class="w3-bar-item w3-button">Clientes</a>
+                    <a href="/tpFinalGrupo13/camion" class="w3-bar-item w3-button">Camiones</a>
+                    <a href="/tpFinalGrupo13/arrastre" class="w3-bar-item w3-button">Remolques</a>
+                    <a href="/tpFinalGrupo13/mantenimiento" class="w3-bar-item w3-button">Mantenimiento</a>
+                    <a href="/tpFinalGrupo13/viaje" class="w3-bar-item w3-button">Viajes</a>
+                {{/_SESSION.esSupervisor}}
+                {{#_SESSION.esChofer}}
+                    <a href="/tpFinalGrupo13/viaje" class="w3-bar-item w3-button">Viajes</a>
+                {{/_SESSION.esChofer}}
+                {{#_SESSION.esEncargadoTaller}}
+                    <a href="/tpFinalGrupo13/camion" class="w3-bar-item w3-button">Camiones</a>
+                    <a href="/tpFinalGrupo13/arrastre" class="w3-bar-item w3-button">Remolques</a>
+                    <a href="/tpFinalGrupo13/mantenimiento" class="w3-bar-item w3-button">Mantenimiento</a>
+                {{/_SESSION.esEncargadoTaller}}
+                {{#_SESSION.esMecanico}}
+                    <a href="/tpFinalGrupo13/mantenimiento" class="w3-bar-item w3-button">Mantenimiento</a>
+                {{/_SESSION.esMecanico}}
+
             </div>
         </div>
         <div class="w3-dropdown-hover">

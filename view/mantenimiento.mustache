@@ -19,12 +19,9 @@
             {{#_SESSION.esSupervisor}}
                 <a href="/tpfinalgrupo13/Mantenimiento/altaMantenimiento" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Nuevo Mantenimiento</a>
             {{/_SESSION.esSupervisor}}
-            {{#_SESSION.esEncargado}}
+            {{#_SESSION.esEncargadoTaller}}
                 <a href="/tpfinalgrupo13/Mantenimiento/altaMantenimiento" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Nuevo Mantenimiento</a>
-            {{/_SESSION.esEncargado}}
-            {{#_SESSION.esMecanico}}
-                <a href="/tpfinalgrupo13/Mantenimiento/altaMantenimiento" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Nuevo Mantenimiento</a>
-            {{/_SESSION.esMecanico}}
+            {{/_SESSION.esEncargadoTaller}}
             <br>
         </div>
     </div>
@@ -72,14 +69,14 @@
                                 <button class='w3-button w3-red' style="width: 100%;" name="IdMantenimiento" {{#MantenimientoFinalizado}}disabled{{/MantenimientoFinalizado}} value="{{Id_mantenimiento}}">Finalizar</button>
                             </form>
                         {{/_SESSION.esSupervisor}}
-                        {{#_SESSION.esEncargado}}
+                        {{#_SESSION.esEncargadoTaller}}
                             <form style="margin-bottom: 10px " action="mantenimiento/modificarMantenimiento" method="post">
                                 <button class='w3-button w3-blue' style="width: 100%;" name="IdMantenimiento" {{#MantenimientoFinalizado}}disabled{{/MantenimientoFinalizado}} value="{{Id_mantenimiento}}">Modificar</button>
                             </form>
                             <form action="mantenimiento/finalizarMantenimiento" method="post">
                                 <button class='w3-button w3-red' style="width: 100%;" name="IdMantenimiento" {{#MantenimientoFinalizado}}disabled{{/MantenimientoFinalizado}} value="{{Id_mantenimiento}}">Finalizar</button>
                             </form>
-                        {{/_SESSION.esEncargado}}
+                        {{/_SESSION.esEncargadoTaller}}
                         {{#_SESSION.esMecanico}}
                             <form style="margin-bottom: 10px " action="mantenimiento/modificarMantenimiento" method="post">
                                 <button class='w3-button w3-blue' style="width: 100%;" name="IdMantenimiento" {{#MantenimientoFinalizado}}disabled{{/MantenimientoFinalizado}} value="{{Id_mantenimiento}}">Modificar</button>
