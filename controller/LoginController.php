@@ -67,10 +67,10 @@ class LoginController
 
 
                 $_SESSION["esAdministrador"] = $this->isAdmin($user[0]["pTipoUsuario"]);
+                $_SESSION["esSupervisor"] = $this->isSupervisor($user[0]["pTipoUsuario"]);
+                $_SESSION["esEncargadoTaller"] = $this->isEncargado($user[0]["pTipoUsuario"]);
                 $_SESSION["esChofer"] = $this->isChofer($user[0]["pTipoUsuario"]);
                 $_SESSION["esMecanico"] = $this->isMecanico($user[0]["pTipoUsuario"]);
-                $_SESSION["esSupervisor"] = $this->isSupervisor($user[0]["pTipoUsuario"]);
-                $_SESSION["esEncargado"] = $this->isEncargado($user[0]["pTipoUsuario"]);
                 $_SESSION["esLlano"] = $this->isLlano($user[0]["pTipoUsuario"]);
 
                 header("Location: /tpFinalGrupo13/home");
