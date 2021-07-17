@@ -30,14 +30,15 @@ class ArrastreModel{
                                             VALUES ('$carga','$patente','$chasis')");
     }
 
-    public function editArrastre($idArrastre,$carga, $patente, $chasis)
+    public function editArrastre($idArrastre,$carga, $patente, $chasis,$activo)
     {
-        echo $idArrastre;
-        echo $carga;
-        echo $patente;
-        echo $chasis;
 
-        $this->database->ejecutar("UPDATE arrastre SET Descripcion = '$carga', Patente = '$patente', NroChasis = '$chasis'  WHERE Id = '$idArrastre'");
+        $this->database->ejecutar("UPDATE arrastre SET Descripcion = '$carga', Patente = '$patente', NroChasis = '$chasis', Activo = '$activo'  WHERE Id = '$idArrastre'");
+    }
+
+    public function listarArrastresActivos()
+    {
+        return $this->database->consulta("select * from arrastre where Activo = 1");
     }
 
 }

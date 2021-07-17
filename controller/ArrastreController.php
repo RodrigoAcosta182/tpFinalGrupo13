@@ -41,6 +41,8 @@ class ArrastreController
                 $patente = $_POST['patente'];
                 $chasis = $_POST['chasis'];
 
+
+
                 if (!$this->arrastreModel->getArrastreSiExistePatente($patente)) {
                     $this->arrastreModel->registrarArrastre($carga, $patente, $chasis);
                     $_SESSION['registroCorrecto'] = 1;
@@ -76,7 +78,13 @@ class ArrastreController
                 $patente = $_POST['patente'];
                 $chasis = $_POST['chasis'];
 
-                $this->arrastreModel->editArrastre($idArrastre,$carga,$patente, $chasis);
+                if (isset($_POST['activo']) && $_POST['activo'] === "on") {
+                    $activo = true;
+                } else {
+                    $activo = false;
+                }
+
+                $this->arrastreModel->editArrastre($idArrastre,$carga,$patente, $chasis,$activo);
                 $_SESSION['mensajeModificar'] = 1;
                 header("Location: /tpFinalGrupo13/Arrastre");
             } else {
