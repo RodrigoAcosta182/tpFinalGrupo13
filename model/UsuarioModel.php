@@ -62,10 +62,12 @@ class UsuarioModel
         return $this->database->consulta("SELECT * FROM licencia");
     }
 
-    public function listarChoferes(){
+
+    public function listarChoferesActivos()
+    {
         return $this->database->consulta("select *
                                               from usuario
-                                              where pTipoUsuario = 1");
+                                              where pTipoUsuario = 1 and Active = 1");
     }
 
 }
