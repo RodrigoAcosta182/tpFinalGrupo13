@@ -23,7 +23,9 @@
                 <input type="text" id="fpatente" name="patente" placeholder="Tu patente.." value="{{Patente}}">
                 <label for="lchasis">Nro chasis</label>
                 <input type="text" id="lchasis" name="chasis" placeholder="Nro chasis.." value="{{NroChasis}}">
-                <br>
+                <br><br>
+                <input type="checkbox" id="activo" name="activo" {{#Activo}}checked="checked"{{/Activo}}>
+                <label for="activo">Activo</label>
                 <input type="submit" value="Guardar">
                 <a type="button" class="button button4 w3-center" style="text-decoration: none" href="/tpFinalGrupo13/arrastre">Volver</a>
             </form>
