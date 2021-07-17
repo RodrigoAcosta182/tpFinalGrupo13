@@ -1,5 +1,6 @@
 {{> header}}
 {{> navbar}}
+<script type="text/javascript" src="/tpFinalGrupo13/public/js/buscar.js"></script>
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-container">
     <!-- Header -->
@@ -9,7 +10,7 @@
             <img src="/tpFinalGrupo13/public/images/logoLema.jpeg" style="width:20%;" class="w3-center w3-round">
             <!-- The form -->
             <div class="w3-section w3-bottombar w3-padding-16">
-                <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Arrastre.." name="busqueda">
+                <input class="w3-padding w3-light-grey w3-border-blue" style="width: 30%" type="text" id="inputBuscarArrastre" onkeyup="buscar('inputBuscarArrastre','tablaArrastre')" placeholder="Buscar Arrastre Por Patente" name="busqueda">
             </div>
             {{#_SESSION.esAdministrador}}
                 <a href="/tpfinalgrupo13/Arrastre/AltaArrastre" style="width: auto; margin-bottom: 20px" type="submit" class="w3-green w3-button">Agregar Arrastre</a>
@@ -21,7 +22,7 @@
         </div>
     </div>
     <div style="overflow: auto;">
-        <table class="w3-table">
+        <table id="tablaArrastre" class="w3-table">
             <tr class="w3-black">
                 <th>Patente</th>
                 <th>Nro. Chasis</th>
