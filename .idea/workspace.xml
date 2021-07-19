@@ -19,13 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95f41833-4724-4827-b546-58178b07df18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/ViajeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ViajeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ViajeModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ViajeModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/altaViaje.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/altaViaje.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/modificarViaje.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/view/modificarViaje.mustache" afterDir="false" />
-    </list>
+    <list default="true" id="95f41833-4724-4827-b546-58178b07df18" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
